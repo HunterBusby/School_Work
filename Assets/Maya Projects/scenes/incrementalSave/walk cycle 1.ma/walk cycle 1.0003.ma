@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: walk cycle 1.ma
-//Last modified: Fri, Sep 29, 2023 01:35:04 PM
+//Last modified: Fri, Sep 29, 2023 01:12:00 PM
 //Codeset: 1252
 file -rdi 1 -ns "Ultimate_Walker_Rig" -rfn "Ultimate_Walker_RigRN" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/hunte/Documents/Education/Fall 2023/Modeling/Models to reference/Ultimate_Walker_Rig.ma";
@@ -16,7 +16,7 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202302170737-4500172811";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22621)";
-fileInfo "UUID" "D5D6F6B6-4718-C74A-803A-AA9A4651F0C0";
+fileInfo "UUID" "D417CA24-45BC-EFA5-B448-DC8DEB0E5673";
 createNode transform -s -n "persp";
 	rename -uid "04C1C0C8-454E-A89A-BBF1-1D8D024FA5CE";
 	setAttr ".v" no;
@@ -770,8 +770,8 @@ createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
 	setAttr ".tgi[0].vl" -type "double2" -785.71425449280639 -85.714282308306153 ;
 	setAttr ".tgi[0].vh" -type "double2" 757.14282705670462 86.904758451477079 ;
 select -ne :time1;
-	setAttr ".o" 84;
-	setAttr ".unw" 84;
+	setAttr ".o" 86;
+	setAttr ".unw" 86;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
