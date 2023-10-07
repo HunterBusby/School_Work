@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: walk cycle 1.ma
-//Last modified: Tue, Oct 03, 2023 11:06:19 PM
+//Last modified: Tue, Oct 03, 2023 09:35:06 PM
 //Codeset: 1252
 file -rdi 1 -ns "Ultimate_Walker_Rig" -rfn "Ultimate_Walker_RigRN" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/hunte/Documents/Education/Fall 2023/Modeling/Models to reference/Ultimate_Walker_Rig.ma";
@@ -16,12 +16,12 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202302170737-4500172811";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22621)";
-fileInfo "UUID" "42CA4247-4078-BF64-B614-DEA81CC7293C";
+fileInfo "UUID" "3A952EB1-4C1E-D725-15B2-8BA15F164D86";
 createNode transform -s -n "persp";
 	rename -uid "04C1C0C8-454E-A89A-BBF1-1D8D024FA5CE";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 11.689569197294706 15.221648701015456 -15.021609741277434 ;
-	setAttr ".r" -type "double3" -35.138352721568879 1221.3999999990742 0 ;
+	setAttr ".t" -type "double3" 22.200432429847801 4.7688379829817595 -3.4880219954819616 ;
+	setAttr ".r" -type "double3" -5.7383527215709105 1176.599999999084 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "45E14E17-4A2A-BB26-4D8B-B9AE84D9D9DB";
 	setAttr -k off ".v" no;
@@ -162,7 +162,7 @@ createNode script -n "uiConfigurationScriptNode";
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "7BC12E70-4340-A40B-D3B5-A1AA7952E915";
-	setAttr ".b" -type "string" "playbackOptions -min 1 -max 126 -ast -1 -aet 200 ";
+	setAttr ".b" -type "string" "playbackOptions -min 102 -max 131 -ast -1 -aet 200 ";
 	setAttr ".st" 6;
 createNode reference -n "Ultimate_Walker_RigRN";
 	rename -uid "5332C5F8-40CE-D231-070A-639A70A3FB42";
@@ -967,8 +967,8 @@ createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
 	setAttr ".tgi[0].vl" -type "double2" -785.71425449280639 -85.714282308306153 ;
 	setAttr ".tgi[0].vh" -type "double2" 757.14282705670462 86.904758451477079 ;
 select -ne :time1;
-	setAttr ".o" 126;
-	setAttr ".unw" 126;
+	setAttr ".o" 131;
+	setAttr ".unw" 131;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -1013,7 +1013,6 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "walker_lf_heel_ik_ctrl_pvControl.o" "Ultimate_Walker_RigRN.phl[1]";
 connectAttr "walker_lf_heel_ik_ctrl_legTwist.o" "Ultimate_Walker_RigRN.phl[2]";
 connectAttr "walker_lf_heel_ik_ctrl_heelTwist.o" "Ultimate_Walker_RigRN.phl[3]";
