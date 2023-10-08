@@ -67,3 +67,40 @@ proc float medianofnums(float $values[]) {
         return $result;
     }
 }
+
+proc float calculator(float $input[], int $operation) {
+    float $result = 0;
+    
+    if ($operation == 1) {
+        $result = addnums($input);
+        print("The sum of " + string($input[0]) + ", " + string($input[1]) + ", and " + string($input[2]) + " is " + string($result) + "\n");
+    } else if ($operation == 2) {
+        $result = subtractnums($input);
+        print("The difference of " + string($input[0]) + ", " + string($input[1]) + ", and " + string($input[2]) + " is " + string($result) + "\n");
+    } else if ($operation == 3) {
+        $result = multiplynums($input);
+        print("The product of " + string($input[0]) + ", " + string($input[1]) + ", and " + string($input[2]) + " is " + string($result) + "\n");
+    } else if ($operation == 4) {
+        $result = dividenums($input);
+        print("The division result of " + string($input[0]) + ", " + string($input[1]) + ", and " + string($input[2]) + " is " + string($result) + "\n");
+    } else if ($operation == 5) {
+        if (size($input) == 2) {
+            $result = powerofnums($input[0], int($input[1]));
+            print(string($input[0]) + " raised to the power of " + string($input[1]) + " is " + string($result) + "\n");
+        } else {
+            error "Power operation requires two values.";
+        }
+    } else if ($operation == 6) {
+        $result = meanofnums($input);
+        print("The mean of " + string($input[0]) + ", " + string($input[1]) + ", and " + string($input[2]) + " is " + string($result) + "\n");
+    } else if ($operation == 7) {
+        $result = medianofnums($input);
+        print("The median of " + string($input[0]) + ", " + string($input[1]) + ", and " + string($input[2]) + " is " + string($result) + "\n");
+    } else {
+        error "Invalid operation code. Please use a valid operation code (1-7).";
+    }
+    
+    return $result;
+}
+
+calculator({1, 2, 3}, 7);
