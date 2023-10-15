@@ -1,0 +1,152 @@
+// addition
+proc float addnums(float $values[]) {
+    float $result = 0;
+    for ($val in $values) {
+        $result += $val;
+    }
+    return $result;
+}
+
+// subtraction
+proc float subtractnums(float $values[]) {
+    float $result = $values[0];
+    for ($i = 1; $i < size($values); $i++) {
+        $result -= $values[$i];
+    }
+    return $result;
+}
+
+// multiplication
+proc float multiplynums(float $values[]) {
+    float $result = 1;
+    for ($val in $values) {
+        $result *= $val;
+    }
+    return $result;
+}
+
+// division
+proc float dividenums(float $values[]) {
+    float $result = $values[0];
+    for ($i = 1; $i < size($values); $i++) {
+        if ($values[$i] != 0) {
+            $result /= $values[$i];
+        } else {
+            print "Dividing by 0 will break the computation!";
+        }
+    }
+    return $result;
+}
+
+// power
+proc float powerofnums(float $base, int $exponent) {
+    float $result = pow($base, $exponent);
+    return $result;
+}
+
+// mean
+proc float meanofnums(float $values[]) {
+    float $sum = addnums($values);
+    float $result = $sum / size($values);
+    return $result;
+}
+
+// median
+proc float medianofnums(float $values[]) {
+    int $numValues = size($values);
+    float $sortedValues[] = `sort $values`;
+    
+    if ($numValues % 2 == 1) {
+        int $middleIndex = ($numValues - 1) / 2;
+        float $result = $sortedValues[$middleIndex];
+        return $result;
+    } else {
+        int $mid1 = ($numValues / 2) - 1;
+        int $mid2 = $numValues / 2;
+        float $result = ($sortedValues[$mid1] + $sortedValues[$mid2]) / 2.0;
+        return $result;
+    }
+}
+
+proc float calculator(float $input[], int $operation) {
+    float $result = 0;
+    
+    if ($operation == 1) {
+        $result = addnums($input);
+        print("The sum of " + string($input[0]) + ", " + string($input[1]) + ", and " + string($input[2]) + " is " + string($result) + "\n");
+    } else if ($operation == 2) {
+        $result = subtractnums($input);
+        print("The difference of " + string($input[0]) + ", " + string($input[1]) + ", and " + string($input[2]) + " is " + string($result) + "\n");
+    } else if ($operation == 3) {
+        $result = multiplynums($input);
+        print("The product of " + string($input[0]) + ", " + string($input[1]) + ", and " + string($input[2]) + " is " + string($result) + "\n");
+    } else if ($operation == 4) {
+        $result = dividenums($input);
+        print("The division result of " + string($input[0]) + ", " + string($input[1]) + ", and " + string($input[2]) + " is " + string($result) + "\n");
+    } else if ($operation == 5) {
+        if (size($input) == 2) {
+            $result = powerofnums($input[0], int($input[1]));
+            print(string($input[0]) + " raised to the power of " + string($input[1]) + " is " + string($result) + "\n");
+        } else {
+            error "Power operation requires two values.";
+        }
+    } else if ($operation == 6) {
+        $result = meanofnums($input);
+        print("The mean of " + string($input[0]) + ", " + string($input[1]) + ", and " + string($input[2]) + " is " + string($result) + "\n");
+    } else if ($operation == 7) {
+        $result = medianofnums($input);
+        print("The median of " + string($input[0]) + ", " + string($input[1]) + ", and " + string($input[2]) + " is " + string($result) + "\n");
+    } else {
+        error "Invalid operation code. Please use a valid operation code (1-7).";
+    }
+    
+    return $result;
+}
+
+// temporary standin from AI till my brain isn't fried and I can make my own.
+
+// Define the function to create the UI
+global proc createCalculatorUI() {
+    if (window -exists "calculatorUI")
+        deleteUI -window "calculatorUI";
+
+    // Create the main window
+    window -title "Calculator" calculatorUI;
+    
+    // Create a column layout to organize controls
+    columnLayout -adjustableColumn true;
+
+    // Create floatFields for entering numbers
+    floatField -precision 2 -value 0.0 num1;
+    floatField -precision 2 -value 0.0 num2;
+    floatField -precision 2 -value 0.0 num3;
+    
+    // Create an intField for selecting the operation
+    intField -minValue 1 -maxValue 7 -value 1 operation;
+
+    // Create a text field to display the result
+    textField -editable false -width 200 resultText;
+
+    // Create a button to calculate
+    button -label "Calculate" -command "calculateOperation";
+
+    // Show the window
+    showWindow calculatorUI;
+}
+
+// Define the function to calculate and display the result
+global proc calculateOperation() {
+    float $input[3];
+    $input[0] = `floatField -query -value num1`;
+    $input[1] = `floatField -query -value num2`;
+    $input[2] = `floatField -query -value num3`;
+    int $op = `intField -query -value operation`;
+
+    float $result = calculator($input, $op);
+
+    // Update the result text field
+    textField -edit -text ("Result: " + $result) resultText;
+}
+
+// Call the createCalculatorUI function to display the UI
+createCalculatorUI();

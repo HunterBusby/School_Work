@@ -1,0 +1,58 @@
+global proc placementGeneratorUI()
+{
+    string $window = `window -title "Placement Generator" -widthHeight 300 250`;
+
+    columnLayout -adjustableColumn true;
+
+    text -label "X Range:";
+    floatField -minValue -100 -maxValue 100 -value 0 xRangeMin;
+    floatField -minValue -100 -maxValue 100 -value 10 xRangeMax;
+    text -label "Y Range:";
+    floatField -minValue -100 -maxValue 100 -value 0 yRangeMin;
+    floatField -minValue -100 -maxValue 100 -value 10 yRangeMax;
+    text -label "Z Range:";
+    floatField -minValue -100 -maxValue 100 -value 0 zRangeMin;
+    floatField -minValue -100 -maxValue 100 -value 10 zRangeMax;
+
+    text -label "Number of Duplicates:";
+    intField -minValue 1 -value 50 numDups;
+
+    button -label "Generate" -command "placementGeneratorUI_create()";
+    showWindow $window;
+}
+
+global proc placementGeneratorUI_create()
+{
+    float $xMin = `floatField -query -value xRangeMin`;
+    float $xMax = `floatField -query -value xRangeMax`;
+    float $yMin = `floatField -query -value yRangeMin`;
+    float $yMax = `floatField -query -value yRangeMax`;
+    float $zMin = `floatField -query -value zRangeMin`;
+    float $zMax = `floatField -query -value zRangeMax`;
+    int $numdups = `intField -query -value numDups`;
+
+    placementGenerator($xMin, $xMax, $yMin, $yMax, $zMin, $zMax, $numdups);
+}
+
+global proc placementGenerator(float $xMin, float $xMax, float $yMin, float $yMax, float $zMin, float $zMax, int $numdups)
+{
+    string $sels[] = `ls -selection`;
+
+    for ($i = 0; $i < size($sels); $i++)
+    {
+        for ($j = 0; $j < $numdups; $j++)
+        {
+            string $dups[] = `duplicate -rr $sels[$i]`;
+            string $dup = $dups[0];
+
+            float $randX = `rand $xMin $xMax`;
+            float $randY = `rand $yMin $yMax`;
+            float $randZ = `rand $zMin $zMax`;
+
+            xform -worldSpace -translation $randX $randY $randZ $dup;
+        }
+    }
+}
+
+placementGeneratorUI();
+
