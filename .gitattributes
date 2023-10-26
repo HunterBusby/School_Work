@@ -3,6 +3,6 @@ git[[:space:]]lfs[[:space:]]track[[:space:]]*.spp filter=lfs diff=lfs merge=lfs 
 git[[:space:]]lfs[[:space:]]track[[:space:]]*.PNG filter=lfs diff=lfs merge=lfs -text
 git[[:space:]]lfs[[:space:]]track[[:space:]]*.jpg filter=lfs diff=lfs merge=lfs -text
 git[[:space:]]lfs[[:space:]]track[[:space:]]*.mp3 filter=lfs diff=lfs merge=lfs -text
-*.hdanc filter=lfs diff=lfs merge=lfs -text
-*.hdnac filter=lfs diff=lfs merge=lfs -text
 Assets/Digital[[:space:]]Assets/object_hunte.dev.Tree_subnet.1.0.hdanc filter=lfs diff=lfs merge=lfs -text
+git[[:space:]]lfs[[:space:]]track[[:space:]]*.hdnac filter=lfs diff=lfs merge=lfs -text
+git[[:space:]]lfs[[:space:]]track[[:space:]]*.hda filter=lfs diff=lfs merge=lfs -text
