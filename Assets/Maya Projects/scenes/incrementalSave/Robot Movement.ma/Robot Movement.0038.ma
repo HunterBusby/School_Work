@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: Robot Movement.ma
-//Last modified: Mon, Oct 30, 2023 01:23:15 PM
+//Last modified: Sun, Oct 29, 2023 07:27:32 PM
 //Codeset: 1252
 file -rdi 1 -ns "PALBot" -rfn "PALBotRN" -op "v=0;" -typ "mayaAscii" "C:/Users/hunte/Documents/Education/Fall 2023/Modeling/Imported/PALBOT/PALBOT/scenes/PALBot.ma";
 file -r -ns "PALBot" -dr 1 -rfn "PALBotRN" -op "v=0;" -typ "mayaAscii" "C:/Users/hunte/Documents/Education/Fall 2023/Modeling/Imported/PALBOT/PALBOT/scenes/PALBot.ma";
@@ -14,19 +14,19 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202302170737-4500172811";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22621)";
-fileInfo "UUID" "4CA44D16-48EB-D43D-50D4-BAB9CD81D985";
+fileInfo "UUID" "37819898-432A-F8F8-D45B-E6A4D3AEBE57";
 createNode transform -s -n "persp";
 	rename -uid "FD7817F3-469F-B491-C613-92A5F9FD683F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 87.206189686232122 3.6091836498269503 0.88682707220760015 ;
-	setAttr ".r" -type "double3" 5.274503337740847 4766.7939696149397 1.4217542337998315e-14 ;
+	setAttr ".t" -type "double3" 49.343070455700484 19.555559224244355 2.4966804109216341 ;
+	setAttr ".r" -type "double3" -12.125496662261019 4761.5939696148853 5.439183110247171e-15 ;
 	setAttr ".rp" -type "double3" -7.1054273576010019e-15 1.7763568394002505e-15 0 ;
 	setAttr ".rpt" -type "double3" 2.4019646116186061e-15 1.1115081572838414e-15 -5.7288970074116056e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "3F0A55EE-4B99-C6D3-B52A-E396A2919365";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 86.14193384359811;
+	setAttr ".coi" 49.905351799659762;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -83,21 +83,21 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "080B1699-43EA-D548-10E5-25B9458EDB7C";
+	rename -uid "289FFFB5-4C9A-9EFB-390E-B5B3AEBF376D";
 	setAttr -s 17 ".lnk";
 	setAttr -s 17 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "08C79AB3-4FCF-5BCE-B325-5FB448280870";
+	rename -uid "F62CC1FC-44B7-455E-9FEE-C6BD2C4983CD";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 1 0 ;
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "2D00F6AE-4701-437D-AE63-33942672189B";
+	rename -uid "B6E3E53F-464E-CF4B-FA3A-F383EE44929F";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "8D0C07D7-4AB6-683E-8759-40B05D1BD1DF";
+	rename -uid "84FB3FF2-4E9B-0D1B-0C69-FDADB3B9C5E2";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "2D41B0FD-439A-68BB-AED7-E9AEA5D7F9EF";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "0E331A6C-403B-7497-EC4C-25A5F2746DCA";
+	rename -uid "089528E0-445C-3119-6B9C-1E9F261EE6BD";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "5E0C3E1A-415E-6159-E3BC-158CF07AFDC1";
 	setAttr ".g" yes;
@@ -4259,8 +4259,8 @@ createNode animCurveTU -n "PALbot_L_Engine_ctrl_on_off";
 	setAttr ".wgt" no;
 	setAttr -s 2 ".ktv[0:1]"  56 0 59 0;
 select -ne :time1;
-	setAttr ".o" 124;
-	setAttr ".unw" 124;
+	setAttr ".o" 60;
+	setAttr ".unw" 60;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
