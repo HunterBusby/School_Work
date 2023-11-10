@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
-//Name: Robot Movement.ma
-//Last modified: Wed, Nov 08, 2023 10:56:47 PM
+//Name: Robot TRAX reference.ma
+//Last modified: Wed, Nov 08, 2023 11:01:03 PM
 //Codeset: 1252
 file -rdi 1 -ns "PALBot" -rfn "PALBotRN" -op "v=0;" -typ "mayaAscii" "C:/Users/hunte/Documents/Education/Fall 2023/Modeling/Imported/PALBOT/PALBOT/scenes/PALBot.ma";
 file -r -ns "PALBot" -dr 1 -rfn "PALBotRN" -op "v=0;" -typ "mayaAscii" "C:/Users/hunte/Documents/Education/Fall 2023/Modeling/Imported/PALBOT/PALBOT/scenes/PALBot.ma";
@@ -13,12 +13,12 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202302170737-4500172811";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22621)";
-fileInfo "UUID" "48975F4E-4CCD-48EA-5796-A0997E5CF9EF";
+fileInfo "UUID" "DB83A8A4-4B32-1E3E-65CE-038C8F717D68";
 createNode transform -s -n "persp";
 	rename -uid "FD7817F3-469F-B491-C613-92A5F9FD683F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 58.927939489260702 40.906735337619175 84.542352949553703 ;
-	setAttr ".r" -type "double3" 162.59316122962201 -215.12290873768961 179.99999999999025 ;
+	setAttr ".t" -type "double3" 42.911073919430777 55.469703715396562 87.371306819123106 ;
+	setAttr ".r" -type "double3" 154.19316122961848 -206.3229087376817 179.99999999999045 ;
 	setAttr ".rp" -type "double3" 2.2204460492503131e-15 2.2204460492503131e-15 -3.5527136788005009e-15 ;
 	setAttr ".rpt" -type "double3" 1.7050366428773891e-15 -1.2250983378583097e-15 4.3592628407839432e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -4776,7 +4776,8 @@ createNode animCurveTU -n "PALbot_L_Engine_ctrl_on_off";
 	setAttr -s 11 ".kot[2:10]"  5 5 5 5 5 5 5 18 
 		18;
 select -ne :time1;
-	setAttr ".o" 0;
+	setAttr ".o" 134;
+	setAttr ".unw" 134;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -5209,4 +5210,4 @@ connectAttr ":defaultArnoldDisplayDriver.msg" ":defaultArnoldRenderOptions.drive
 connectAttr ":defaultArnoldFilter.msg" ":defaultArnoldRenderOptions.filt";
 connectAttr ":defaultArnoldDriver.msg" ":defaultArnoldRenderOptions.drvr";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-// End of Robot Movement.ma
+// End of Robot TRAX reference.ma
