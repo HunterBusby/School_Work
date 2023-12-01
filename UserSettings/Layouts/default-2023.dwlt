@@ -43,8 +43,8 @@ MonoBehaviour:
     y: 0
     width: 328
     height: 252.8
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -249,8 +249,8 @@ MonoBehaviour:
     y: 0
     width: 449.59998
     height: 555.2
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -276,8 +276,8 @@ MonoBehaviour:
     y: 0
     width: 504.8
     height: 252.8
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -866,9 +866,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 9.814424, y: -8.523476, z: 51.42682}
+    m_Target: {x: -1.7114449, y: 6.435253, z: 29.911148}
     speed: 2
-    m_Value: {x: 9.814424, y: -8.523476, z: 51.42682}
+    m_Value: {x: -1.7114449, y: 6.435253, z: 29.911148}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -914,13 +914,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.16614857, y: 0.04730525, z: -0.008004891, w: 0.9849787}
+    m_Target: {x: 0.04859272, y: 0.0074854284, z: -0.00036801645, w: 0.9988407}
     speed: 2
-    m_Value: {x: 0.1661411, y: 0.047303118, z: -0.00800453, w: 0.9849343}
+    m_Value: {x: 0.05008842, y: 0.007484493, z: -0.00037922745, w: 0.99871665}
   m_Size:
-    m_Target: 33.656544
+    m_Target: 20.518118
     speed: 2
-    m_Value: 33.656544
+    m_Value: 20.518118
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1005,11 +1005,11 @@ MonoBehaviour:
     - e00: 0.5408684
       e01: 0
       e02: 0
-      e03: -310.47522
+      e03: -124.39974
       e10: 0
       e11: 0.5408684
       e12: 0
-      e13: 63.038956
+      e13: 63.038937
       e20: 0
       e21: 0
       e22: 1
@@ -1081,7 +1081,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/ScriptObj
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1091,16 +1091,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/ScriptObj
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\hunte\Documents\Education\Fall 2023\vid game\2D_Side_Sccroller
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 113.400024}
-    m_SelectedIDs: a66d0000
-    m_LastClickedID: 28070
-    m_ExpandedIDs: 000000006c6d000000ca9a3b
+    m_SelectedIDs: 886d0000
+    m_LastClickedID: 28040
+    m_ExpandedIDs: 00000000ee6c0000aa6d0000ae6d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1128,7 +1128,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000006c6d0000
+    m_ExpandedIDs: 00000000ee6c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1274,7 +1274,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 3af9ffff
+      m_ExpandedIDs: 0af0fffff2f9ffffdc68000008690000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
