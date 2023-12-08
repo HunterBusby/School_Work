@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: Saga Jeune animation.ma
-//Last modified: Thu, Dec 07, 2023 09:32:55 PM
+//Last modified: Thu, Dec 07, 2023 09:32:36 PM
 //Codeset: 1252
 file -rdi 1 -ns "PALBot" -rfn "PALBotRN" -op "v=0;" -typ "mayaAscii" "C:/Users/hunte/Documents/Education/Fall 2023/Modeling/Imported/PALBOT/PALBOT/scenes/PALBot.ma";
 file -rdi 1 -ns "PALBot1" -rfn "PALBotRN1" -op "v=0;" -typ "mayaAscii" "C:/Users/hunte/Documents/Education/Fall 2023/Modeling/Imported/PALBOT/PALBOT/scenes/PALBot.ma";
@@ -19,12 +19,12 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202302170737-4500172811";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22621)";
-fileInfo "UUID" "A748251D-444D-5A13-8F63-9F8938177F4F";
+fileInfo "UUID" "9607B6B2-4A19-C95C-8788-7388AA804BCD";
 createNode transform -s -n "persp";
 	rename -uid "0B68FA2E-43FB-0834-0AB7-EBBCAFC3FD4F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 246.55511447305986 71.755331580507516 3.1646530891140374 ;
-	setAttr ".r" -type "double3" -7.5383527313001411 812.59999999961519 0 ;
+	setAttr ".t" -type "double3" 246.39940359370803 34.723323612126137 54.338255812625953 ;
+	setAttr ".r" -type "double3" 0.26164726881782385 801.79999999969743 1.7421488615576029e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "0F646CF5-4FFC-0BE3-E207-F4BF66232120";
 	setAttr -k off ".v" no;
@@ -230,7 +230,7 @@ createNode mesh -n "uvunwrap1_0Shape" -p "uvunwrap1_0";
 	setAttr ".cdvm[0]"  0 1 1;
 createNode transform -n "directionalLight1";
 	rename -uid "9CB5D635-4A6C-BE25-4EFC-87A8C4C99D8A";
-	setAttr ".t" -type "double3" 0 33.077393321915167 93.453701610258619 ;
+	setAttr ".t" -type "double3" 0 33.077393321915167 0 ;
 	setAttr ".r" -type "double3" 0 92.159406476836438 0 ;
 	setAttr ".s" -type "double3" 31.672941825616086 31.672941825616086 31.672941825616086 ;
 createNode directionalLight -n "directionalLightShape1" -p "directionalLight1";
