@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: Saga Jeune animation.ma
-//Last modified: Sun, Dec 10, 2023 09:18:47 PM
+//Last modified: Sun, Dec 10, 2023 09:17:19 PM
 //Codeset: 1252
 file -rdi 1 -ns "PALBot" -rfn "PALBotRN" -op "v=0;" -typ "mayaAscii" "C:/Users/hunte/Documents/Education/Fall 2023/Modeling/Imported/PALBOT/PALBOT/scenes/PALBot.ma";
 file -rdi 1 -ns "PALBot1" -rfn "PALBotRN1" -op "v=0;" -typ "mayaAscii" "C:/Users/hunte/Documents/Education/Fall 2023/Modeling/Imported/PALBOT/PALBOT/scenes/PALBot.ma";
@@ -20,12 +20,12 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202302170737-4500172811";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22621)";
-fileInfo "UUID" "956FC9BB-4C27-572E-2454-3DB12149DBA8";
+fileInfo "UUID" "A4F32F6F-4D33-C054-9BA3-558D0FD0B60A";
 createNode transform -s -n "persp";
 	rename -uid "0B68FA2E-43FB-0834-0AB7-EBBCAFC3FD4F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 64.544280721104144 12.788428510730206 2.3999517662737544 ;
-	setAttr ".r" -type "double3" -2.138352696000438 5488.9999999921838 -1.1390100657595724e-14 ;
+	setAttr ".t" -type "double3" 64.247084276053926 14.350501666399934 -4.2568879925040291 ;
+	setAttr ".r" -type "double3" -4.5383526959975447 5495.7999999922176 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "0F646CF5-4FFC-0BE3-E207-F4BF66232120";
 	setAttr -k off ".v" no;
@@ -9721,8 +9721,8 @@ createNode animCurveTL -n "pCylinder2_translateZ";
 	setAttr -s 2 ".ktv[0:1]"  26 5.1919593505196691 29 5.1919593505196691;
 	setAttr -s 2 ".kot[0:1]"  5 5;
 select -ne :time1;
-	setAttr ".o" 49;
-	setAttr ".unw" 49;
+	setAttr ".o" 3;
+	setAttr ".unw" 3;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1

@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: Saga Jeune animation.ma
-//Last modified: Sun, Dec 10, 2023 09:18:47 PM
+//Last modified: Sun, Dec 10, 2023 08:59:22 PM
 //Codeset: 1252
 file -rdi 1 -ns "PALBot" -rfn "PALBotRN" -op "v=0;" -typ "mayaAscii" "C:/Users/hunte/Documents/Education/Fall 2023/Modeling/Imported/PALBOT/PALBOT/scenes/PALBot.ma";
 file -rdi 1 -ns "PALBot1" -rfn "PALBotRN1" -op "v=0;" -typ "mayaAscii" "C:/Users/hunte/Documents/Education/Fall 2023/Modeling/Imported/PALBOT/PALBOT/scenes/PALBot.ma";
@@ -20,17 +20,17 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202302170737-4500172811";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22621)";
-fileInfo "UUID" "956FC9BB-4C27-572E-2454-3DB12149DBA8";
+fileInfo "UUID" "305DCB62-4EC7-AE4A-4D37-5893E613CE3C";
 createNode transform -s -n "persp";
 	rename -uid "0B68FA2E-43FB-0834-0AB7-EBBCAFC3FD4F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 64.544280721104144 12.788428510730206 2.3999517662737544 ;
-	setAttr ".r" -type "double3" -2.138352696000438 5488.9999999921838 -1.1390100657595724e-14 ;
+	setAttr ".t" -type "double3" 0.91654445324487233 17.768514426803463 42.29729272801962 ;
+	setAttr ".r" -type "double3" -7.5383526963721987 5404.9999999956726 4.9885998181614804e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "0F646CF5-4FFC-0BE3-E207-F4BF66232120";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 63.345235129888735;
+	setAttr ".coi" 43.973214075632782;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -250,23 +250,23 @@ createNode mesh -n "pCylinderShape2" -p "pCylinder2";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "AF3CF2AC-45EC-AFDF-B57B-2BA081E14F15";
+	rename -uid "E3B7E511-48CE-0BD1-3F86-FBA44C0E0521";
 	setAttr -s 34 ".lnk";
 	setAttr -s 34 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "7FEF80D2-4168-5797-EBBC-6EBAD579EBFB";
+	rename -uid "5F3C2D14-422C-8ABE-724C-4A89B2FB7C8D";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 2 0 1 ;
 	setAttr -s 2 ".bspr";
 	setAttr -s 2 ".obsv";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "455C344E-4A4A-F933-FE69-809141FEE53C";
+	rename -uid "D082898B-4222-3C98-CA17-3691701919A3";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "0789F0AC-4463-3230-BB41-22AE268E44D9";
+	rename -uid "2193B478-44FD-DEC5-ECF0-42B673AC7CD4";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "F226B68C-4960-D29F-0265-24AE0CDCBFCA";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "87D207AA-4FF3-3B37-32D4-BDB9CB84D345";
+	rename -uid "939C9DD5-411E-8131-EF8B-5FA504704A0F";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "CFD9A02E-4F64-03F4-6B28-1CADD4D435E2";
 	setAttr ".g" yes;
@@ -720,13 +720,61 @@ createNode reference -n "PALBotRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"PALBotRN"
 		"PALBotRN" 0
-		"PALBotRN" 379
+		"PALBotRN" 403
 		2 "|PALBot:PALBOT_GRP" "scale" " -type \"double3\" 1 1 1"
 		2 "|PALBot:PALBOT_GRP" "rotatePivot" " -type \"double3\" 0 0 0"
 		2 "|PALBot:PALBOT_GRP" "scalePivot" " -type \"double3\" 0 0 0"
 		2 "|PALBot:PALBOT_GRP" "scalePivotTranslate" " -type \"double3\" 0 0 0"
 		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_MESH|PALBot:PALbot_HeadGRP|PALBot:GLASS_clean|PALBot:GLASS_cleanShape" 
 		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN" 
+		"global_scale" " -k 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN" 
+		"Mesh_lock" " -k 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_knee_aim_offset|PALBot:PALbot_L_knee_aim_ctrl" 
+		"space_switch" " -k 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_Engine_ctrl_offset|PALBot:PALbot_L_Engine_ctrl" 
+		"on_off" " -k 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl" 
+		"Heel_Peel" " -k 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl" 
+		"follow_hip" " -k 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_HandVIS_offset|PALBot:PALbot_R_HandVIS" 
+		"Hand_Vis" " -k 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_HandVIS_offset|PALBot:PALbot_R_HandVIS" 
+		"canon_light" " -k 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl" 
+		"secondary_vis" " -k 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl" 
+		"secondary_vis" " -k 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_Neck_ctrl_offset|PALBot:PALbot_Neck_ctrl|PALBot:PALbot_head_ctrl_offset|PALBot:PALbot_head_ctrl" 
+		"Space_switch" " -k 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_Neck_ctrl_offset|PALBot:PALbot_Neck_ctrl|PALBot:PALbot_head_ctrl_offset|PALBot:PALbot_head_ctrl" 
+		"FaceLight" " -k 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_Neck_ctrl_offset|PALBot:PALbot_Neck_ctrl|PALBot:PALbot_head_ctrl_offset|PALBot:PALbot_head_ctrl" 
+		"Led_color" " -k 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_Neck_ctrl_offset|PALBot:PALbot_Neck_ctrl|PALBot:PALbot_head_ctrl_offset|PALBot:PALbot_head_ctrl" 
+		"Face_Drawing" " -k 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_arm_IK_FK_switch_offset|PALBot:PALbot_R_arm_IK_FK_switch" 
+		"IK_FK" " -k 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_arm_IK_FK_switch_offset|PALBot:PALbot_L_arm_IK_FK_switch" 
+		"IK_FK" " -k 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl|PALBot:PALbot_R_hip_offset|PALBot:PALbot_R_hip|PALBot:PALbot_R_leg_IK_FK_switch_offset|PALBot:PALbot_R_leg_IK_FK_switch" 
+		"IK_FK" " -k 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl|PALBot:PALbot_L_hip_offset|PALBot:PALbot_L_hip|PALBot:PALbot_L_leg_IK_FK_switch_offset|PALBot:PALbot_L_leg_IK_FK_switch" 
+		"IK_FK" " -k 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_knee_aim_offset|PALBot:PALbot_R_knee_aim_ctrl" 
+		"space_switch" " -k 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_Engine_ctrl_offset1|PALBot:PALbot_R_Engine_ctrl" 
+		"on_off" " -k 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl" 
+		"Heel_Peel" " -k 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl" 
+		"follow_hip" " -k 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_HandVIS_offset|PALBot:PALbot_L_HandVIS" 
+		"Hand_Vis" " -k 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_HandVIS_offset|PALBot:PALbot_L_HandVIS" 
+		"canon_light" " -k 1"
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN.global_scale" 
 		"PALBotRN.placeHolderList[1]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN.Mesh_lock" 
@@ -1857,7 +1905,7 @@ createNode reference -n "PALBotRN1";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"PALBotRN1"
 		"PALBotRN1" 0
-		"PALBotRN1" 379
+		"PALBotRN1" 403
 		2 "|PALBot1:PALBOT_GRP" "visibility" " 1"
 		2 "|PALBot1:PALBOT_GRP" "translate" " -type \"double3\" 0 0 0"
 		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_MESH" "scale" " -type \"double3\" 1 1 1"
@@ -1866,6 +1914,54 @@ createNode reference -n "PALBotRN1";
 		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_RIG" "scale" " -type \"double3\" 1 1 1"
 		
+		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN" 
+		"global_scale" " -k 1"
+		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN" 
+		"Mesh_lock" " -k 1"
+		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN|PALBot1:PALbot_root|PALBot1:PALbot_L_knee_aim_offset|PALBot1:PALbot_L_knee_aim_ctrl" 
+		"space_switch" " -k 1"
+		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN|PALBot1:PALbot_root|PALBot1:PALbot_L_Engine_ctrl_offset|PALBot1:PALbot_L_Engine_ctrl" 
+		"on_off" " -k 1"
+		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN|PALBot1:PALbot_root|PALBot1:PALbot_L_IK_Foot_offset|PALBot1:PALbot_L_IK_Foot_ctrl" 
+		"Heel_Peel" " -k 1"
+		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN|PALBot1:PALbot_root|PALBot1:PALbot_L_IK_Foot_offset|PALBot1:PALbot_L_IK_Foot_ctrl" 
+		"follow_hip" " -k 1"
+		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN|PALBot1:PALbot_root|PALBot1:PALbot_R_HandVIS_offset|PALBot1:PALbot_R_HandVIS" 
+		"Hand_Vis" " -k 1"
+		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN|PALBot1:PALbot_root|PALBot1:PALbot_R_HandVIS_offset|PALBot1:PALbot_R_HandVIS" 
+		"canon_light" " -k 1"
+		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN|PALBot1:PALbot_root|PALBot1:PALbot_cog_ctrl_offset|PALBot1:PALbot_cog_ctrl" 
+		"secondary_vis" " -k 1"
+		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN|PALBot1:PALbot_root|PALBot1:PALbot_cog_ctrl_offset|PALBot1:PALbot_cog_ctrl|PALBot1:PALbot_cog_secondary_ctrl_offset1|PALBot1:PALbot_cog_secondary_ctrl|PALBot1:PALbot_chestup_ctrl_offset|PALBot1:PALbot_chestUp_ctrl" 
+		"secondary_vis" " -k 1"
+		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN|PALBot1:PALbot_root|PALBot1:PALbot_cog_ctrl_offset|PALBot1:PALbot_cog_ctrl|PALBot1:PALbot_cog_secondary_ctrl_offset1|PALBot1:PALbot_cog_secondary_ctrl|PALBot1:PALbot_chestup_ctrl_offset|PALBot1:PALbot_chestUp_ctrl|PALBot1:PALbot_chestUp_secondary_ctrl_offset|PALBot1:PALbot_chestUp_secondary_ctrl|PALBot1:PALbot_Neck_ctrl_offset|PALBot1:PALbot_Neck_ctrl|PALBot1:PALbot_head_ctrl_offset|PALBot1:PALbot_head_ctrl" 
+		"Space_switch" " -k 1"
+		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN|PALBot1:PALbot_root|PALBot1:PALbot_cog_ctrl_offset|PALBot1:PALbot_cog_ctrl|PALBot1:PALbot_cog_secondary_ctrl_offset1|PALBot1:PALbot_cog_secondary_ctrl|PALBot1:PALbot_chestup_ctrl_offset|PALBot1:PALbot_chestUp_ctrl|PALBot1:PALbot_chestUp_secondary_ctrl_offset|PALBot1:PALbot_chestUp_secondary_ctrl|PALBot1:PALbot_Neck_ctrl_offset|PALBot1:PALbot_Neck_ctrl|PALBot1:PALbot_head_ctrl_offset|PALBot1:PALbot_head_ctrl" 
+		"FaceLight" " -k 1"
+		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN|PALBot1:PALbot_root|PALBot1:PALbot_cog_ctrl_offset|PALBot1:PALbot_cog_ctrl|PALBot1:PALbot_cog_secondary_ctrl_offset1|PALBot1:PALbot_cog_secondary_ctrl|PALBot1:PALbot_chestup_ctrl_offset|PALBot1:PALbot_chestUp_ctrl|PALBot1:PALbot_chestUp_secondary_ctrl_offset|PALBot1:PALbot_chestUp_secondary_ctrl|PALBot1:PALbot_Neck_ctrl_offset|PALBot1:PALbot_Neck_ctrl|PALBot1:PALbot_head_ctrl_offset|PALBot1:PALbot_head_ctrl" 
+		"Led_color" " -k 1"
+		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN|PALBot1:PALbot_root|PALBot1:PALbot_cog_ctrl_offset|PALBot1:PALbot_cog_ctrl|PALBot1:PALbot_cog_secondary_ctrl_offset1|PALBot1:PALbot_cog_secondary_ctrl|PALBot1:PALbot_chestup_ctrl_offset|PALBot1:PALbot_chestUp_ctrl|PALBot1:PALbot_chestUp_secondary_ctrl_offset|PALBot1:PALbot_chestUp_secondary_ctrl|PALBot1:PALbot_Neck_ctrl_offset|PALBot1:PALbot_Neck_ctrl|PALBot1:PALbot_head_ctrl_offset|PALBot1:PALbot_head_ctrl" 
+		"Face_Drawing" " -k 1"
+		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN|PALBot1:PALbot_root|PALBot1:PALbot_cog_ctrl_offset|PALBot1:PALbot_cog_ctrl|PALBot1:PALbot_cog_secondary_ctrl_offset1|PALBot1:PALbot_cog_secondary_ctrl|PALBot1:PALbot_chestup_ctrl_offset|PALBot1:PALbot_chestUp_ctrl|PALBot1:PALbot_chestUp_secondary_ctrl_offset|PALBot1:PALbot_chestUp_secondary_ctrl|PALBot1:PALbot_R_Clavicle_offset|PALBot1:PALbot_R_Clavicle_ctrl|PALBot1:PALbot_R_arm_IK_FK_switch_offset|PALBot1:PALbot_R_arm_IK_FK_switch" 
+		"IK_FK" " -k 1"
+		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN|PALBot1:PALbot_root|PALBot1:PALbot_cog_ctrl_offset|PALBot1:PALbot_cog_ctrl|PALBot1:PALbot_cog_secondary_ctrl_offset1|PALBot1:PALbot_cog_secondary_ctrl|PALBot1:PALbot_chestup_ctrl_offset|PALBot1:PALbot_chestUp_ctrl|PALBot1:PALbot_chestUp_secondary_ctrl_offset|PALBot1:PALbot_chestUp_secondary_ctrl|PALBot1:PALbot_L_Clavicle_offset|PALBot1:PALbot_L_Clavicle_ctrl|PALBot1:PALbot_L_arm_IK_FK_switch_offset|PALBot1:PALbot_L_arm_IK_FK_switch" 
+		"IK_FK" " -k 1"
+		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN|PALBot1:PALbot_root|PALBot1:PALbot_cog_ctrl_offset|PALBot1:PALbot_cog_ctrl|PALBot1:PALbot_cog_secondary_ctrl_offset1|PALBot1:PALbot_cog_secondary_ctrl|PALBot1:PALbot_hipMain_ctrl|PALBot1:PALbot_R_hip_offset|PALBot1:PALbot_R_hip|PALBot1:PALbot_R_leg_IK_FK_switch_offset|PALBot1:PALbot_R_leg_IK_FK_switch" 
+		"IK_FK" " -k 1"
+		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN|PALBot1:PALbot_root|PALBot1:PALbot_cog_ctrl_offset|PALBot1:PALbot_cog_ctrl|PALBot1:PALbot_cog_secondary_ctrl_offset1|PALBot1:PALbot_cog_secondary_ctrl|PALBot1:PALbot_hipMain_ctrl|PALBot1:PALbot_L_hip_offset|PALBot1:PALbot_L_hip|PALBot1:PALbot_L_leg_IK_FK_switch_offset|PALBot1:PALbot_L_leg_IK_FK_switch" 
+		"IK_FK" " -k 1"
+		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN|PALBot1:PALbot_root|PALBot1:PALbot_R_knee_aim_offset|PALBot1:PALbot_R_knee_aim_ctrl" 
+		"space_switch" " -k 1"
+		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN|PALBot1:PALbot_root|PALBot1:PALbot_R_Engine_ctrl_offset1|PALBot1:PALbot_R_Engine_ctrl" 
+		"on_off" " -k 1"
+		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN|PALBot1:PALbot_root|PALBot1:PALbot_R_IK_Foot_offset|PALBot1:PALbot_R_IK_Foot_ctrl" 
+		"Heel_Peel" " -k 1"
+		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN|PALBot1:PALbot_root|PALBot1:PALbot_R_IK_Foot_offset|PALBot1:PALbot_R_IK_Foot_ctrl" 
+		"follow_hip" " -k 1"
+		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN|PALBot1:PALbot_root|PALBot1:PALbot_L_HandVIS_offset|PALBot1:PALbot_L_HandVIS" 
+		"Hand_Vis" " -k 1"
+		2 "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN|PALBot1:PALbot_root|PALBot1:PALbot_L_HandVIS_offset|PALBot1:PALbot_L_HandVIS" 
+		"canon_light" " -k 1"
 		5 4 "PALBotRN1" "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN.global_scale" 
 		"PALBotRN1.placeHolderList[1]" ""
 		5 4 "PALBotRN1" "|PALBot1:PALBOT_GRP|PALBot1:PALbot_LOC|PALBot1:PALbot_CTRLs|PALBot1:PALbot_MAIN.Mesh_lock" 
@@ -6407,100 +6503,100 @@ createNode animCurveTA -n "PALbot_R_FK_Elbow_ctrl_rotateX1";
 	rename -uid "65998CC0-4ACA-7113-888A-EDA1D71A9EF7";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 26 ".ktv[0:25]"  0 -82.842917925361974 16 -45.108285928243511
+	setAttr -s 24 ".ktv[0:23]"  0 -82.842917925361974 16 -45.108285928243511
 		 19 -45.108285928243511 20 -10.92093420476399 21 -5.3565864172935056 22 -4.5616795905120107
 		 23 -21.665986986759869 24 -48.701827709861234 25 -64.15087955163348 26 -61.170596298581827
 		 28 -52.655501289862748 29 -52.655501289862748 31 -52.655501289862748 33 -52.655501289862748
 		 35 -97.337999715899642 36 -127.80678394712493 37 -127.39380712617177 38 -131.4643758422321
-		 39 -112.87534894587574 41 -106.18593265598264 43 -84.007039471265429 44 -53.379651330380305
-		 46 -24.352610005501052 52 -54.807787513785172 53 -54.807787513785172 58 -46.88778732436753;
-	setAttr -s 26 ".kit[21:25]"  9 9 10 1 10;
-	setAttr -s 26 ".kot[18:25]"  5 10 10 9 9 10 1 10;
-	setAttr -s 26 ".kix[24:25]"  0.72719214065939886 0.83326445645849456;
-	setAttr -s 26 ".kiy[24:25]"  -0.68643396664442613 0.55287462014721733;
-	setAttr -s 26 ".kox[24:25]"  0.72719214065939886 0.83326445645849456;
-	setAttr -s 26 ".koy[24:25]"  -0.68643396664442613 0.55287462014721733;
+		 39 -112.87534894587574 41 -96.724900386427606 46 -24.352610005501052 52 -54.807787513785172
+		 53 -54.807787513785172 58 -46.88778732436753;
+	setAttr -s 24 ".kit[22:23]"  1 10;
+	setAttr -s 24 ".kot[18:23]"  5 10 10 10 1 10;
+	setAttr -s 24 ".kix[22:23]"  0.72719214065939886 0.83326445645849456;
+	setAttr -s 24 ".kiy[22:23]"  -0.68643396664442613 0.55287462014721733;
+	setAttr -s 24 ".kox[22:23]"  0.72719214065939886 0.83326445645849456;
+	setAttr -s 24 ".koy[22:23]"  -0.68643396664442613 0.55287462014721733;
 createNode animCurveTL -n "PALbot_R_FK_Elbow_ctrl_translateX1";
 	rename -uid "141F2FE3-4A10-30E4-1B3E-66A40FA73E44";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 26 ".ktv[0:25]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
-		 26 0 28 0 29 0 31 0 33 0 35 0 36 0 37 0 38 0 39 0 41 0 43 0 44 0 46 0 52 0 53 0 58 0;
-	setAttr -s 26 ".kit[21:25]"  9 9 10 1 10;
-	setAttr -s 26 ".kot[18:25]"  5 10 10 9 9 10 1 10;
-	setAttr -s 26 ".kix[24:25]"  1 1;
-	setAttr -s 26 ".kiy[24:25]"  0 0;
-	setAttr -s 26 ".kox[24:25]"  1 1;
-	setAttr -s 26 ".koy[24:25]"  0 0;
+	setAttr -s 24 ".ktv[0:23]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
+		 26 0 28 0 29 0 31 0 33 0 35 0 36 0 37 0 38 0 39 0 41 0 46 0 52 0 53 0 58 0;
+	setAttr -s 24 ".kit[22:23]"  1 10;
+	setAttr -s 24 ".kot[18:23]"  5 10 10 10 1 10;
+	setAttr -s 24 ".kix[22:23]"  1 1;
+	setAttr -s 24 ".kiy[22:23]"  0 0;
+	setAttr -s 24 ".kox[22:23]"  1 1;
+	setAttr -s 24 ".koy[22:23]"  0 0;
 createNode animCurveTL -n "PALbot_R_FK_Elbow_ctrl_translateY1";
 	rename -uid "38C44061-428F-287F-FF33-7BA088EB43AB";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 26 ".ktv[0:25]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
-		 26 0 28 0 29 0 31 0 33 0 35 0 36 0 37 0 38 0 39 0 41 0 43 0 44 0 46 0 52 0 53 0 58 0;
-	setAttr -s 26 ".kit[21:25]"  9 9 10 1 10;
-	setAttr -s 26 ".kot[18:25]"  5 10 10 9 9 10 1 10;
-	setAttr -s 26 ".kix[24:25]"  1 1;
-	setAttr -s 26 ".kiy[24:25]"  0 0;
-	setAttr -s 26 ".kox[24:25]"  1 1;
-	setAttr -s 26 ".koy[24:25]"  0 0;
+	setAttr -s 24 ".ktv[0:23]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
+		 26 0 28 0 29 0 31 0 33 0 35 0 36 0 37 0 38 0 39 0 41 0 46 0 52 0 53 0 58 0;
+	setAttr -s 24 ".kit[22:23]"  1 10;
+	setAttr -s 24 ".kot[18:23]"  5 10 10 10 1 10;
+	setAttr -s 24 ".kix[22:23]"  1 1;
+	setAttr -s 24 ".kiy[22:23]"  0 0;
+	setAttr -s 24 ".kox[22:23]"  1 1;
+	setAttr -s 24 ".koy[22:23]"  0 0;
 createNode animCurveTL -n "PALbot_R_FK_Elbow_ctrl_translateZ1";
 	rename -uid "968E00EA-4F02-0A59-5E4F-0B86A02B39D2";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 26 ".ktv[0:25]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
-		 26 0 28 0 29 0 31 0 33 0 35 0 36 0 37 0 38 0 39 0 41 0 43 0 44 0 46 0 52 0 53 0 58 0;
-	setAttr -s 26 ".kit[21:25]"  9 9 10 1 10;
-	setAttr -s 26 ".kot[18:25]"  5 10 10 9 9 10 1 10;
-	setAttr -s 26 ".kix[24:25]"  1 1;
-	setAttr -s 26 ".kiy[24:25]"  0 0;
-	setAttr -s 26 ".kox[24:25]"  1 1;
-	setAttr -s 26 ".koy[24:25]"  0 0;
+	setAttr -s 24 ".ktv[0:23]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
+		 26 0 28 0 29 0 31 0 33 0 35 0 36 0 37 0 38 0 39 0 41 0 46 0 52 0 53 0 58 0;
+	setAttr -s 24 ".kit[22:23]"  1 10;
+	setAttr -s 24 ".kot[18:23]"  5 10 10 10 1 10;
+	setAttr -s 24 ".kix[22:23]"  1 1;
+	setAttr -s 24 ".kiy[22:23]"  0 0;
+	setAttr -s 24 ".kox[22:23]"  1 1;
+	setAttr -s 24 ".koy[22:23]"  0 0;
 createNode animCurveTA -n "PALbot_L_Arm_ctrl_rotateY2";
 	rename -uid "A9C97B49-43D2-4021-01C6-68B005604C46";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 24 ".ktv[0:23]"  0 -72.29825763745842 16 -171.18352338409932
+	setAttr -s 25 ".ktv[0:24]"  0 -72.29825763745842 16 -171.18352338409932
 		 19 -171.18352338409932 20 -209.94284424631201 21 -248.70216510852453 22 -216.43364874926021
 		 23 -236.07608810713825 24 -267.18771794094573 25 -285.24879160483721 26 -285.41387463083811
 		 28 -285.48338327336478 29 -285.48338327336478 31 -287.55282837536885 33 -278.76208088648826
-		 35 -276.95856379369241 36 -340.66490395418845 39 -383.29234130341644 40 -383.29234130341644
-		 43 -360.38561227167702 46 -362.68760863063278 52 -362.68760863063278 53 -362.68760863063278
-		 55 -362.68760863063278 58 -362.67928981646588;
-	setAttr -s 24 ".kot[16:23]"  5 10 10 10 10 10 10 10;
+		 35 -276.95856379369241 36 -340.66490395418845 37 -315.05178812208209 38 -314.29234761397657
+		 39 -301.09611335652272 41 -279.22219326658387 46 -362.68760863063278 52 -362.68760863063278
+		 53 -362.68760863063278 55 -362.68760863063278 58 -362.67928981646588;
+	setAttr -s 25 ".kot[18:24]"  5 10 10 10 10 10 10;
 createNode animCurveTA -n "PALbot_L_Arm_ctrl_rotateZ2";
 	rename -uid "B3CCB754-4F45-52ED-A833-20B69F763851";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 25 ".ktv[0:24]"  0 0 16 -21.551606902799197 19 -21.551606902799197
+	setAttr -s 24 ".ktv[0:23]"  0 0 16 -21.551606902799197 19 -21.551606902799197
 		 20 -15.744558260254022 21 -6.5656749220375019 22 -1.3205987287709697 23 -5.09803307449409
 		 24 -11.881958206321487 25 -19.359543445396731 26 -26.527994874987968 28 -36.856243352698137
 		 31 -47.147783423770733 33 -36.248425899111389 35 -33.811998005930548 36 -37.42950384699585
-		 37 -43.760139068859921 38 -47.765234821467907 39 -47.765234821467779 40 -47.765234821467878
-		 43 -49.109394404545505 46 -19.734480654177013 52 -19.734480654177013 53 -19.734480654177013
-		 55 -19.734480654177013 58 -28.860453353337256;
-	setAttr -s 25 ".kot[17:24]"  5 10 10 10 10 10 10 10;
+		 37 -43.760139068859921 38 -47.765234821467907 39 -47.765234821467779 41 -49.109394404545185
+		 46 -19.734480654177013 52 -19.734480654177013 53 -19.734480654177013 55 -19.734480654177013
+		 58 -28.860453353337256;
+	setAttr -s 24 ".kot[17:23]"  5 10 10 10 10 10 10;
 createNode animCurveTL -n "PALbot_L_Arm_ctrl_translateX2";
 	rename -uid "5F6B5158-46FD-3C60-B9B1-D08CCD71EEC2";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 26 ".ktv[0:25]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
-		 26 0 28 0 29 0 31 0 33 0 35 0 36 0 37 0 38 0 39 0 40 0 43 0 46 0 52 0 53 0 55 0 58 0;
-	setAttr -s 26 ".kot[18:25]"  5 10 10 10 10 10 10 10;
+	setAttr -s 25 ".ktv[0:24]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
+		 26 0 28 0 29 0 31 0 33 0 35 0 36 0 37 0 38 0 39 0 41 0 46 0 52 0 53 0 55 0 58 0;
+	setAttr -s 25 ".kot[18:24]"  5 10 10 10 10 10 10;
 createNode animCurveTL -n "PALbot_L_Arm_ctrl_translateY2";
 	rename -uid "0A3D5083-4D44-7AFE-96DD-9EBA3CF714A3";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 26 ".ktv[0:25]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
-		 26 0 28 0 29 0 31 0 33 0 35 0 36 0 37 0 38 0 39 0 40 0 43 0 46 0 52 0 53 0 55 0 58 0;
-	setAttr -s 26 ".kot[18:25]"  5 10 10 10 10 10 10 10;
+	setAttr -s 25 ".ktv[0:24]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
+		 26 0 28 0 29 0 31 0 33 0 35 0 36 0 37 0 38 0 39 0 41 0 46 0 52 0 53 0 55 0 58 0;
+	setAttr -s 25 ".kot[18:24]"  5 10 10 10 10 10 10;
 createNode animCurveTL -n "PALbot_L_Arm_ctrl_translateZ2";
 	rename -uid "75F4CA75-4D1A-6830-ECC0-23A664F3AD18";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 26 ".ktv[0:25]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
-		 26 0 28 0 29 0 31 0 33 0 35 0 36 0 37 0 38 0 39 0 40 0 43 0 46 0 52 0 53 0 55 0 58 0;
-	setAttr -s 26 ".kot[18:25]"  5 10 10 10 10 10 10 10;
+	setAttr -s 25 ".ktv[0:24]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
+		 26 0 28 0 29 0 31 0 33 0 35 0 36 0 37 0 38 0 39 0 41 0 46 0 52 0 53 0 55 0 58 0;
+	setAttr -s 25 ".kot[18:24]"  5 10 10 10 10 10 10;
 createNode animCurveTA -n "PALbot_R_FK_Wrist_ctrl_rotateX1";
 	rename -uid "D949742A-4A44-B6F6-C4C2-56B1B7F68D88";
 	setAttr ".tan" 10;
@@ -7733,46 +7829,42 @@ createNode animCurveTA -n "PALbot_R_Clavicle_ctrl_rotateX1";
 	rename -uid "66BD7D22-4EE0-A2FF-3271-949E76FE4EFA";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 22 ".ktv[0:21]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
-		 26 0 28 0 29 0 31 0 33 0 36 0 38 0 39 0 41 0 43 0 46 0 52 0 53 0;
-	setAttr -s 22 ".kit[21]"  1;
-	setAttr -s 22 ".kot[15:21]"  5 5 10 10 10 10 1;
-	setAttr -s 22 ".kix[21]"  1;
-	setAttr -s 22 ".kiy[21]"  0;
-	setAttr -s 22 ".kox[21]"  1;
-	setAttr -s 22 ".koy[21]"  0;
+	setAttr -s 21 ".ktv[0:20]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
+		 26 0 28 0 29 0 31 0 33 0 36 0 38 0 39 0 41 0 46 0 52 0 53 0;
+	setAttr -s 21 ".kit[20]"  1;
+	setAttr -s 21 ".kot[15:20]"  5 5 5 10 10 1;
+	setAttr -s 21 ".kix[20]"  1;
+	setAttr -s 21 ".kiy[20]"  0;
+	setAttr -s 21 ".kox[20]"  1;
+	setAttr -s 21 ".koy[20]"  0;
 createNode animCurveTA -n "PALbot_R_Clavicle_ctrl_rotateY1";
 	rename -uid "A7291336-4BF6-A5CA-2F93-80A27E1B0191";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 22 ".ktv[0:21]"  0 0 16 -22.577588116780777 19 -22.577588116780777
+	setAttr -s 21 ".ktv[0:20]"  0 0 16 -22.577588116780777 19 -22.577588116780777
 		 20 -22.577588116780777 21 -22.577588116780777 22 -22.577588116780777 23 -12.39808365375581
 		 24 3.6921008200577932 25 12.886491947951308 26 12.886491947951308 28 12.886491947951308
-		 29 12.886491947951308 31 12.886491947951308 33 12.886491947951308 36 -20.966030943652747
-		 38 -15.392916411098373 39 -15.392916411098373 41 -17.655269079822357 43 -20.829727311441403
-		 46 12.886491947951308 52 -31.456371530757629 53 -31.456371530757629;
-	setAttr -s 22 ".kit[18:21]"  1 10 10 1;
-	setAttr -s 22 ".kot[15:21]"  5 5 10 1 10 10 1;
-	setAttr -s 22 ".kix[18:21]"  0.9999040697703464 0.89635975126508083 
-		1 0.21052502030959924;
-	setAttr -s 22 ".kiy[18:21]"  -0.013851038109047987 -0.44332741434745759 
-		0 -0.97758846956356993;
-	setAttr -s 22 ".kox[18:21]"  0.99990406673016119 0.89635975126508083 
-		1 0.21052502030959924;
-	setAttr -s 22 ".koy[18:21]"  -0.013851257577756624 -0.44332741434745759 
-		0 -0.97758846956356993;
+		 29 12.886491947951308 31 12.886491947951308 33 12.886491947951308 36 -20.966030943652743
+		 38 -15.392916411098373 39 -15.392916411098373 41 -17.655269079822357 46 12.886491947951308
+		 52 -31.456371530757629 53 -31.456371530757629;
+	setAttr -s 21 ".kit[20]"  1;
+	setAttr -s 21 ".kot[15:20]"  5 5 5 10 10 1;
+	setAttr -s 21 ".kix[20]"  0.21052502030959924;
+	setAttr -s 21 ".kiy[20]"  -0.97758846956356993;
+	setAttr -s 21 ".kox[20]"  0.21052502030959924;
+	setAttr -s 21 ".koy[20]"  -0.97758846956356993;
 createNode animCurveTA -n "PALbot_R_Clavicle_ctrl_rotateZ1";
 	rename -uid "04368FE4-46EC-217A-EBDF-678531CBC6B2";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 22 ".ktv[0:21]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
-		 26 0 28 0 29 0 31 0 33 0 36 0 38 0 39 0 41 0 43 0 46 0 52 0 53 0;
-	setAttr -s 22 ".kit[21]"  1;
-	setAttr -s 22 ".kot[15:21]"  5 5 10 10 10 10 1;
-	setAttr -s 22 ".kix[21]"  1;
-	setAttr -s 22 ".kiy[21]"  0;
-	setAttr -s 22 ".kox[21]"  1;
-	setAttr -s 22 ".koy[21]"  0;
+	setAttr -s 21 ".ktv[0:20]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
+		 26 0 28 0 29 0 31 0 33 0 36 0 38 0 39 0 41 0 46 0 52 0 53 0;
+	setAttr -s 21 ".kit[20]"  1;
+	setAttr -s 21 ".kot[15:20]"  5 5 5 10 10 1;
+	setAttr -s 21 ".kix[20]"  1;
+	setAttr -s 21 ".kiy[20]"  0;
+	setAttr -s 21 ".kox[20]"  1;
+	setAttr -s 21 ".koy[20]"  0;
 createNode animCurveTA -n "PALbot_L_ShoulderRotate_ctrl_rotateZ3";
 	rename -uid "E67F9979-4048-65FE-3DE5-7887211534D1";
 	setAttr ".tan" 10;
@@ -7781,10 +7873,10 @@ createNode animCurveTA -n "PALbot_L_ShoulderRotate_ctrl_rotateZ3";
 		 20 -194.78314315560277 21 -257.72340184233104 22 -289.27539682766809 23 -289.27539682766809
 		 24 -289.27539682766809 25 -289.27539682766809 26 -291.92787459295715 28 -299.50638249378318
 		 29 -299.50638249378318 31 -299.50638249378318 33 -318.00405831545748 35 -319.11948155638947
-		 38 -343.15561359970792 39 -343.15561359970792 40 -343.15561359970792 43 -343.15561359970792
+		 38 -343.15561359970792 39 -343.15561359970792 40 -343.15561359970792 41 -347.32175142516996
 		 46 -362.93844964853565 52 -378.18844073183459 53 -378.18844073183459;
 	setAttr -s 22 ".kit[21]"  1;
-	setAttr -s 22 ".kot[15:21]"  5 5 5 10 10 10 1;
+	setAttr -s 22 ".kot[15:21]"  5 5 10 10 10 10 1;
 	setAttr -s 22 ".kix[21]"  0.53072021000048564;
 	setAttr -s 22 ".kiy[21]"  -0.8475470834691371;
 	setAttr -s 22 ".kox[21]"  0.53072021000048564;
@@ -8239,9 +8331,9 @@ createNode animCurveTL -n "PALbot_L_ShoulderRotate_ctrl_translateX3";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
 	setAttr -s 22 ".ktv[0:21]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
-		 26 0 28 0 29 0 31 0 33 0 35 0 38 0 39 0 40 0 43 0 46 0 52 0 53 0;
+		 26 0 28 0 29 0 31 0 33 0 35 0 38 0 39 0 40 0 41 0 46 0 52 0 53 0;
 	setAttr -s 22 ".kit[21]"  1;
-	setAttr -s 22 ".kot[15:21]"  5 5 5 10 10 10 1;
+	setAttr -s 22 ".kot[15:21]"  5 5 10 10 10 10 1;
 	setAttr -s 22 ".kix[21]"  1;
 	setAttr -s 22 ".kiy[21]"  0;
 	setAttr -s 22 ".kox[21]"  1;
@@ -8251,9 +8343,9 @@ createNode animCurveTL -n "PALbot_L_ShoulderRotate_ctrl_translateY3";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
 	setAttr -s 22 ".ktv[0:21]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
-		 26 0 28 0 29 0 31 0 33 0 35 0 38 0 39 0 40 0 43 0 46 0 52 0 53 0;
+		 26 0 28 0 29 0 31 0 33 0 35 0 38 0 39 0 40 0 41 0 46 0 52 0 53 0;
 	setAttr -s 22 ".kit[21]"  1;
-	setAttr -s 22 ".kot[15:21]"  5 5 5 10 10 10 1;
+	setAttr -s 22 ".kot[15:21]"  5 5 10 10 10 10 1;
 	setAttr -s 22 ".kix[21]"  1;
 	setAttr -s 22 ".kiy[21]"  0;
 	setAttr -s 22 ".kox[21]"  1;
@@ -8263,9 +8355,9 @@ createNode animCurveTL -n "PALbot_L_ShoulderRotate_ctrl_translateZ3";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
 	setAttr -s 22 ".ktv[0:21]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
-		 26 0 28 0 29 0 31 0 33 0 35 0 38 0 39 0 40 0 43 0 46 0 52 0 53 0;
+		 26 0 28 0 29 0 31 0 33 0 35 0 38 0 39 0 40 0 41 0 46 0 52 0 53 0;
 	setAttr -s 22 ".kit[21]"  1;
-	setAttr -s 22 ".kot[15:21]"  5 5 5 10 10 10 1;
+	setAttr -s 22 ".kot[15:21]"  5 5 10 10 10 10 1;
 	setAttr -s 22 ".kix[21]"  1;
 	setAttr -s 22 ".kiy[21]"  0;
 	setAttr -s 22 ".kox[21]"  1;
@@ -8451,38 +8543,38 @@ createNode animCurveTL -n "PALbot_R_Clavicle_ctrl_translateX1";
 	rename -uid "035F4C52-4E6A-CF56-FB1F-3889642A68EF";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 22 ".ktv[0:21]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
-		 26 0 28 0 29 0 31 0 33 0 36 0 38 0 39 0 41 0 43 0 46 0 52 0 53 0;
-	setAttr -s 22 ".kit[21]"  1;
-	setAttr -s 22 ".kot[15:21]"  5 5 10 10 10 10 1;
-	setAttr -s 22 ".kix[21]"  1;
-	setAttr -s 22 ".kiy[21]"  0;
-	setAttr -s 22 ".kox[21]"  1;
-	setAttr -s 22 ".koy[21]"  0;
+	setAttr -s 21 ".ktv[0:20]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
+		 26 0 28 0 29 0 31 0 33 0 36 0 38 0 39 0 41 0 46 0 52 0 53 0;
+	setAttr -s 21 ".kit[20]"  1;
+	setAttr -s 21 ".kot[15:20]"  5 5 5 10 10 1;
+	setAttr -s 21 ".kix[20]"  1;
+	setAttr -s 21 ".kiy[20]"  0;
+	setAttr -s 21 ".kox[20]"  1;
+	setAttr -s 21 ".koy[20]"  0;
 createNode animCurveTL -n "PALbot_R_Clavicle_ctrl_translateY1";
 	rename -uid "4107683E-4558-03E9-906A-6BBE5D6CC53A";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 22 ".ktv[0:21]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
-		 26 0 28 0 29 0 31 0 33 0 36 0 38 0 39 0 41 0 43 0 46 0 52 0 53 0;
-	setAttr -s 22 ".kit[21]"  1;
-	setAttr -s 22 ".kot[15:21]"  5 5 10 10 10 10 1;
-	setAttr -s 22 ".kix[21]"  1;
-	setAttr -s 22 ".kiy[21]"  0;
-	setAttr -s 22 ".kox[21]"  1;
-	setAttr -s 22 ".koy[21]"  0;
+	setAttr -s 21 ".ktv[0:20]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
+		 26 0 28 0 29 0 31 0 33 0 36 0 38 0 39 0 41 0 46 0 52 0 53 0;
+	setAttr -s 21 ".kit[20]"  1;
+	setAttr -s 21 ".kot[15:20]"  5 5 5 10 10 1;
+	setAttr -s 21 ".kix[20]"  1;
+	setAttr -s 21 ".kiy[20]"  0;
+	setAttr -s 21 ".kox[20]"  1;
+	setAttr -s 21 ".koy[20]"  0;
 createNode animCurveTL -n "PALbot_R_Clavicle_ctrl_translateZ1";
 	rename -uid "2AAFC35D-4CBF-2BA1-062C-56A7527C4D34";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 22 ".ktv[0:21]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
-		 26 0 28 0 29 0 31 0 33 0 36 0 38 0 39 0 41 0 43 0 46 0 52 0 53 0;
-	setAttr -s 22 ".kit[21]"  1;
-	setAttr -s 22 ".kot[15:21]"  5 5 10 10 10 10 1;
-	setAttr -s 22 ".kix[21]"  1;
-	setAttr -s 22 ".kiy[21]"  0;
-	setAttr -s 22 ".kox[21]"  1;
-	setAttr -s 22 ".koy[21]"  0;
+	setAttr -s 21 ".ktv[0:20]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
+		 26 0 28 0 29 0 31 0 33 0 36 0 38 0 39 0 41 0 46 0 52 0 53 0;
+	setAttr -s 21 ".kit[20]"  1;
+	setAttr -s 21 ".kot[15:20]"  5 5 5 10 10 1;
+	setAttr -s 21 ".kix[20]"  1;
+	setAttr -s 21 ".kiy[20]"  0;
+	setAttr -s 21 ".kox[20]"  1;
+	setAttr -s 21 ".koy[20]"  0;
 createNode animCurveTL -n "PALbot_L_Engine_ctrl_translateX1";
 	rename -uid "86586A47-42E2-9FC5-60A9-04BC1573501B";
 	setAttr ".tan" 10;
@@ -9721,8 +9813,8 @@ createNode animCurveTL -n "pCylinder2_translateZ";
 	setAttr -s 2 ".ktv[0:1]"  26 5.1919593505196691 29 5.1919593505196691;
 	setAttr -s 2 ".kot[0:1]"  5 5;
 select -ne :time1;
-	setAttr ".o" 49;
-	setAttr ".unw" 49;
+	setAttr ".o" 53;
+	setAttr ".unw" 53;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1

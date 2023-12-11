@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: Saga Jeune animation.ma
-//Last modified: Sun, Dec 10, 2023 09:18:47 PM
+//Last modified: Sun, Dec 10, 2023 09:14:13 PM
 //Codeset: 1252
 file -rdi 1 -ns "PALBot" -rfn "PALBotRN" -op "v=0;" -typ "mayaAscii" "C:/Users/hunte/Documents/Education/Fall 2023/Modeling/Imported/PALBOT/PALBOT/scenes/PALBot.ma";
 file -rdi 1 -ns "PALBot1" -rfn "PALBotRN1" -op "v=0;" -typ "mayaAscii" "C:/Users/hunte/Documents/Education/Fall 2023/Modeling/Imported/PALBOT/PALBOT/scenes/PALBot.ma";
@@ -20,17 +20,17 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202302170737-4500172811";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22621)";
-fileInfo "UUID" "956FC9BB-4C27-572E-2454-3DB12149DBA8";
+fileInfo "UUID" "6764C8D7-4522-2B1F-D3B2-79ADB9D40A11";
 createNode transform -s -n "persp";
 	rename -uid "0B68FA2E-43FB-0834-0AB7-EBBCAFC3FD4F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 64.544280721104144 12.788428510730206 2.3999517662737544 ;
-	setAttr ".r" -type "double3" -2.138352696000438 5488.9999999921838 -1.1390100657595724e-14 ;
+	setAttr ".t" -type "double3" 34.449701973247109 13.885054005184328 0.60587363996398214 ;
+	setAttr ".r" -type "double3" -0.93835269642409458 5487.7999999933718 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "0F646CF5-4FFC-0BE3-E207-F4BF66232120";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 63.345235129888735;
+	setAttr ".coi" 36.637458445520011;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -6412,7 +6412,7 @@ createNode animCurveTA -n "PALbot_R_FK_Elbow_ctrl_rotateX1";
 		 23 -21.665986986759869 24 -48.701827709861234 25 -64.15087955163348 26 -61.170596298581827
 		 28 -52.655501289862748 29 -52.655501289862748 31 -52.655501289862748 33 -52.655501289862748
 		 35 -97.337999715899642 36 -127.80678394712493 37 -127.39380712617177 38 -131.4643758422321
-		 39 -112.87534894587574 41 -106.18593265598264 43 -84.007039471265429 44 -53.379651330380305
+		 39 -112.87534894587574 41 -106.18593265598264 43 -96.724900386427606 44 -79.064306816591539
 		 46 -24.352610005501052 52 -54.807787513785172 53 -54.807787513785172 58 -46.88778732436753;
 	setAttr -s 26 ".kit[21:25]"  9 9 10 1 10;
 	setAttr -s 26 ".kot[18:25]"  5 10 10 9 9 10 1 10;
@@ -6460,14 +6460,14 @@ createNode animCurveTA -n "PALbot_L_Arm_ctrl_rotateY2";
 	rename -uid "A9C97B49-43D2-4021-01C6-68B005604C46";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 24 ".ktv[0:23]"  0 -72.29825763745842 16 -171.18352338409932
+	setAttr -s 26 ".ktv[0:25]"  0 -72.29825763745842 16 -171.18352338409932
 		 19 -171.18352338409932 20 -209.94284424631201 21 -248.70216510852453 22 -216.43364874926021
 		 23 -236.07608810713825 24 -267.18771794094573 25 -285.24879160483721 26 -285.41387463083811
 		 28 -285.48338327336478 29 -285.48338327336478 31 -287.55282837536885 33 -278.76208088648826
-		 35 -276.95856379369241 36 -340.66490395418845 39 -383.29234130341644 40 -383.29234130341644
-		 43 -360.38561227167702 46 -362.68760863063278 52 -362.68760863063278 53 -362.68760863063278
-		 55 -362.68760863063278 58 -362.67928981646588;
-	setAttr -s 24 ".kot[16:23]"  5 10 10 10 10 10 10 10;
+		 35 -276.95856379369241 36 -340.66490395418845 37 -315.05178812208209 38 -314.29234761397657
+		 39 -301.09611335652272 41 -290.62359561263844 43 -290.62359561263844 46 -362.68760863063278
+		 52 -362.68760863063278 53 -362.68760863063278 55 -362.68760863063278 58 -362.67928981646588;
+	setAttr -s 26 ".kot[18:25]"  5 10 10 10 10 10 10 10;
 createNode animCurveTA -n "PALbot_L_Arm_ctrl_rotateZ2";
 	rename -uid "B3CCB754-4F45-52ED-A833-20B69F763851";
 	setAttr ".tan" 10;
@@ -6476,8 +6476,8 @@ createNode animCurveTA -n "PALbot_L_Arm_ctrl_rotateZ2";
 		 20 -15.744558260254022 21 -6.5656749220375019 22 -1.3205987287709697 23 -5.09803307449409
 		 24 -11.881958206321487 25 -19.359543445396731 26 -26.527994874987968 28 -36.856243352698137
 		 31 -47.147783423770733 33 -36.248425899111389 35 -33.811998005930548 36 -37.42950384699585
-		 37 -43.760139068859921 38 -47.765234821467907 39 -47.765234821467779 40 -47.765234821467878
-		 43 -49.109394404545505 46 -19.734480654177013 52 -19.734480654177013 53 -19.734480654177013
+		 37 -43.760139068859921 38 -47.765234821467907 39 -47.765234821467779 41 -49.109394404545185
+		 43 -49.109394404545441 46 -19.734480654177013 52 -19.734480654177013 53 -19.734480654177013
 		 55 -19.734480654177013 58 -28.860453353337256;
 	setAttr -s 25 ".kot[17:24]"  5 10 10 10 10 10 10 10;
 createNode animCurveTL -n "PALbot_L_Arm_ctrl_translateX2";
@@ -6485,21 +6485,21 @@ createNode animCurveTL -n "PALbot_L_Arm_ctrl_translateX2";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
 	setAttr -s 26 ".ktv[0:25]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
-		 26 0 28 0 29 0 31 0 33 0 35 0 36 0 37 0 38 0 39 0 40 0 43 0 46 0 52 0 53 0 55 0 58 0;
+		 26 0 28 0 29 0 31 0 33 0 35 0 36 0 37 0 38 0 39 0 41 0 43 0 46 0 52 0 53 0 55 0 58 0;
 	setAttr -s 26 ".kot[18:25]"  5 10 10 10 10 10 10 10;
 createNode animCurveTL -n "PALbot_L_Arm_ctrl_translateY2";
 	rename -uid "0A3D5083-4D44-7AFE-96DD-9EBA3CF714A3";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
 	setAttr -s 26 ".ktv[0:25]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
-		 26 0 28 0 29 0 31 0 33 0 35 0 36 0 37 0 38 0 39 0 40 0 43 0 46 0 52 0 53 0 55 0 58 0;
+		 26 0 28 0 29 0 31 0 33 0 35 0 36 0 37 0 38 0 39 0 41 0 43 0 46 0 52 0 53 0 55 0 58 0;
 	setAttr -s 26 ".kot[18:25]"  5 10 10 10 10 10 10 10;
 createNode animCurveTL -n "PALbot_L_Arm_ctrl_translateZ2";
 	rename -uid "75F4CA75-4D1A-6830-ECC0-23A664F3AD18";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
 	setAttr -s 26 ".ktv[0:25]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
-		 26 0 28 0 29 0 31 0 33 0 35 0 36 0 37 0 38 0 39 0 40 0 43 0 46 0 52 0 53 0 55 0 58 0;
+		 26 0 28 0 29 0 31 0 33 0 35 0 36 0 37 0 38 0 39 0 41 0 43 0 46 0 52 0 53 0 55 0 58 0;
 	setAttr -s 26 ".kot[18:25]"  5 10 10 10 10 10 10 10;
 createNode animCurveTA -n "PALbot_R_FK_Wrist_ctrl_rotateX1";
 	rename -uid "D949742A-4A44-B6F6-C4C2-56B1B7F68D88";
@@ -9721,8 +9721,8 @@ createNode animCurveTL -n "pCylinder2_translateZ";
 	setAttr -s 2 ".ktv[0:1]"  26 5.1919593505196691 29 5.1919593505196691;
 	setAttr -s 2 ".kot[0:1]"  5 5;
 select -ne :time1;
-	setAttr ".o" 49;
-	setAttr ".unw" 49;
+	setAttr ".o" 52;
+	setAttr ".unw" 52;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
