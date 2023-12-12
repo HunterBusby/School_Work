@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: Saga Jeune animation.ma
-//Last modified: Mon, Dec 11, 2023 09:35:23 PM
+//Last modified: Mon, Dec 11, 2023 09:07:46 PM
 //Codeset: 1252
 file -rdi 1 -ns "PALBot" -rfn "PALBotRN" -op "v=0;" -typ "mayaAscii" "C:/Users/hunte/Documents/Education/Fall 2023/Modeling/Imported/PALBOT/PALBOT/scenes/PALBot.ma";
 file -rdi 1 -ns "PALBot1" -rfn "PALBotRN1" -op "v=0;" -typ "mayaAscii" "C:/Users/hunte/Documents/Education/Fall 2023/Modeling/Imported/PALBOT/PALBOT/scenes/PALBot.ma";
@@ -20,19 +20,19 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202302170737-4500172811";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22621)";
-fileInfo "UUID" "CBE7FA3A-4B6C-3004-C4B9-168C5E6133FD";
+fileInfo "UUID" "0C2F2729-4A84-068C-94B6-5EACC5C86242";
 createNode transform -s -n "persp";
 	rename -uid "0B68FA2E-43FB-0834-0AB7-EBBCAFC3FD4F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 58.786593619275337 35.693537084864204 9.9542843276606945 ;
-	setAttr ".r" -type "double3" -26.249218915290722 81.313787178548068 0 ;
+	setAttr ".t" -type "double3" 49.096358741690103 12.992821213441809 6.0507713354399835 ;
+	setAttr ".r" -type "double3" 1.3507810847088857 86.113787178548876 1.4664997353446641e-15 ;
 	setAttr ".rp" -type "double3" 8.8817841970012523e-16 0 7.1054273576010019e-15 ;
 	setAttr ".rpt" -type "double3" 7.8830917816677014e-15 -1.3453959253993597e-15 -9.9539126583596209e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "0F646CF5-4FFC-0BE3-E207-F4BF66232120";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 54.422369112008148;
+	setAttr ".coi" 37.806713501056848;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -213,7 +213,7 @@ createNode transform -n "WallTool" -p "hunte__dev__Wallsubnet__1_01";
 createNode transform -n "uvunwrap1_0" -p "WallTool";
 	rename -uid "F6FF6636-4780-7D19-63C0-C49F142BEDC1";
 	setAttr ".t" -type "double3" -43.59745181157043 -0.28455196428692098 2.4717856363921134 ;
-	setAttr ".s" -type "double3" 7.0722935237291322 15.84317508505457 15.84317508505457 ;
+	setAttr ".s" -type "double3" 9.87734684283466 22.126985380596302 22.126985380596302 ;
 createNode mesh -n "uvunwrap1_0Shape" -p "|hunte__dev__Wallsubnet__1_01|WallTool|uvunwrap1_0";
 	rename -uid "1B758E35-4497-CEC7-6ECB-18BF23E24EBB";
 	addAttr -ci true -sn "ptdist" -ln "ptdist" -dt "floatArray";
@@ -231,6 +231,15 @@ createNode mesh -n "uvunwrap1_0Shape" -p "|hunte__dev__Wallsubnet__1_01|WallTool
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ai_disp_padding" 0.043999999761581421;
+createNode transform -n "directionalLight1";
+	rename -uid "9CB5D635-4A6C-BE25-4EFC-87A8C4C99D8A";
+	setAttr ".t" -type "double3" 0 33.077393321915167 92.535482518305074 ;
+	setAttr ".r" -type "double3" 0 92.159406476836438 0 ;
+	setAttr ".s" -type "double3" 31.672941825616086 31.672941825616086 31.672941825616086 ;
+createNode directionalLight -n "directionalLightShape1" -p "directionalLight1";
+	rename -uid "0BE4EECF-4F6A-30B9-67B0-1593DB5E56C8";
+	setAttr -k off ".v";
+	setAttr ".cl" -type "float3" 0.83950001 1 0.67900002 ;
 createNode transform -n "pCylinder2";
 	rename -uid "156347AD-4007-A2D4-A119-2FA9DC48CA80";
 	setAttr ".s" -type "double3" 0.33681744715475681 3.3627849298178916 0.33681744715475681 ;
@@ -479,6 +488,13 @@ createNode mesh -n "uvunwrap1_0Shape" -p "|hunte__dev__Basic_Chair__1_01|geo1|uv
 	setAttr ".ccls" -type "string" "";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "directionalLight2";
+	rename -uid "08658D04-4CF1-A0EF-BEC9-43ACA9939458";
+	setAttr ".t" -type "double3" -0.98296406703304129 -0.24111079637776722 17.202416393346901 ;
+	setAttr ".r" -type "double3" 74.560192058515852 0 0 ;
+createNode directionalLight -n "directionalLightShape2" -p "directionalLight2";
+	rename -uid "2EA73CBE-43A9-9A86-6D8D-238E35C9043D";
+	setAttr -k off ".v";
 createNode houdiniAsset -n "hunte__dev__JailBars__1_01";
 	rename -uid "E826C00C-4A7B-5B72-632C-E1AD49868F13";
 	addAttr -is true -ci true -sn "houdiniAssetParm" -ln "houdiniAssetParm" -at "compound" 
@@ -608,6 +624,7 @@ createNode transform -n "uvunwrap1_0" -p "|hunte__dev__JailBars__1_01|geo1";
 createNode mesh -n "uvunwrap1_0Shape" -p "|hunte__dev__JailBars__1_01|geo1|uvunwrap1_0";
 	rename -uid "EA91A51C-45EA-B969-5BA7-F7A24294C3AB";
 	setAttr -k off ".v";
+	setAttr -s 2 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr -s 2 ".uvst";
@@ -619,42 +636,10 @@ createNode mesh -n "uvunwrap1_0Shape" -p "|hunte__dev__JailBars__1_01|geo1|uvunw
 	setAttr ".ccls" -type "string" "";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr ".ai_disp_height" 0;
-createNode transform -n "MainLightGreen";
-	rename -uid "9CB5D635-4A6C-BE25-4EFC-87A8C4C99D8A";
-	setAttr ".t" -type "double3" 0 33.077393321915167 92.535482518305074 ;
-	setAttr ".r" -type "double3" 0 92.159406476836438 0 ;
-	setAttr ".s" -type "double3" 31.672941825616086 31.672941825616086 31.672941825616086 ;
-createNode directionalLight -n "MainLightGreenShape" -p "MainLightGreen";
-	rename -uid "0BE4EECF-4F6A-30B9-67B0-1593DB5E56C8";
-	setAttr -k off ".v";
-	setAttr ".cl" -type "float3" 0.71603799 1 0.67900002 ;
-createNode transform -n "camera1";
-	rename -uid "5443B173-49C2-947D-17DC-EE9ADA2F5392";
-	setAttr ".t" -type "double3" 41.070165536641326 10.961037406415688 4.9982786984564624 ;
-	setAttr ".r" -type "double3" 0 89.401079038595597 0 ;
-createNode camera -n "cameraShape1" -p "camera1";
-	rename -uid "9BDB6A9D-4FD5-2781-7851-F49595FB06CE";
-	setAttr -k off ".v";
-	setAttr ".rnd" no;
-	setAttr ".cap" -type "double2" 1.41732 0.94488 ;
-	setAttr ".ff" 0;
-	setAttr ".ow" 30;
-	setAttr ".imn" -type "string" "camera1";
-	setAttr ".den" -type "string" "camera1_depth";
-	setAttr ".man" -type "string" "camera1_mask";
-createNode transform -n "directionalLight1";
-	rename -uid "008184D9-4E6F-F13C-77BF-419CE51450C6";
-	setAttr ".t" -type "double3" -7.8476259750371966 24.206589301461449 -18.041504497020863 ;
-	setAttr ".r" -type "double3" -10.704553060014023 148.74704660431712 0 ;
-	setAttr ".s" -type "double3" 5.8506712221298258 5.8506712221298258 5.8506712221298258 ;
-createNode directionalLight -n "directionalLightShape1" -p "directionalLight1";
-	rename -uid "1B0297AC-4228-1DF3-8E1A-EB934D317D77";
-	setAttr -k off ".v";
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "259F23A1-487F-C527-7097-8596C0C82CCF";
-	setAttr -s 40 ".lnk";
-	setAttr -s 40 ".slnk";
+	setAttr -s 39 ".lnk";
+	setAttr -s 39 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
 	rename -uid "F5F5C467-48F3-E801-6CB7-89925D2764E6";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 2 0 1 ;
@@ -676,7 +661,6 @@ createNode aiOptions -s -n "defaultArnoldRenderOptions";
 	rename -uid "913DE79C-4DF8-D53F-6476-2DBE60EDC30C";
 	addAttr -ci true -sn "ARV_options" -ln "ARV_options" -dt "string";
 	setAttr ".version" -type "string" "5.3.0";
-	setAttr ".ARV_options" -type "string" "Test Resolution=100%;Camera=cameraShape1;Color Management.Gamma=1;Color Management.Exposure=0;Background.BG=BG Color;Background.Color=0 0 0;Background.Image=;Background.Scale=1 1;Background.Offset=0 0;Background.Apply Color Management=1;Foreground.Enable FG=0;Foreground.Image=;Foreground.Scale=1 1;Foreground.Offset=0 0;Foreground.Apply Color Management=1;";
 createNode aiAOVFilter -s -n "defaultArnoldFilter";
 	rename -uid "BFE5A452-47B9-DA93-9FAE-04BEBBB999FE";
 	setAttr ".ai_translator" -type "string" "gaussian";
@@ -708,7 +692,7 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 492\n            -height 395\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n"
 		+ "        modelEditor -e \n            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
 		+ "            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n"
-		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 256\n            -height 836\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1027\n            -height 836\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 1\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n"
 		+ "            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n"
 		+ "            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n"
@@ -735,8 +719,8 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n"
 		+ "                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -bluePencil 1\n                -greasePencils 0\n                -excludeObjectPreset \"All\" \n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n"
 		+ "            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 256\\n    -height 836\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 256\\n    -height 836\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1027\\n    -height 836\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1027\\n    -height 836\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -10762,6 +10746,167 @@ createNode bump2d -n "bump2d3";
 	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
 createNode displacementShader -n "displacementShader3";
 	rename -uid "0B302C02-4FC2-98EC-841C-52B992735132";
+createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
+	rename -uid "87D513CD-4974-430E-700A-319B3E6D209D";
+	setAttr -s 2 ".tgi";
+	setAttr ".tgi[0].tn" -type "string" "Untitled_2";
+	setAttr ".tgi[0].vl" -type "double2" -2999.9788104165004 -3565.7921044101336 ;
+	setAttr ".tgi[0].vh" -type "double2" 2706.4158216602382 3658.9336936293735 ;
+	setAttr -s 25 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" 121.42857360839844;
+	setAttr ".tgi[0].ni[0].y" -567.14288330078125;
+	setAttr ".tgi[0].ni[0].nvs" 1923;
+	setAttr ".tgi[0].ni[1].x" -374.28570556640625;
+	setAttr ".tgi[0].ni[1].y" 325.71429443359375;
+	setAttr ".tgi[0].ni[1].nvs" 1923;
+	setAttr ".tgi[0].ni[2].x" 618.5714111328125;
+	setAttr ".tgi[0].ni[2].y" 1634.2857666015625;
+	setAttr ".tgi[0].ni[2].nvs" 1922;
+	setAttr ".tgi[0].ni[3].x" -374.28570556640625;
+	setAttr ".tgi[0].ni[3].y" 114.28571319580078;
+	setAttr ".tgi[0].ni[3].nvs" 1923;
+	setAttr ".tgi[0].ni[4].x" -875.62554931640625;
+	setAttr ".tgi[0].ni[4].y" 90;
+	setAttr ".tgi[0].ni[4].nvs" 1922;
+	setAttr ".tgi[0].ni[5].x" -374.28570556640625;
+	setAttr ".tgi[0].ni[5].y" -707.14288330078125;
+	setAttr ".tgi[0].ni[5].nvs" 1922;
+	setAttr ".tgi[0].ni[6].x" 1115.7142333984375;
+	setAttr ".tgi[0].ni[6].y" 1384.2857666015625;
+	setAttr ".tgi[0].ni[6].nvs" 1923;
+	setAttr ".tgi[0].ni[7].x" -1492.857177734375;
+	setAttr ".tgi[0].ni[7].y" -270;
+	setAttr ".tgi[0].ni[7].nvs" 1923;
+	setAttr ".tgi[0].ni[8].x" -874.28570556640625;
+	setAttr ".tgi[0].ni[8].y" 560;
+	setAttr ".tgi[0].ni[8].nvs" 1922;
+	setAttr ".tgi[0].ni[9].x" -874.28570556640625;
+	setAttr ".tgi[0].ni[9].y" 1030;
+	setAttr ".tgi[0].ni[9].nvs" 1922;
+	setAttr ".tgi[0].ni[10].x" 121.42857360839844;
+	setAttr ".tgi[0].ni[10].y" -1314.2857666015625;
+	setAttr ".tgi[0].ni[10].nvs" 1923;
+	setAttr ".tgi[0].ni[11].x" 121.42857360839844;
+	setAttr ".tgi[0].ni[11].y" -742.85711669921875;
+	setAttr ".tgi[0].ni[11].nvs" 1923;
+	setAttr ".tgi[0].ni[12].x" -374.28570556640625;
+	setAttr ".tgi[0].ni[12].y" -61.428569793701172;
+	setAttr ".tgi[0].ni[12].nvs" 1923;
+	setAttr ".tgi[0].ni[13].x" -1185.7142333984375;
+	setAttr ".tgi[0].ni[13].y" -185.71427917480469;
+	setAttr ".tgi[0].ni[13].nvs" 1970;
+	setAttr ".tgi[0].ni[14].x" 121.42857360839844;
+	setAttr ".tgi[0].ni[14].y" -414.28570556640625;
+	setAttr ".tgi[0].ni[14].nvs" 1923;
+	setAttr ".tgi[0].ni[15].x" 121.42857360839844;
+	setAttr ".tgi[0].ni[15].y" -120;
+	setAttr ".tgi[0].ni[15].nvs" 1923;
+	setAttr ".tgi[0].ni[16].x" 1115.7142333984375;
+	setAttr ".tgi[0].ni[16].y" -2081.428466796875;
+	setAttr ".tgi[0].ni[16].nvs" 1923;
+	setAttr ".tgi[0].ni[17].x" 618.5714111328125;
+	setAttr ".tgi[0].ni[17].y" -1127.142822265625;
+	setAttr ".tgi[0].ni[17].nvs" 1923;
+	setAttr ".tgi[0].ni[18].x" 1115.7142333984375;
+	setAttr ".tgi[0].ni[18].y" 1971.4285888671875;
+	setAttr ".tgi[0].ni[18].nvs" 1923;
+	setAttr ".tgi[0].ni[19].x" 1115.7142333984375;
+	setAttr ".tgi[0].ni[19].y" -758.5714111328125;
+	setAttr ".tgi[0].ni[19].nvs" 1923;
+	setAttr ".tgi[0].ni[20].x" 618.5714111328125;
+	setAttr ".tgi[0].ni[20].y" -1831.4285888671875;
+	setAttr ".tgi[0].ni[20].nvs" 1922;
+	setAttr ".tgi[0].ni[21].x" -374.28570556640625;
+	setAttr ".tgi[0].ni[21].y" -1250;
+	setAttr ".tgi[0].ni[21].nvs" 1922;
+	setAttr ".tgi[0].ni[22].x" 618.5714111328125;
+	setAttr ".tgi[0].ni[22].y" 2221.428466796875;
+	setAttr ".tgi[0].ni[22].nvs" 1922;
+	setAttr ".tgi[0].ni[23].x" 618.5714111328125;
+	setAttr ".tgi[0].ni[23].y" -432.85714721679688;
+	setAttr ".tgi[0].ni[23].nvs" 2387;
+	setAttr ".tgi[0].ni[24].x" -374.28570556640625;
+	setAttr ".tgi[0].ni[24].y" -237.14285278320312;
+	setAttr ".tgi[0].ni[24].nvs" 1922;
+	setAttr ".tgi[1].tn" -type "string" "Untitled_3";
+	setAttr ".tgi[1].vl" -type "double2" -645.23806959863794 -135.71428032148447 ;
+	setAttr ".tgi[1].vh" -type "double2" -108.33332902855375 544.04759742910983 ;
+	setAttr -s 25 ".tgi[1].ni";
+	setAttr ".tgi[1].ni[0].x" 565.71429443359375;
+	setAttr ".tgi[1].ni[0].y" -2.8571429252624512;
+	setAttr ".tgi[1].ni[0].nvs" 1923;
+	setAttr ".tgi[1].ni[1].x" 217.14285278320312;
+	setAttr ".tgi[1].ni[1].y" -372.85714721679688;
+	setAttr ".tgi[1].ni[1].nvs" 1923;
+	setAttr ".tgi[1].ni[2].x" -147.14285278320312;
+	setAttr ".tgi[1].ni[2].y" 632.85711669921875;
+	setAttr ".tgi[1].ni[2].nvs" 1923;
+	setAttr ".tgi[1].ni[3].x" -937.14288330078125;
+	setAttr ".tgi[1].ni[3].y" 845.71429443359375;
+	setAttr ".tgi[1].ni[3].nvs" 1922;
+	setAttr ".tgi[1].ni[4].x" -554.28570556640625;
+	setAttr ".tgi[1].ni[4].y" 868.5714111328125;
+	setAttr ".tgi[1].ni[4].nvs" 1923;
+	setAttr ".tgi[1].ni[5].x" 217.14285278320312;
+	setAttr ".tgi[1].ni[5].y" 321.42855834960938;
+	setAttr ".tgi[1].ni[5].nvs" 2387;
+	setAttr ".tgi[1].ni[6].x" -147.14285278320312;
+	setAttr ".tgi[1].ni[6].y" 341.42855834960938;
+	setAttr ".tgi[1].ni[6].nvs" 1923;
+	setAttr ".tgi[1].ni[7].x" -937.14288330078125;
+	setAttr ".tgi[1].ni[7].y" 1315.7142333984375;
+	setAttr ".tgi[1].ni[7].nvs" 1922;
+	setAttr ".tgi[1].ni[8].x" -554.28570556640625;
+	setAttr ".tgi[1].ni[8].y" 692.85711669921875;
+	setAttr ".tgi[1].ni[8].nvs" 1923;
+	setAttr ".tgi[1].ni[9].x" -937.14288330078125;
+	setAttr ".tgi[1].ni[9].y" 1785.7142333984375;
+	setAttr ".tgi[1].ni[9].nvs" 1922;
+	setAttr ".tgi[1].ni[10].x" 565.71429443359375;
+	setAttr ".tgi[1].ni[10].y" -1842.857177734375;
+	setAttr ".tgi[1].ni[10].nvs" 1923;
+	setAttr ".tgi[1].ni[11].x" -554.28570556640625;
+	setAttr ".tgi[1].ni[11].y" 1087.142822265625;
+	setAttr ".tgi[1].ni[11].nvs" 1923;
+	setAttr ".tgi[1].ni[12].x" 217.14285278320312;
+	setAttr ".tgi[1].ni[12].y" -1592.857177734375;
+	setAttr ".tgi[1].ni[12].nvs" 1922;
+	setAttr ".tgi[1].ni[13].x" -147.14285278320312;
+	setAttr ".tgi[1].ni[13].y" 188.57142639160156;
+	setAttr ".tgi[1].ni[13].nvs" 1923;
+	setAttr ".tgi[1].ni[14].x" -554.28570556640625;
+	setAttr ".tgi[1].ni[14].y" 517.14288330078125;
+	setAttr ".tgi[1].ni[14].nvs" 1922;
+	setAttr ".tgi[1].ni[15].x" -147.14285278320312;
+	setAttr ".tgi[1].ni[15].y" -558.5714111328125;
+	setAttr ".tgi[1].ni[15].nvs" 1923;
+	setAttr ".tgi[1].ni[16].x" 217.14285278320312;
+	setAttr ".tgi[1].ni[16].y" 2391.428466796875;
+	setAttr ".tgi[1].ni[16].nvs" 1922;
+	setAttr ".tgi[1].ni[17].x" -554.28570556640625;
+	setAttr ".tgi[1].ni[17].y" -494.28570556640625;
+	setAttr ".tgi[1].ni[17].nvs" 1922;
+	setAttr ".tgi[1].ni[18].x" 565.71429443359375;
+	setAttr ".tgi[1].ni[18].y" -1257.142822265625;
+	setAttr ".tgi[1].ni[18].nvs" 1923;
+	setAttr ".tgi[1].ni[19].x" 217.14285278320312;
+	setAttr ".tgi[1].ni[19].y" -1007.1428833007812;
+	setAttr ".tgi[1].ni[19].nvs" 1922;
+	setAttr ".tgi[1].ni[20].x" -1555.7142333984375;
+	setAttr ".tgi[1].ni[20].y" -77.142860412597656;
+	setAttr ".tgi[1].ni[20].nvs" 1923;
+	setAttr ".tgi[1].ni[21].x" 565.71429443359375;
+	setAttr ".tgi[1].ni[21].y" 2141.428466796875;
+	setAttr ".tgi[1].ni[21].nvs" 1923;
+	setAttr ".tgi[1].ni[22].x" -1248.5714111328125;
+	setAttr ".tgi[1].ni[22].y" 132.85714721679688;
+	setAttr ".tgi[1].ni[22].nvs" 1970;
+	setAttr ".tgi[1].ni[23].x" -147.14285278320312;
+	setAttr ".tgi[1].ni[23].y" 12.857142448425293;
+	setAttr ".tgi[1].ni[23].nvs" 1923;
+	setAttr ".tgi[1].ni[24].x" -554.28570556640625;
+	setAttr ".tgi[1].ni[24].y" 47.142856597900391;
+	setAttr ".tgi[1].ni[24].nvs" 1922;
 createNode phong -n "v_layered4";
 	rename -uid "661A65D7-4142-576A-65CA-7BA3FF628118";
 createNode shadingEngine -n "v_layered4SG";
@@ -10773,395 +10918,16 @@ createNode materialInfo -n "materialInfo7";
 createNode file -n "file34";
 	rename -uid "5C45FDE2-4D81-DEDC-11C1-5AA661372123";
 	setAttr ".cs" -type "string" "sRGB";
+createNode groupId -n "groupId8";
+	rename -uid "E9867A31-444C-BF47-C474-1E87C69D0EF8";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts2";
+	rename -uid "D3052C56-4D92-E348-7A36-DEB41563A7C2";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:823]";
 createNode groupId -n "groupId9";
 	rename -uid "5961226A-44BE-194A-91D0-4DB3798256FC";
 	setAttr ".ihi" 0;
-createNode substanceNode -n "substanceNode6";
-	rename -uid "0A646956-49D1-60AE-C6F5-CB8120B3919A";
-	addAttr -r false -ci true -h true -k true -sn "input_randomseed" -ln "input_randomseed" 
-		-nn "$randomseed" -ct "substance_input" -smn 0 -smx 2147483647 -at "long";
-	addAttr -r false -ci true -uac -h true -k true -sn "input_rust_brown" -ln "input_rust_brown" 
-		-nn "Rust Brown" -ct "substance_input" -at "float3" -nc 3;
-	addAttr -r false -ci true -h true -k true -sn "input_rust_brownr" -ln "input_rust_brownR" 
-		-dv 0.43103399872779846 -smn 0 -smx 0 -at "float" -p "input_rust_brown";
-	addAttr -r false -ci true -h true -k true -sn "input_rust_browng" -ln "input_rust_brownG" 
-		-dv 0.29870900511741638 -smn 0 -smx 0 -at "float" -p "input_rust_brown";
-	addAttr -r false -ci true -h true -k true -sn "input_rust_brownb" -ln "input_rust_brownB" 
-		-dv 0.22113899886608124 -smn 0 -smx 0 -at "float" -p "input_rust_brown";
-	addAttr -r false -ci true -h true -k true -sn "input_variation" -ln "input_variation" 
-		-nn "Volume Variation" -ct "substance_input" -dv 1 -smn 0 -smx 1 -at "float";
-	addAttr -r false -ci true -h true -k true -sn "input_roughness" -ln "input_roughness" 
-		-nn "Roughness" -ct "substance_input" -dv 0.72000002861022949 -smn 0 -smx 1 -at "float";
-	addAttr -r false -ci true -h true -k true -sn "input_channel_diffuse" -ln "input_channel_diffuse" 
-		-nn "Diffuse" -ct "substance_input" -min 0 -max 1 -smn 0 -smx 0 -at "bool";
-	addAttr -r false -ci true -h true -k true -sn "input_channel_basecolor" -ln "input_channel_basecolor" 
-		-nn "Base Color" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
-	addAttr -r false -ci true -h true -k true -sn "input_channel_normal" -ln "input_channel_normal" 
-		-nn "Normal" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
-	addAttr -r false -ci true -h true -k true -sn "input_channel_specular" -ln "input_channel_specular" 
-		-nn "Specular" -ct "substance_input" -min 0 -max 1 -smn 0 -smx 0 -at "bool";
-	addAttr -r false -ci true -h true -k true -sn "input_channel_glossiness" -ln "input_channel_glossiness" 
-		-nn "Glossiness" -ct "substance_input" -min 0 -max 1 -smn 0 -smx 0 -at "bool";
-	addAttr -r false -ci true -h true -k true -sn "input_channel_roughness" -ln "input_channel_roughness" 
-		-nn "Roughness" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
-	addAttr -r false -ci true -h true -k true -sn "input_channel_metallic" -ln "input_channel_metallic" 
-		-nn "Metallic" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
-	addAttr -r false -ci true -h true -k true -sn "input_channel_height" -ln "input_channel_height" 
-		-nn "Height" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
-	addAttr -r false -ci true -h true -k true -sn "input_luminosity" -ln "input_luminosity" 
-		-nn "Luminosity" -ct "substance_input" -dv 0.5 -smn 0 -smx 1 -at "float";
-	addAttr -r false -ci true -h true -k true -sn "input_contrast" -ln "input_contrast" 
-		-nn "Contrast" -ct "substance_input" -smn -1 -smx 1 -at "float";
-	addAttr -r false -ci true -h true -k true -sn "input_hue_shift" -ln "input_hue_shift" 
-		-nn "Hue Shift" -ct "substance_input" -smn 0 -smx 1 -at "float";
-	addAttr -r false -ci true -h true -k true -sn "input_saturation" -ln "input_saturation" 
-		-nn "Saturation" -ct "substance_input" -dv 0.5 -smn 0 -smx 1 -at "float";
-	addAttr -r false -ci true -h true -k true -sn "input_normal_intensity" -ln "input_normal_intensity" 
-		-nn "Normal Intensity" -ct "substance_input" -dv 0.5 -smn 0 -smx 1 -at "float";
-	addAttr -r false -ci true -h true -k true -sn "input_normal_format" -ln "input_normal_format" 
-		-nn "Normal Format" -ct "substance_input" -smn 0 -smx 0 -at "long";
-	addAttr -r false -ci true -h true -k true -sn "input_height_range" -ln "input_height_range" 
-		-nn "Height Range" -ct "substance_input" -dv 0.5 -smn 0 -smx 1 -at "float";
-	addAttr -r false -ci true -h true -k true -sn "input_height_position" -ln "input_height_position" 
-		-nn "Height Position" -ct "substance_input" -dv 0.5 -smn 0 -smx 1 -at "float";
-	addAttr -ci true -h true -sn "output_basecolor" -ln "output_basecolor" -ct "substance_output" 
-		-dt "string";
-	addAttr -ci true -h true -sn "output_diffuse" -ln "output_diffuse" -ct "substance_output" 
-		-dt "string";
-	addAttr -ci true -h true -sn "output_specular" -ln "output_specular" -ct "substance_output" 
-		-dt "string";
-	addAttr -ci true -h true -sn "output_glossiness" -ln "output_glossiness" -ct "substance_output" 
-		-dt "string";
-	addAttr -ci true -h true -sn "output_roughness" -ln "output_roughness" -ct "substance_output" 
-		-dt "string";
-	addAttr -ci true -h true -sn "output_metallic" -ln "output_metallic" -ct "substance_output" 
-		-dt "string";
-	addAttr -ci true -h true -sn "output_height" -ln "output_height" -ct "substance_output" 
-		-dt "string";
-	addAttr -ci true -h true -sn "output_normal" -ln "output_normal" -ct "substance_output" 
-		-dt "string";
-	setAttr ".sbs" -type "string" "C:/Users/hunte/Documents/Education/Fall 2023/Substance surfaces/rust_brown.sbsar";
-	setAttr ".ctd" yes;
-	setAttr ".wkfl" -type "string" "Arnold";
-	setAttr ".storedHeight" 9;
-	setAttr ".pst" -type "stringArray" 1 "<sbspresets formatversion=\"1.1\" count=\"2\" >\n <sbspreset pkgurl=\"pkg://rust_brown\" label=\"Old Wet\" >\n  <presetinput identifier=\"\" uid=\"4294967295\" type=\"65535\" value=\"1,1\" />\n  <presetinput identifier=\"\" uid=\"4294967295\" type=\"65535\" value=\"0\" />\n  <presetinput identifier=\"rust_brown\" uid=\"1836172783\" type=\"2\" value=\"0.498039,0.2,0\" />\n  <presetinput identifier=\"variation\" uid=\"1836172067\" type=\"0\" value=\"1\" />\n  <presetinput identifier=\"roughness\" uid=\"1836171641\" type=\"0\" value=\"0.1\" />\n  <presetinput identifier=\"channel_diffuse\" uid=\"1752122217\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_basecolor\" uid=\"1724021571\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_normal\" uid=\"1724021568\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_specular\" uid=\"1752122198\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_glossiness\" uid=\"1752122199\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_roughness\" uid=\"1724021580\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_metallic\" uid=\"1724021581\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_height\" uid=\"1724021579\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"luminosity\" uid=\"536404556\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"contrast\" uid=\"1618815854\" type=\"0\" value=\"0\" />\n  <presetinput identifier=\"hue_shift\" uid=\"536404542\" type=\"0\" value=\"0\" />\n  <presetinput identifier=\"saturation\" uid=\"536404569\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"normal_intensity\" uid=\"536419629\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"normal_format\" uid=\"1724016736\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"height_range\" uid=\"1742278924\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"height_position\" uid=\"1742279037\" type=\"0\" value=\"0.5\" />\n </sbspreset>\n <sbspreset pkgurl=\"pkg://rust_brown\" label=\"Rust Orange\" >\n  <presetinput identifier=\"\" uid=\"4294967295\" type=\"65535\" value=\"1,1\" />\n  <presetinput identifier=\"\" uid=\"4294967295\" type=\"65535\" value=\"0\" />\n  <presetinput identifier=\"rust_brown\" uid=\"1836172783\" type=\"2\" value=\"0.733333,0.387092,0.109502\" />\n  <presetinput identifier=\"variation\" uid=\"1836172067\" type=\"0\" value=\"1\" />\n  <presetinput identifier=\"roughness\" uid=\"1836171641\" type=\"0\" value=\"0.6\" />\n  <presetinput identifier=\"channel_diffuse\" uid=\"1752122217\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_basecolor\" uid=\"1724021571\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_normal\" uid=\"1724021568\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_specular\" uid=\"1752122198\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_glossiness\" uid=\"1752122199\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_roughness\" uid=\"1724021580\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_metallic\" uid=\"1724021581\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_height\" uid=\"1724021579\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"luminosity\" uid=\"536404556\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"contrast\" uid=\"1618815854\" type=\"0\" value=\"0\" />\n  <presetinput identifier=\"hue_shift\" uid=\"536404542\" type=\"0\" value=\"0\" />\n  <presetinput identifier=\"saturation\" uid=\"536404569\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"normal_intensity\" uid=\"536419629\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"normal_format\" uid=\"1724016736\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"height_range\" uid=\"1742278924\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"height_position\" uid=\"1742279037\" type=\"0\" value=\"0.5\" />\n </sbspreset>\n</sbspresets>\n"  ;
-createNode place2dTexture -n "place2dTexture6";
-	rename -uid "DD27DDE0-48E8-1E6F-57C5-E3B7B5D98AE4";
-createNode substanceOutputNode -n "Rust_Brown_basecolor";
-	rename -uid "9197C20C-4D1C-F1B8-B3C5-8A8BAD56CA30";
-	setAttr ".cpth" -type "string" "C:/Users/hunte/Documents/maya\\2024\\substance/baked_images/Rust_Brown_basecolor.exr";
-createNode file -n "file35";
-	rename -uid "74A34445-4626-4707-9B9A-E78E5026660F";
-	setAttr ".cs" -type "string" "sRGB";
-	setAttr ".ifr" yes;
-createNode substanceOutputNode -n "Rust_Brown_diffuse";
-	rename -uid "D6591DAF-4A23-14BB-258A-7B946735D090";
-	setAttr ".cpth" -type "string" "C:/Users/hunte/Documents/maya\\2024\\substance/baked_images/Rust_Brown_diffuse.exr";
-createNode file -n "file36";
-	rename -uid "09FC707C-4FF7-5111-A1BC-4FAE7F09ACB4";
-	setAttr ".cs" -type "string" "sRGB";
-	setAttr ".ifr" yes;
-createNode substanceOutputNode -n "Rust_Brown_specular";
-	rename -uid "BE246F07-4647-A634-0C96-2285443BF6B8";
-	setAttr ".cpth" -type "string" "C:/Users/hunte/Documents/maya\\2024\\substance/baked_images/Rust_Brown_specular.exr";
-createNode file -n "file38";
-	rename -uid "91DFFD84-40E2-D9B5-C076-E3AEB4CCBD0D";
-	setAttr ".cs" -type "string" "Raw";
-	setAttr ".ifr" yes;
-createNode substanceOutputNode -n "Rust_Brown_glossiness";
-	rename -uid "CEB5BEE2-4C0A-C4D3-4AE6-A09A7B8012DB";
-	setAttr ".cpth" -type "string" "C:/Users/hunte/Documents/maya\\2024\\substance/baked_images/Rust_Brown_glossiness.exr";
-createNode file -n "file39";
-	rename -uid "F400450E-48D1-4585-1085-608BE4640FB2";
-	setAttr ".ail" yes;
-	setAttr ".cs" -type "string" "Raw";
-	setAttr ".ifr" yes;
-createNode substanceOutputNode -n "Rust_Brown_roughness";
-	rename -uid "14F03D23-486C-4E3A-5E76-418E0AE1E96D";
-	setAttr ".cpth" -type "string" "C:/Users/hunte/Documents/maya\\2024\\substance/baked_images/Rust_Brown_roughness.png";
-createNode file -n "file40";
-	rename -uid "B63B1E40-4228-1820-05FB-52958E7071CD";
-	setAttr ".ail" yes;
-	setAttr ".cs" -type "string" "Raw";
-	setAttr ".ifr" yes;
-createNode substanceOutputNode -n "Rust_Brown_metallic";
-	rename -uid "D8A72893-4BA5-FA88-DB8E-659E2F1D39DC";
-	setAttr ".cpth" -type "string" "C:/Users/hunte/Documents/maya\\2024\\substance/baked_images/Rust_Brown_metallic.png";
-createNode file -n "file41";
-	rename -uid "42E738D5-4875-39F4-AF3D-2287A913B9D0";
-	setAttr ".ail" yes;
-	setAttr ".cs" -type "string" "Raw";
-	setAttr ".ifr" yes;
-createNode substanceOutputNode -n "Rust_Brown_height";
-	rename -uid "B9311681-4375-7226-90D1-1183CEEFE847";
-	setAttr ".cpth" -type "string" "C:/Users/hunte/Documents/maya\\2024\\substance/baked_images/Rust_Brown_height.exr";
-createNode file -n "file42";
-	rename -uid "FCA5C33E-49A1-EE93-E097-FFA698753B0A";
-	setAttr ".ail" yes;
-	setAttr ".ao" -0.5;
-	setAttr ".cs" -type "string" "Raw";
-	setAttr ".ifr" yes;
-createNode substanceOutputNode -n "Rust_Brown_normal";
-	rename -uid "8C42FDF4-4456-88D0-3B4C-8A8AA1010C31";
-	setAttr ".cpth" -type "string" "C:/Users/hunte/Documents/maya\\2024\\substance/baked_images/Rust_Brown_normal.exr";
-createNode file -n "file43";
-	rename -uid "04B0B585-484F-A93C-C5F0-7F85A020E672";
-	setAttr ".ail" yes;
-	setAttr ".cs" -type "string" "Raw";
-	setAttr ".ifr" yes;
-createNode multiplyDivide -n "multiplyDivide4";
-	rename -uid "616868D0-4009-80B4-C5CB-D78005EDFBE5";
-createNode aiStandardSurface -n "RustMetal";
-	rename -uid "9AB4E5BB-4952-82AA-1018-65AC634DA277";
-	setAttr ".emission" 1;
-	setAttr ".emission_color" -type "float3" 0 0 0 ;
-createNode shadingEngine -n "set4";
-	rename -uid "0EFD404F-4CE0-4B8D-49AB-C4887B1A67F6";
-	setAttr ".ihi" 0;
-	setAttr ".ro" yes;
-createNode materialInfo -n "materialInfo8";
-	rename -uid "6322C990-4476-6919-EFF8-C58C3F808941";
-createNode bump2d -n "bump2d4";
-	rename -uid "DD8411C0-4649-6FB4-682B-CD863D6956CF";
-	setAttr ".bi" 1;
-	setAttr ".vc1" -type "float3" 0 9.9999997e-06 0 ;
-	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
-createNode displacementShader -n "displacementShader4";
-	rename -uid "B64ECF55-4664-703B-4BD1-D7BB6DB92F14";
-createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "B6CCBA76-4CBF-3C84-FFCC-7DA725BB7CCF";
-	setAttr -s 3 ".tgi";
-	setAttr ".tgi[0].tn" -type "string" "Untitled_2";
-	setAttr ".tgi[0].vl" -type "double2" -7003.5715760219709 -1810.7143290695699 ;
-	setAttr ".tgi[0].vh" -type "double2" 6710.7144448019244 1903.5714682369019 ;
-	setAttr -s 25 ".tgi[0].ni";
-	setAttr ".tgi[0].ni[0].x" -374.28570556640625;
-	setAttr ".tgi[0].ni[0].y" 325.71429443359375;
-	setAttr ".tgi[0].ni[0].nvs" 1923;
-	setAttr ".tgi[0].ni[1].x" -874.28570556640625;
-	setAttr ".tgi[0].ni[1].y" 1030;
-	setAttr ".tgi[0].ni[1].nvs" 1922;
-	setAttr ".tgi[0].ni[2].x" 618.5714111328125;
-	setAttr ".tgi[0].ni[2].y" -1831.4285888671875;
-	setAttr ".tgi[0].ni[2].nvs" 1922;
-	setAttr ".tgi[0].ni[3].x" -1492.857177734375;
-	setAttr ".tgi[0].ni[3].y" -270;
-	setAttr ".tgi[0].ni[3].nvs" 1923;
-	setAttr ".tgi[0].ni[4].x" 1115.7142333984375;
-	setAttr ".tgi[0].ni[4].y" -758.5714111328125;
-	setAttr ".tgi[0].ni[4].nvs" 1923;
-	setAttr ".tgi[0].ni[5].x" -374.28570556640625;
-	setAttr ".tgi[0].ni[5].y" -707.14288330078125;
-	setAttr ".tgi[0].ni[5].nvs" 1922;
-	setAttr ".tgi[0].ni[6].x" 121.42857360839844;
-	setAttr ".tgi[0].ni[6].y" -567.14288330078125;
-	setAttr ".tgi[0].ni[6].nvs" 1923;
-	setAttr ".tgi[0].ni[7].x" 121.42857360839844;
-	setAttr ".tgi[0].ni[7].y" -120;
-	setAttr ".tgi[0].ni[7].nvs" 1923;
-	setAttr ".tgi[0].ni[8].x" 618.5714111328125;
-	setAttr ".tgi[0].ni[8].y" -1127.142822265625;
-	setAttr ".tgi[0].ni[8].nvs" 1923;
-	setAttr ".tgi[0].ni[9].x" 1115.7142333984375;
-	setAttr ".tgi[0].ni[9].y" 1384.2857666015625;
-	setAttr ".tgi[0].ni[9].nvs" 1923;
-	setAttr ".tgi[0].ni[10].x" 1115.7142333984375;
-	setAttr ".tgi[0].ni[10].y" 1971.4285888671875;
-	setAttr ".tgi[0].ni[10].nvs" 1923;
-	setAttr ".tgi[0].ni[11].x" -374.28570556640625;
-	setAttr ".tgi[0].ni[11].y" -237.14285278320312;
-	setAttr ".tgi[0].ni[11].nvs" 1922;
-	setAttr ".tgi[0].ni[12].x" 121.42857360839844;
-	setAttr ".tgi[0].ni[12].y" -414.28570556640625;
-	setAttr ".tgi[0].ni[12].nvs" 1923;
-	setAttr ".tgi[0].ni[13].x" -374.28570556640625;
-	setAttr ".tgi[0].ni[13].y" 114.28571319580078;
-	setAttr ".tgi[0].ni[13].nvs" 1923;
-	setAttr ".tgi[0].ni[14].x" 121.42857360839844;
-	setAttr ".tgi[0].ni[14].y" -742.85711669921875;
-	setAttr ".tgi[0].ni[14].nvs" 1923;
-	setAttr ".tgi[0].ni[15].x" -874.28570556640625;
-	setAttr ".tgi[0].ni[15].y" 560;
-	setAttr ".tgi[0].ni[15].nvs" 1922;
-	setAttr ".tgi[0].ni[16].x" 1115.7142333984375;
-	setAttr ".tgi[0].ni[16].y" -2081.428466796875;
-	setAttr ".tgi[0].ni[16].nvs" 1923;
-	setAttr ".tgi[0].ni[17].x" 618.5714111328125;
-	setAttr ".tgi[0].ni[17].y" 1634.2857666015625;
-	setAttr ".tgi[0].ni[17].nvs" 1922;
-	setAttr ".tgi[0].ni[18].x" -374.28570556640625;
-	setAttr ".tgi[0].ni[18].y" -61.428569793701172;
-	setAttr ".tgi[0].ni[18].nvs" 1923;
-	setAttr ".tgi[0].ni[19].x" 121.42857360839844;
-	setAttr ".tgi[0].ni[19].y" -1314.2857666015625;
-	setAttr ".tgi[0].ni[19].nvs" 1923;
-	setAttr ".tgi[0].ni[20].x" 618.5714111328125;
-	setAttr ".tgi[0].ni[20].y" 2221.428466796875;
-	setAttr ".tgi[0].ni[20].nvs" 1922;
-	setAttr ".tgi[0].ni[21].x" 618.5714111328125;
-	setAttr ".tgi[0].ni[21].y" -432.85714721679688;
-	setAttr ".tgi[0].ni[21].nvs" 2387;
-	setAttr ".tgi[0].ni[22].x" -374.28570556640625;
-	setAttr ".tgi[0].ni[22].y" -1250;
-	setAttr ".tgi[0].ni[22].nvs" 1922;
-	setAttr ".tgi[0].ni[23].x" -1185.7142333984375;
-	setAttr ".tgi[0].ni[23].y" -185.71427917480469;
-	setAttr ".tgi[0].ni[23].nvs" 1970;
-	setAttr ".tgi[0].ni[24].x" -875.62554931640625;
-	setAttr ".tgi[0].ni[24].y" 90;
-	setAttr ".tgi[0].ni[24].nvs" 1922;
-	setAttr ".tgi[1].tn" -type "string" "Untitled_3";
-	setAttr ".tgi[1].vl" -type "double2" -645.23806959863805 -476.19045726836754 ;
-	setAttr ".tgi[1].vh" -type "double2" 428.57141154153084 883.33329823282179 ;
-	setAttr -s 25 ".tgi[1].ni";
-	setAttr ".tgi[1].ni[0].x" 217.14285278320312;
-	setAttr ".tgi[1].ni[0].y" -372.85714721679688;
-	setAttr ".tgi[1].ni[0].nvs" 1923;
-	setAttr ".tgi[1].ni[1].x" -937.14288330078125;
-	setAttr ".tgi[1].ni[1].y" 1785.7142333984375;
-	setAttr ".tgi[1].ni[1].nvs" 1922;
-	setAttr ".tgi[1].ni[2].x" -147.14285278320312;
-	setAttr ".tgi[1].ni[2].y" 188.57142639160156;
-	setAttr ".tgi[1].ni[2].nvs" 1923;
-	setAttr ".tgi[1].ni[3].x" 217.14285278320312;
-	setAttr ".tgi[1].ni[3].y" -1592.857177734375;
-	setAttr ".tgi[1].ni[3].nvs" 1922;
-	setAttr ".tgi[1].ni[4].x" 565.71429443359375;
-	setAttr ".tgi[1].ni[4].y" -2.8571429252624512;
-	setAttr ".tgi[1].ni[4].nvs" 1923;
-	setAttr ".tgi[1].ni[5].x" -554.28570556640625;
-	setAttr ".tgi[1].ni[5].y" 692.85711669921875;
-	setAttr ".tgi[1].ni[5].nvs" 1923;
-	setAttr ".tgi[1].ni[6].x" -1248.5714111328125;
-	setAttr ".tgi[1].ni[6].y" 132.85714721679688;
-	setAttr ".tgi[1].ni[6].nvs" 1970;
-	setAttr ".tgi[1].ni[7].x" -937.14288330078125;
-	setAttr ".tgi[1].ni[7].y" 845.71429443359375;
-	setAttr ".tgi[1].ni[7].nvs" 1922;
-	setAttr ".tgi[1].ni[8].x" 565.71429443359375;
-	setAttr ".tgi[1].ni[8].y" -1842.857177734375;
-	setAttr ".tgi[1].ni[8].nvs" 1923;
-	setAttr ".tgi[1].ni[9].x" -554.28570556640625;
-	setAttr ".tgi[1].ni[9].y" -494.28570556640625;
-	setAttr ".tgi[1].ni[9].nvs" 1922;
-	setAttr ".tgi[1].ni[10].x" -554.28570556640625;
-	setAttr ".tgi[1].ni[10].y" 47.142856597900391;
-	setAttr ".tgi[1].ni[10].nvs" 1922;
-	setAttr ".tgi[1].ni[11].x" 565.71429443359375;
-	setAttr ".tgi[1].ni[11].y" -1257.142822265625;
-	setAttr ".tgi[1].ni[11].nvs" 1923;
-	setAttr ".tgi[1].ni[12].x" -1555.7142333984375;
-	setAttr ".tgi[1].ni[12].y" -77.142860412597656;
-	setAttr ".tgi[1].ni[12].nvs" 1923;
-	setAttr ".tgi[1].ni[13].x" -554.28570556640625;
-	setAttr ".tgi[1].ni[13].y" 868.5714111328125;
-	setAttr ".tgi[1].ni[13].nvs" 1923;
-	setAttr ".tgi[1].ni[14].x" -147.14285278320312;
-	setAttr ".tgi[1].ni[14].y" -558.5714111328125;
-	setAttr ".tgi[1].ni[14].nvs" 1923;
-	setAttr ".tgi[1].ni[15].x" 565.71429443359375;
-	setAttr ".tgi[1].ni[15].y" 2141.428466796875;
-	setAttr ".tgi[1].ni[15].nvs" 1923;
-	setAttr ".tgi[1].ni[16].x" -147.14285278320312;
-	setAttr ".tgi[1].ni[16].y" 341.42855834960938;
-	setAttr ".tgi[1].ni[16].nvs" 1923;
-	setAttr ".tgi[1].ni[17].x" -937.14288330078125;
-	setAttr ".tgi[1].ni[17].y" 1315.7142333984375;
-	setAttr ".tgi[1].ni[17].nvs" 1922;
-	setAttr ".tgi[1].ni[18].x" 217.14285278320312;
-	setAttr ".tgi[1].ni[18].y" 2391.428466796875;
-	setAttr ".tgi[1].ni[18].nvs" 1922;
-	setAttr ".tgi[1].ni[19].x" 217.14285278320312;
-	setAttr ".tgi[1].ni[19].y" 321.42855834960938;
-	setAttr ".tgi[1].ni[19].nvs" 2387;
-	setAttr ".tgi[1].ni[20].x" -554.28570556640625;
-	setAttr ".tgi[1].ni[20].y" 1087.142822265625;
-	setAttr ".tgi[1].ni[20].nvs" 1923;
-	setAttr ".tgi[1].ni[21].x" -147.14285278320312;
-	setAttr ".tgi[1].ni[21].y" 632.85711669921875;
-	setAttr ".tgi[1].ni[21].nvs" 1923;
-	setAttr ".tgi[1].ni[22].x" 217.14285278320312;
-	setAttr ".tgi[1].ni[22].y" -1007.1428833007812;
-	setAttr ".tgi[1].ni[22].nvs" 1922;
-	setAttr ".tgi[1].ni[23].x" -554.28570556640625;
-	setAttr ".tgi[1].ni[23].y" 517.14288330078125;
-	setAttr ".tgi[1].ni[23].nvs" 1922;
-	setAttr ".tgi[1].ni[24].x" -147.14285278320312;
-	setAttr ".tgi[1].ni[24].y" 12.857142448425293;
-	setAttr ".tgi[1].ni[24].nvs" 1923;
-	setAttr ".tgi[2].tn" -type "string" "Untitled_4";
-	setAttr ".tgi[2].vl" -type "double2" -267.85713221345674 -340.47617694688279 ;
-	setAttr ".tgi[2].vh" -type "double2" 269.04760835662768 339.2857008037119 ;
-	setAttr -s 23 ".tgi[2].ni";
-	setAttr ".tgi[2].ni[0].x" -417.14285278320312;
-	setAttr ".tgi[2].ni[0].y" 1351.4285888671875;
-	setAttr ".tgi[2].ni[0].nvs" 1922;
-	setAttr ".tgi[2].ni[1].x" -110;
-	setAttr ".tgi[2].ni[1].y" 862.85711669921875;
-	setAttr ".tgi[2].ni[1].nvs" 1923;
-	setAttr ".tgi[2].ni[2].x" -728.5714111328125;
-	setAttr ".tgi[2].ni[2].y" 8.5714282989501953;
-	setAttr ".tgi[2].ni[2].nvs" 1970;
-	setAttr ".tgi[2].ni[3].x" -1035.7142333984375;
-	setAttr ".tgi[2].ni[3].y" -137.14285278320312;
-	setAttr ".tgi[2].ni[3].nvs" 1923;
-	setAttr ".tgi[2].ni[4].x" 504.28570556640625;
-	setAttr ".tgi[2].ni[4].y" -1568.5714111328125;
-	setAttr ".tgi[2].ni[4].nvs" 1922;
-	setAttr ".tgi[2].ni[5].x" 852.85711669921875;
-	setAttr ".tgi[2].ni[5].y" -1818.5714111328125;
-	setAttr ".tgi[2].ni[5].nvs" 1923;
-	setAttr ".tgi[2].ni[6].x" 197.14285278320312;
-	setAttr ".tgi[2].ni[6].y" 182.85714721679688;
-	setAttr ".tgi[2].ni[6].nvs" 1923;
-	setAttr ".tgi[2].ni[7].x" 197.14285278320312;
-	setAttr ".tgi[2].ni[7].y" 335.71429443359375;
-	setAttr ".tgi[2].ni[7].nvs" 1923;
-	setAttr ".tgi[2].ni[8].x" 504.28570556640625;
-	setAttr ".tgi[2].ni[8].y" -987.14288330078125;
-	setAttr ".tgi[2].ni[8].nvs" 1922;
-	setAttr ".tgi[2].ni[9].x" 504.28570556640625;
-	setAttr ".tgi[2].ni[9].y" 1957.142822265625;
-	setAttr ".tgi[2].ni[9].nvs" 1922;
-	setAttr ".tgi[2].ni[10].x" 197.14285278320312;
-	setAttr ".tgi[2].ni[10].y" 567.14288330078125;
-	setAttr ".tgi[2].ni[10].nvs" 1923;
-	setAttr ".tgi[2].ni[11].x" -110;
-	setAttr ".tgi[2].ni[11].y" 511.42855834960938;
-	setAttr ".tgi[2].ni[11].nvs" 1922;
-	setAttr ".tgi[2].ni[12].x" -110;
-	setAttr ".tgi[2].ni[12].y" 687.14288330078125;
-	setAttr ".tgi[2].ni[12].nvs" 1923;
-	setAttr ".tgi[2].ni[13].x" 852.85711669921875;
-	setAttr ".tgi[2].ni[13].y" -10;
-	setAttr ".tgi[2].ni[13].nvs" 1923;
-	setAttr ".tgi[2].ni[14].x" 504.28570556640625;
-	setAttr ".tgi[2].ni[14].y" 315.71429443359375;
-	setAttr ".tgi[2].ni[14].nvs" 2387;
-	setAttr ".tgi[2].ni[15].x" 197.14285278320312;
-	setAttr ".tgi[2].ni[15].y" 7.1428570747375488;
-	setAttr ".tgi[2].ni[15].nvs" 1923;
-	setAttr ".tgi[2].ni[16].x" 852.85711669921875;
-	setAttr ".tgi[2].ni[16].y" -1238.5714111328125;
-	setAttr ".tgi[2].ni[16].nvs" 1923;
-	setAttr ".tgi[2].ni[17].x" 852.85711669921875;
-	setAttr ".tgi[2].ni[17].y" 1707.142822265625;
-	setAttr ".tgi[2].ni[17].nvs" 1923;
-	setAttr ".tgi[2].ni[18].x" -110;
-	setAttr ".tgi[2].ni[18].y" 41.428569793701172;
-	setAttr ".tgi[2].ni[18].nvs" 1922;
-	setAttr ".tgi[2].ni[19].x" -110;
-	setAttr ".tgi[2].ni[19].y" -471.42855834960938;
-	setAttr ".tgi[2].ni[19].nvs" 1922;
-	setAttr ".tgi[2].ni[20].x" 197.14285278320312;
-	setAttr ".tgi[2].ni[20].y" -551.4285888671875;
-	setAttr ".tgi[2].ni[20].nvs" 1923;
-	setAttr ".tgi[2].ni[21].x" -417.14285278320312;
-	setAttr ".tgi[2].ni[21].y" 881.4285888671875;
-	setAttr ".tgi[2].ni[21].nvs" 1922;
-	setAttr ".tgi[2].ni[22].x" 504.28570556640625;
-	setAttr ".tgi[2].ni[22].y" -378.57144165039062;
-	setAttr ".tgi[2].ni[22].nvs" 1923;
 select -ne :time1;
 	setAttr ".o" 0;
 select -ne :hardwareRenderingGlobals;
@@ -11172,25 +10938,25 @@ select -ne :hardwareRenderingGlobals;
 	setAttr ".fprt" yes;
 	setAttr ".rtfm" 1;
 select -ne :renderPartition;
-	setAttr -s 40 ".st";
+	setAttr -s 39 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 47 ".s";
+	setAttr -s 45 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 68 ".u";
+	setAttr -s 65 ".u";
 select -ne :defaultRenderingList1;
 	setAttr -s 17 ".r";
 select -ne :lightList1;
 	setAttr -s 2 ".l";
 select -ne :defaultTextureList1;
-	setAttr -s 126 ".tx";
+	setAttr -s 109 ".tx";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 2 ".dsm";
+	setAttr -s 3 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
@@ -12043,7 +11809,13 @@ connectAttr "hunte__dev__JailBars__1_01.outputObjects[0].outputObjectRotate" "|h
 		;
 connectAttr "hunte__dev__JailBars__1_01.outputObjects[0].outputObjectScale" "|hunte__dev__JailBars__1_01|geo1.s"
 		;
-connectAttr "hunte__dev__JailBars__1_01.outputObjects[0].outputGeos[0].outputParts[0].outputPartMeshData" "|hunte__dev__JailBars__1_01|geo1|uvunwrap1_0|uvunwrap1_0Shape.i"
+connectAttr "groupParts2.og" "|hunte__dev__JailBars__1_01|geo1|uvunwrap1_0|uvunwrap1_0Shape.i"
+		;
+connectAttr "groupId8.id" "|hunte__dev__JailBars__1_01|geo1|uvunwrap1_0|uvunwrap1_0Shape.iog.og[0].gid"
+		;
+connectAttr "v_layered4SG.mwc" "|hunte__dev__JailBars__1_01|geo1|uvunwrap1_0|uvunwrap1_0Shape.iog.og[0].gco"
+		;
+connectAttr "groupId9.id" "|hunte__dev__JailBars__1_01|geo1|uvunwrap1_0|uvunwrap1_0Shape.ciog.cog[0].cgid"
 		;
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
@@ -12054,7 +11826,6 @@ relationship "link" ":lightLinker1" "set2.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "v_layered3SG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "set3.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "v_layered4SG.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "set4.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "v_layered1SG.message" ":defaultLightSet.message";
@@ -12064,7 +11835,6 @@ relationship "shadowLink" ":lightLinker1" "set2.message" ":defaultLightSet.messa
 relationship "shadowLink" ":lightLinker1" "v_layered3SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "set3.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "v_layered4SG.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "set4.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr ":defaultArnoldDisplayDriver.msg" ":defaultArnoldRenderOptions.drivers"
@@ -13222,6 +12992,106 @@ connectAttr "Wood.msg" "materialInfo6.m";
 connectAttr "Wood.msg" "materialInfo6.t" -na;
 connectAttr "file33.oa" "bump2d3.bv";
 connectAttr "file31.oa" "displacementShader3.d";
+connectAttr "file17.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+		;
+connectAttr "file13.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+		;
+connectAttr "Cotton_Rich_Tricotine_Weave_Front_Side_Scan_specular.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+		;
+connectAttr "file20.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+		;
+connectAttr "Cotton_Rich_Tricotine_Weave_Front_Side_Scan_normal.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+		;
+connectAttr "Cotton_Rich_Tricotine_Weave_Front_Side_Scan_metallic.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+		;
+connectAttr "file15.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+		;
+connectAttr "place2dTexture2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+		;
+connectAttr "Cotton_Rich_Tricotine_Weave_Front_Side_Scan_ambientocclusion.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+		;
+connectAttr "Cotton_Rich_Tricotine_Weave_Front_Side_Scan_basecolor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
+		;
+connectAttr "file19.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
+		;
+connectAttr "file18.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
+		;
+connectAttr "file14.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[12].dn"
+		;
+connectAttr "substanceNode2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[13].dn"
+		;
+connectAttr "bump2d2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[14].dn"
+		;
+connectAttr "multiplyDivide2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[15].dn"
+		;
+connectAttr "file16.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[16].dn"
+		;
+connectAttr "displacementShader2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[17].dn"
+		;
+connectAttr "file12.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[18].dn"
+		;
+connectAttr "set2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[19].dn"
+		;
+connectAttr "Cotton_Rich_Tricotine_Weave_Front_Side_Scan_glossiness.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[20].dn"
+		;
+connectAttr "Cotton_Rich_Tricotine_Weave_Front_Side_Scan_height.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[21].dn"
+		;
+connectAttr "Cotton_Rich_Tricotine_Weave_Front_Side_Scan_diffuse.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[22].dn"
+		;
+connectAttr "RibbonFull.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[23].dn"
+		;
+connectAttr "Cotton_Rich_Tricotine_Weave_Front_Side_Scan_roughness.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[24].dn"
+		;
+connectAttr "set3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[0].dn"
+		;
+connectAttr "displacementShader3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[1].dn"
+		;
+connectAttr "multiplyDivide3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[2].dn"
+		;
+connectAttr "Cerused_Pine_Wood_normal.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[3].dn"
+		;
+connectAttr "file32.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[4].dn"
+		;
+connectAttr "Wood.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[5].dn"
+		;
+connectAttr "bump2d3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[6].dn"
+		;
+connectAttr "Cerused_Pine_Wood_ambientocclusion.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[7].dn"
+		;
+connectAttr "file33.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[8].dn"
+		;
+connectAttr "Cerused_Pine_Wood_basecolor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[9].dn"
+		;
+connectAttr "file25.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[10].dn"
+		;
+connectAttr "file26.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[11].dn"
+		;
+connectAttr "Cerused_Pine_Wood_diffuse.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[12].dn"
+		;
+connectAttr "file29.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[13].dn"
+		;
+connectAttr "Cerused_Pine_Wood_roughness.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[14].dn"
+		;
+connectAttr "file31.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[15].dn"
+		;
+connectAttr "Cerused_Pine_Wood_glossiness.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[16].dn"
+		;
+connectAttr "Cerused_Pine_Wood_height.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[17].dn"
+		;
+connectAttr "file27.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[18].dn"
+		;
+connectAttr "Cerused_Pine_Wood_specular.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[19].dn"
+		;
+connectAttr "place2dTexture5.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[20].dn"
+		;
+connectAttr "file28.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[21].dn"
+		;
+connectAttr "substanceNode5.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[22].dn"
+		;
+connectAttr "file30.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[23].dn"
+		;
+connectAttr "Cerused_Pine_Wood_metallic.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[24].dn"
+		;
 connectAttr "file34.oc" "v_layered4.c";
 connectAttr "hunte__dev__JailBars__1_01.outputMaterials[0].outputMaterialSpecularColor" "v_layered4.sc"
 		;
@@ -13230,6 +13100,9 @@ connectAttr "hunte__dev__JailBars__1_01.outputMaterials[0].outputMaterialAmbient
 connectAttr "hunte__dev__JailBars__1_01.outputMaterials[0].outputMaterialAlphaColor" "v_layered4.it"
 		;
 connectAttr "v_layered4.oc" "v_layered4SG.ss";
+connectAttr "|hunte__dev__JailBars__1_01|geo1|uvunwrap1_0|uvunwrap1_0Shape.iog.og[0]" "v_layered4SG.dsm"
+		 -na;
+connectAttr "groupId8.msg" "v_layered4SG.gn" -na;
 connectAttr "v_layered4SG.msg" "materialInfo7.sg";
 connectAttr "v_layered4.msg" "materialInfo7.m";
 connectAttr "file34.msg" "materialInfo7.t" -na;
@@ -13239,408 +13112,9 @@ connectAttr ":defaultColorMgtGlobals.cfp" "file34.cmcp";
 connectAttr ":defaultColorMgtGlobals.wsn" "file34.ws";
 connectAttr "hunte__dev__JailBars__1_01.outputMaterials[0].outputMaterialTexturePath" "file34.ftn"
 		;
-connectAttr "place2dTexture6.o" "substanceNode6.uv";
-connectAttr "place2dTexture6.ofs" "substanceNode6.fs";
-connectAttr "substanceNode6.output_basecolor" "Rust_Brown_basecolor.sbs";
-connectAttr "substanceNode6.rsw" "Rust_Brown_basecolor.rsw";
-connectAttr "substanceNode6.cext" "Rust_Brown_basecolor.cext";
-connectAttr "substanceNode6.hext" "Rust_Brown_basecolor.hext";
-connectAttr "substanceNode6.cfld" "Rust_Brown_basecolor.cprx";
-connectAttr "place2dTexture6.o" "Rust_Brown_basecolor.uv";
-connectAttr "place2dTexture6.ofs" "Rust_Brown_basecolor.fs";
-connectAttr ":defaultColorMgtGlobals.cme" "file35.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "file35.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "file35.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "file35.ws";
-connectAttr "Rust_Brown_basecolor.cpth" "file35.ftn";
-connectAttr "place2dTexture6.o" "file35.uv";
-connectAttr "place2dTexture6.ofs" "file35.fs";
-connectAttr "place2dTexture6.c" "file35.c";
-connectAttr "place2dTexture6.tf" "file35.tf";
-connectAttr "place2dTexture6.rf" "file35.rf";
-connectAttr "place2dTexture6.mu" "file35.mu";
-connectAttr "place2dTexture6.mv" "file35.mv";
-connectAttr "place2dTexture6.s" "file35.s";
-connectAttr "place2dTexture6.wu" "file35.wu";
-connectAttr "place2dTexture6.wv" "file35.wv";
-connectAttr "place2dTexture6.re" "file35.re";
-connectAttr "place2dTexture6.of" "file35.of";
-connectAttr "place2dTexture6.r" "file35.ro";
-connectAttr "place2dTexture6.n" "file35.n";
-connectAttr "place2dTexture6.vt1" "file35.vt1";
-connectAttr "place2dTexture6.vt2" "file35.vt2";
-connectAttr "place2dTexture6.vt3" "file35.vt3";
-connectAttr "place2dTexture6.vc1" "file35.vc1";
-connectAttr "substanceNode6.output_diffuse" "Rust_Brown_diffuse.sbs";
-connectAttr "substanceNode6.rsw" "Rust_Brown_diffuse.rsw";
-connectAttr "substanceNode6.cext" "Rust_Brown_diffuse.cext";
-connectAttr "substanceNode6.hext" "Rust_Brown_diffuse.hext";
-connectAttr "substanceNode6.cfld" "Rust_Brown_diffuse.cprx";
-connectAttr "place2dTexture6.o" "Rust_Brown_diffuse.uv";
-connectAttr "place2dTexture6.ofs" "Rust_Brown_diffuse.fs";
-connectAttr ":defaultColorMgtGlobals.cme" "file36.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "file36.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "file36.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "file36.ws";
-connectAttr "Rust_Brown_diffuse.cpth" "file36.ftn";
-connectAttr "place2dTexture6.o" "file36.uv";
-connectAttr "place2dTexture6.ofs" "file36.fs";
-connectAttr "place2dTexture6.c" "file36.c";
-connectAttr "place2dTexture6.tf" "file36.tf";
-connectAttr "place2dTexture6.rf" "file36.rf";
-connectAttr "place2dTexture6.mu" "file36.mu";
-connectAttr "place2dTexture6.mv" "file36.mv";
-connectAttr "place2dTexture6.s" "file36.s";
-connectAttr "place2dTexture6.wu" "file36.wu";
-connectAttr "place2dTexture6.wv" "file36.wv";
-connectAttr "place2dTexture6.re" "file36.re";
-connectAttr "place2dTexture6.of" "file36.of";
-connectAttr "place2dTexture6.r" "file36.ro";
-connectAttr "place2dTexture6.n" "file36.n";
-connectAttr "place2dTexture6.vt1" "file36.vt1";
-connectAttr "place2dTexture6.vt2" "file36.vt2";
-connectAttr "place2dTexture6.vt3" "file36.vt3";
-connectAttr "place2dTexture6.vc1" "file36.vc1";
-connectAttr "substanceNode6.output_specular" "Rust_Brown_specular.sbs";
-connectAttr "substanceNode6.rsw" "Rust_Brown_specular.rsw";
-connectAttr "substanceNode6.cext" "Rust_Brown_specular.cext";
-connectAttr "substanceNode6.hext" "Rust_Brown_specular.hext";
-connectAttr "substanceNode6.cfld" "Rust_Brown_specular.cprx";
-connectAttr "place2dTexture6.o" "Rust_Brown_specular.uv";
-connectAttr "place2dTexture6.ofs" "Rust_Brown_specular.fs";
-connectAttr ":defaultColorMgtGlobals.cme" "file38.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "file38.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "file38.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "file38.ws";
-connectAttr "Rust_Brown_specular.cpth" "file38.ftn";
-connectAttr "place2dTexture6.o" "file38.uv";
-connectAttr "place2dTexture6.ofs" "file38.fs";
-connectAttr "place2dTexture6.c" "file38.c";
-connectAttr "place2dTexture6.tf" "file38.tf";
-connectAttr "place2dTexture6.rf" "file38.rf";
-connectAttr "place2dTexture6.mu" "file38.mu";
-connectAttr "place2dTexture6.mv" "file38.mv";
-connectAttr "place2dTexture6.s" "file38.s";
-connectAttr "place2dTexture6.wu" "file38.wu";
-connectAttr "place2dTexture6.wv" "file38.wv";
-connectAttr "place2dTexture6.re" "file38.re";
-connectAttr "place2dTexture6.of" "file38.of";
-connectAttr "place2dTexture6.r" "file38.ro";
-connectAttr "place2dTexture6.n" "file38.n";
-connectAttr "place2dTexture6.vt1" "file38.vt1";
-connectAttr "place2dTexture6.vt2" "file38.vt2";
-connectAttr "place2dTexture6.vt3" "file38.vt3";
-connectAttr "place2dTexture6.vc1" "file38.vc1";
-connectAttr "substanceNode6.output_glossiness" "Rust_Brown_glossiness.sbs";
-connectAttr "substanceNode6.rsw" "Rust_Brown_glossiness.rsw";
-connectAttr "substanceNode6.cext" "Rust_Brown_glossiness.cext";
-connectAttr "substanceNode6.hext" "Rust_Brown_glossiness.hext";
-connectAttr "substanceNode6.cfld" "Rust_Brown_glossiness.cprx";
-connectAttr "place2dTexture6.o" "Rust_Brown_glossiness.uv";
-connectAttr "place2dTexture6.ofs" "Rust_Brown_glossiness.fs";
-connectAttr ":defaultColorMgtGlobals.cme" "file39.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "file39.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "file39.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "file39.ws";
-connectAttr "Rust_Brown_glossiness.cpth" "file39.ftn";
-connectAttr "place2dTexture6.o" "file39.uv";
-connectAttr "place2dTexture6.ofs" "file39.fs";
-connectAttr "place2dTexture6.c" "file39.c";
-connectAttr "place2dTexture6.tf" "file39.tf";
-connectAttr "place2dTexture6.rf" "file39.rf";
-connectAttr "place2dTexture6.mu" "file39.mu";
-connectAttr "place2dTexture6.mv" "file39.mv";
-connectAttr "place2dTexture6.s" "file39.s";
-connectAttr "place2dTexture6.wu" "file39.wu";
-connectAttr "place2dTexture6.wv" "file39.wv";
-connectAttr "place2dTexture6.re" "file39.re";
-connectAttr "place2dTexture6.of" "file39.of";
-connectAttr "place2dTexture6.r" "file39.ro";
-connectAttr "place2dTexture6.n" "file39.n";
-connectAttr "place2dTexture6.vt1" "file39.vt1";
-connectAttr "place2dTexture6.vt2" "file39.vt2";
-connectAttr "place2dTexture6.vt3" "file39.vt3";
-connectAttr "place2dTexture6.vc1" "file39.vc1";
-connectAttr "substanceNode6.output_roughness" "Rust_Brown_roughness.sbs";
-connectAttr "substanceNode6.rsw" "Rust_Brown_roughness.rsw";
-connectAttr "substanceNode6.cext" "Rust_Brown_roughness.cext";
-connectAttr "substanceNode6.hext" "Rust_Brown_roughness.hext";
-connectAttr "substanceNode6.cfld" "Rust_Brown_roughness.cprx";
-connectAttr "place2dTexture6.o" "Rust_Brown_roughness.uv";
-connectAttr "place2dTexture6.ofs" "Rust_Brown_roughness.fs";
-connectAttr ":defaultColorMgtGlobals.cme" "file40.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "file40.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "file40.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "file40.ws";
-connectAttr "Rust_Brown_roughness.cpth" "file40.ftn";
-connectAttr "place2dTexture6.o" "file40.uv";
-connectAttr "place2dTexture6.ofs" "file40.fs";
-connectAttr "place2dTexture6.c" "file40.c";
-connectAttr "place2dTexture6.tf" "file40.tf";
-connectAttr "place2dTexture6.rf" "file40.rf";
-connectAttr "place2dTexture6.mu" "file40.mu";
-connectAttr "place2dTexture6.mv" "file40.mv";
-connectAttr "place2dTexture6.s" "file40.s";
-connectAttr "place2dTexture6.wu" "file40.wu";
-connectAttr "place2dTexture6.wv" "file40.wv";
-connectAttr "place2dTexture6.re" "file40.re";
-connectAttr "place2dTexture6.of" "file40.of";
-connectAttr "place2dTexture6.r" "file40.ro";
-connectAttr "place2dTexture6.n" "file40.n";
-connectAttr "place2dTexture6.vt1" "file40.vt1";
-connectAttr "place2dTexture6.vt2" "file40.vt2";
-connectAttr "place2dTexture6.vt3" "file40.vt3";
-connectAttr "place2dTexture6.vc1" "file40.vc1";
-connectAttr "substanceNode6.output_metallic" "Rust_Brown_metallic.sbs";
-connectAttr "substanceNode6.rsw" "Rust_Brown_metallic.rsw";
-connectAttr "substanceNode6.cext" "Rust_Brown_metallic.cext";
-connectAttr "substanceNode6.hext" "Rust_Brown_metallic.hext";
-connectAttr "substanceNode6.cfld" "Rust_Brown_metallic.cprx";
-connectAttr "place2dTexture6.o" "Rust_Brown_metallic.uv";
-connectAttr "place2dTexture6.ofs" "Rust_Brown_metallic.fs";
-connectAttr ":defaultColorMgtGlobals.cme" "file41.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "file41.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "file41.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "file41.ws";
-connectAttr "Rust_Brown_metallic.cpth" "file41.ftn";
-connectAttr "place2dTexture6.o" "file41.uv";
-connectAttr "place2dTexture6.ofs" "file41.fs";
-connectAttr "place2dTexture6.c" "file41.c";
-connectAttr "place2dTexture6.tf" "file41.tf";
-connectAttr "place2dTexture6.rf" "file41.rf";
-connectAttr "place2dTexture6.mu" "file41.mu";
-connectAttr "place2dTexture6.mv" "file41.mv";
-connectAttr "place2dTexture6.s" "file41.s";
-connectAttr "place2dTexture6.wu" "file41.wu";
-connectAttr "place2dTexture6.wv" "file41.wv";
-connectAttr "place2dTexture6.re" "file41.re";
-connectAttr "place2dTexture6.of" "file41.of";
-connectAttr "place2dTexture6.r" "file41.ro";
-connectAttr "place2dTexture6.n" "file41.n";
-connectAttr "place2dTexture6.vt1" "file41.vt1";
-connectAttr "place2dTexture6.vt2" "file41.vt2";
-connectAttr "place2dTexture6.vt3" "file41.vt3";
-connectAttr "place2dTexture6.vc1" "file41.vc1";
-connectAttr "substanceNode6.output_height" "Rust_Brown_height.sbs";
-connectAttr "substanceNode6.rsw" "Rust_Brown_height.rsw";
-connectAttr "substanceNode6.cext" "Rust_Brown_height.cext";
-connectAttr "substanceNode6.hext" "Rust_Brown_height.hext";
-connectAttr "substanceNode6.cfld" "Rust_Brown_height.cprx";
-connectAttr "place2dTexture6.o" "Rust_Brown_height.uv";
-connectAttr "place2dTexture6.ofs" "Rust_Brown_height.fs";
-connectAttr ":defaultColorMgtGlobals.cme" "file42.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "file42.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "file42.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "file42.ws";
-connectAttr "Rust_Brown_height.cpth" "file42.ftn";
-connectAttr "place2dTexture6.o" "file42.uv";
-connectAttr "place2dTexture6.ofs" "file42.fs";
-connectAttr "place2dTexture6.c" "file42.c";
-connectAttr "place2dTexture6.tf" "file42.tf";
-connectAttr "place2dTexture6.rf" "file42.rf";
-connectAttr "place2dTexture6.mu" "file42.mu";
-connectAttr "place2dTexture6.mv" "file42.mv";
-connectAttr "place2dTexture6.s" "file42.s";
-connectAttr "place2dTexture6.wu" "file42.wu";
-connectAttr "place2dTexture6.wv" "file42.wv";
-connectAttr "place2dTexture6.re" "file42.re";
-connectAttr "place2dTexture6.of" "file42.of";
-connectAttr "place2dTexture6.r" "file42.ro";
-connectAttr "place2dTexture6.n" "file42.n";
-connectAttr "place2dTexture6.vt1" "file42.vt1";
-connectAttr "place2dTexture6.vt2" "file42.vt2";
-connectAttr "place2dTexture6.vt3" "file42.vt3";
-connectAttr "place2dTexture6.vc1" "file42.vc1";
-connectAttr "substanceNode6.output_normal" "Rust_Brown_normal.sbs";
-connectAttr "substanceNode6.rsw" "Rust_Brown_normal.rsw";
-connectAttr "substanceNode6.cext" "Rust_Brown_normal.cext";
-connectAttr "substanceNode6.hext" "Rust_Brown_normal.hext";
-connectAttr "substanceNode6.cfld" "Rust_Brown_normal.cprx";
-connectAttr "place2dTexture6.o" "Rust_Brown_normal.uv";
-connectAttr "place2dTexture6.ofs" "Rust_Brown_normal.fs";
-connectAttr ":defaultColorMgtGlobals.cme" "file43.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "file43.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "file43.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "file43.ws";
-connectAttr "Rust_Brown_normal.cpth" "file43.ftn";
-connectAttr "place2dTexture6.o" "file43.uv";
-connectAttr "place2dTexture6.ofs" "file43.fs";
-connectAttr "place2dTexture6.c" "file43.c";
-connectAttr "place2dTexture6.tf" "file43.tf";
-connectAttr "place2dTexture6.rf" "file43.rf";
-connectAttr "place2dTexture6.mu" "file43.mu";
-connectAttr "place2dTexture6.mv" "file43.mv";
-connectAttr "place2dTexture6.s" "file43.s";
-connectAttr "place2dTexture6.wu" "file43.wu";
-connectAttr "place2dTexture6.wv" "file43.wv";
-connectAttr "place2dTexture6.re" "file43.re";
-connectAttr "place2dTexture6.of" "file43.of";
-connectAttr "place2dTexture6.r" "file43.ro";
-connectAttr "place2dTexture6.n" "file43.n";
-connectAttr "place2dTexture6.vt1" "file43.vt1";
-connectAttr "place2dTexture6.vt2" "file43.vt2";
-connectAttr "place2dTexture6.vt3" "file43.vt3";
-connectAttr "place2dTexture6.vc1" "file43.vc1";
-connectAttr "file35.oc" "multiplyDivide4.i1";
-connectAttr "multiplyDivide4.o" "RustMetal.base_color";
-connectAttr "bump2d4.o" "RustMetal.n";
-connectAttr "file40.oa" "RustMetal.specular_roughness";
-connectAttr "file41.oa" "RustMetal.metalness";
-connectAttr "RustMetal.out" "set4.ss";
-connectAttr "displacementShader4.d" "set4.ds";
-connectAttr "|hunte__dev__JailBars__1_01|geo1|uvunwrap1_0|uvunwrap1_0Shape.iog" "set4.dsm"
-		 -na;
-connectAttr "set4.msg" "materialInfo8.sg";
-connectAttr "RustMetal.msg" "materialInfo8.m";
-connectAttr "RustMetal.msg" "materialInfo8.t" -na;
-connectAttr "file43.oa" "bump2d4.bv";
-connectAttr "file42.oa" "displacementShader4.d";
-connectAttr "file13.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+connectAttr "hunte__dev__JailBars__1_01.outputObjects[0].outputGeos[0].outputParts[0].outputPartMeshData" "groupParts2.ig"
 		;
-connectAttr "Cotton_Rich_Tricotine_Weave_Front_Side_Scan_basecolor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
-		;
-connectAttr "Cotton_Rich_Tricotine_Weave_Front_Side_Scan_glossiness.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
-		;
-connectAttr "place2dTexture2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
-		;
-connectAttr "set2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
-		;
-connectAttr "Cotton_Rich_Tricotine_Weave_Front_Side_Scan_metallic.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
-		;
-connectAttr "file17.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
-		;
-connectAttr "multiplyDivide2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
-		;
-connectAttr "displacementShader2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
-		;
-connectAttr "file15.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
-		;
-connectAttr "file12.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
-		;
-connectAttr "Cotton_Rich_Tricotine_Weave_Front_Side_Scan_roughness.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
-		;
-connectAttr "bump2d2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[12].dn"
-		;
-connectAttr "file20.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[13].dn"
-		;
-connectAttr "file18.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[14].dn"
-		;
-connectAttr "Cotton_Rich_Tricotine_Weave_Front_Side_Scan_ambientocclusion.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[15].dn"
-		;
-connectAttr "file16.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[16].dn"
-		;
-connectAttr "Cotton_Rich_Tricotine_Weave_Front_Side_Scan_specular.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[17].dn"
-		;
-connectAttr "file14.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[18].dn"
-		;
-connectAttr "file19.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[19].dn"
-		;
-connectAttr "Cotton_Rich_Tricotine_Weave_Front_Side_Scan_diffuse.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[20].dn"
-		;
-connectAttr "RibbonFull.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[21].dn"
-		;
-connectAttr "Cotton_Rich_Tricotine_Weave_Front_Side_Scan_height.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[22].dn"
-		;
-connectAttr "substanceNode2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[23].dn"
-		;
-connectAttr "Cotton_Rich_Tricotine_Weave_Front_Side_Scan_normal.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[24].dn"
-		;
-connectAttr "displacementShader3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[0].dn"
-		;
-connectAttr "Cerused_Pine_Wood_basecolor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[1].dn"
-		;
-connectAttr "file29.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[2].dn"
-		;
-connectAttr "Cerused_Pine_Wood_diffuse.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[3].dn"
-		;
-connectAttr "set3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[4].dn"
-		;
-connectAttr "file33.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[5].dn"
-		;
-connectAttr "substanceNode5.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[6].dn"
-		;
-connectAttr "Cerused_Pine_Wood_normal.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[7].dn"
-		;
-connectAttr "file25.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[8].dn"
-		;
-connectAttr "Cerused_Pine_Wood_height.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[9].dn"
-		;
-connectAttr "Cerused_Pine_Wood_metallic.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[10].dn"
-		;
-connectAttr "file27.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[11].dn"
-		;
-connectAttr "place2dTexture5.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[12].dn"
-		;
-connectAttr "file32.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[13].dn"
-		;
-connectAttr "file31.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[14].dn"
-		;
-connectAttr "file28.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[15].dn"
-		;
-connectAttr "bump2d3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[16].dn"
-		;
-connectAttr "Cerused_Pine_Wood_ambientocclusion.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[17].dn"
-		;
-connectAttr "Cerused_Pine_Wood_glossiness.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[18].dn"
-		;
-connectAttr "Wood.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[19].dn"
-		;
-connectAttr "file26.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[20].dn"
-		;
-connectAttr "multiplyDivide3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[21].dn"
-		;
-connectAttr "Cerused_Pine_Wood_specular.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[22].dn"
-		;
-connectAttr "Cerused_Pine_Wood_roughness.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[23].dn"
-		;
-connectAttr "file30.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[24].dn"
-		;
-connectAttr "Rust_Brown_basecolor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[2].ni[0].dn"
-		;
-connectAttr "file35.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[2].ni[1].dn"
-		;
-connectAttr "substanceNode6.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[2].ni[2].dn"
-		;
-connectAttr "place2dTexture6.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[2].ni[3].dn"
-		;
-connectAttr "Rust_Brown_diffuse.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[2].ni[4].dn"
-		;
-connectAttr "file36.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[2].ni[5].dn"
-		;
-connectAttr "file40.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[2].ni[6].dn"
-		;
-connectAttr "bump2d4.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[2].ni[7].dn"
-		;
-connectAttr "Rust_Brown_glossiness.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[2].ni[8].dn"
-		;
-connectAttr "Rust_Brown_specular.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[2].ni[9].dn"
-		;
-connectAttr "multiplyDivide4.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[2].ni[10].dn"
-		;
-connectAttr "Rust_Brown_roughness.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[2].ni[11].dn"
-		;
-connectAttr "file43.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[2].ni[12].dn"
-		;
-connectAttr "set4.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[2].ni[13].dn"
-		;
-connectAttr "RustMetal.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[2].ni[14].dn"
-		;
-connectAttr "file41.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[2].ni[15].dn"
-		;
-connectAttr "file39.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[2].ni[16].dn"
-		;
-connectAttr "file38.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[2].ni[17].dn"
-		;
-connectAttr "Rust_Brown_metallic.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[2].ni[18].dn"
-		;
-connectAttr "Rust_Brown_height.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[2].ni[19].dn"
-		;
-connectAttr "file42.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[2].ni[20].dn"
-		;
-connectAttr "Rust_Brown_normal.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[2].ni[21].dn"
-		;
-connectAttr "displacementShader4.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[2].ni[22].dn"
-		;
+connectAttr "groupId8.id" "groupParts2.gi";
 connectAttr "v_layered1SG.pa" ":renderPartition.st" -na;
 connectAttr "set1.pa" ":renderPartition.st" -na;
 connectAttr "v_layered2SG.pa" ":renderPartition.st" -na;
@@ -13648,7 +13122,6 @@ connectAttr "set2.pa" ":renderPartition.st" -na;
 connectAttr "v_layered3SG.pa" ":renderPartition.st" -na;
 connectAttr "set3.pa" ":renderPartition.st" -na;
 connectAttr "v_layered4SG.pa" ":renderPartition.st" -na;
-connectAttr "set4.pa" ":renderPartition.st" -na;
 connectAttr "v_layered1.msg" ":defaultShaderList1.s" -na;
 connectAttr "WallCement.msg" ":defaultShaderList1.s" -na;
 connectAttr "displacementShader1.msg" ":defaultShaderList1.s" -na;
@@ -13659,8 +13132,6 @@ connectAttr "v_layered3.msg" ":defaultShaderList1.s" -na;
 connectAttr "Wood.msg" ":defaultShaderList1.s" -na;
 connectAttr "displacementShader3.msg" ":defaultShaderList1.s" -na;
 connectAttr "v_layered4.msg" ":defaultShaderList1.s" -na;
-connectAttr "RustMetal.msg" ":defaultShaderList1.s" -na;
-connectAttr "displacementShader4.msg" ":defaultShaderList1.s" -na;
 connectAttr "place2dTexture1.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "multiplyDivide1.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "bump2d1.msg" ":defaultRenderUtilityList1.u" -na;
@@ -13672,12 +13143,9 @@ connectAttr "place2dTexture4.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "place2dTexture5.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "multiplyDivide3.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "bump2d3.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "place2dTexture6.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "multiplyDivide4.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "bump2d4.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-connectAttr "MainLightGreenShape.ltd" ":lightList1.l" -na;
 connectAttr "directionalLightShape1.ltd" ":lightList1.l" -na;
+connectAttr "directionalLightShape2.ltd" ":lightList1.l" -na;
 connectAttr "file1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "substanceNode1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "Heavy_Cracked_Concrete_Sidewalk_01_diffuse.msg" ":defaultTextureList1.tx"
@@ -13767,25 +13235,11 @@ connectAttr "file32.msg" ":defaultTextureList1.tx" -na;
 connectAttr "Cerused_Pine_Wood_normal.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file33.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file34.msg" ":defaultTextureList1.tx" -na;
-connectAttr "substanceNode6.msg" ":defaultTextureList1.tx" -na;
-connectAttr "Rust_Brown_basecolor.msg" ":defaultTextureList1.tx" -na;
-connectAttr "file35.msg" ":defaultTextureList1.tx" -na;
-connectAttr "Rust_Brown_diffuse.msg" ":defaultTextureList1.tx" -na;
-connectAttr "file36.msg" ":defaultTextureList1.tx" -na;
-connectAttr "Rust_Brown_specular.msg" ":defaultTextureList1.tx" -na;
-connectAttr "file38.msg" ":defaultTextureList1.tx" -na;
-connectAttr "Rust_Brown_glossiness.msg" ":defaultTextureList1.tx" -na;
-connectAttr "file39.msg" ":defaultTextureList1.tx" -na;
-connectAttr "Rust_Brown_roughness.msg" ":defaultTextureList1.tx" -na;
-connectAttr "file40.msg" ":defaultTextureList1.tx" -na;
-connectAttr "Rust_Brown_metallic.msg" ":defaultTextureList1.tx" -na;
-connectAttr "file41.msg" ":defaultTextureList1.tx" -na;
-connectAttr "Rust_Brown_height.msg" ":defaultTextureList1.tx" -na;
-connectAttr "file42.msg" ":defaultTextureList1.tx" -na;
-connectAttr "Rust_Brown_normal.msg" ":defaultTextureList1.tx" -na;
-connectAttr "file43.msg" ":defaultTextureList1.tx" -na;
 connectAttr "pCylinderShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pCylinderShape2.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "MainLightGreen.iog" ":defaultLightSet.dsm" -na;
+connectAttr "|hunte__dev__JailBars__1_01|geo1|uvunwrap1_0|uvunwrap1_0Shape.ciog.cog[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "groupId9.msg" ":initialShadingGroup.gn" -na;
 connectAttr "directionalLight1.iog" ":defaultLightSet.dsm" -na;
+connectAttr "directionalLight2.iog" ":defaultLightSet.dsm" -na;
 // End of Saga Jeune animation.ma
