@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: Saga Jeune animation.ma
-//Last modified: Tue, Dec 12, 2023 06:51:43 PM
+//Last modified: Tue, Dec 12, 2023 06:36:07 PM
 //Codeset: 1252
 file -rdi 1 -ns "PALBot" -rfn "PALBotRN" -op "v=0;" -typ "mayaAscii" "C:/Users/hunte/Documents/Education/Fall 2023/Modeling/Imported/PALBOT/PALBOT/scenes/PALBot.ma";
 file -rdi 1 -ns "PALBot1" -rfn "PALBotRN1" -op "v=0;" -typ "mayaAscii" "C:/Users/hunte/Documents/Education/Fall 2023/Modeling/Imported/PALBOT/PALBOT/scenes/PALBot.ma";
@@ -20,12 +20,12 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202302170737-4500172811";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22621)";
-fileInfo "UUID" "0782B0A9-4424-4D96-D1FD-0096BB0635A6";
+fileInfo "UUID" "19257A99-45D9-C2DB-1583-69AE1B09EDE5";
 createNode transform -s -n "persp";
 	rename -uid "0B68FA2E-43FB-0834-0AB7-EBBCAFC3FD4F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 193.69115256679697 35.531645502946787 -4.5598411267267966 ;
-	setAttr ".r" -type "double3" -5.2492189119370263 451.71378717834028 0 ;
+	setAttr ".t" -type "double3" 79.577829346293797 18.119993759424361 7.9391667056277226 ;
+	setAttr ".r" -type "double3" 0.75078108499313667 446.1137871784963 7.332498676624345e-16 ;
 	setAttr ".rp" -type "double3" 8.8817841970012523e-16 0 7.1054273576010019e-15 ;
 	setAttr ".rpt" -type "double3" 7.8830917816677014e-15 -1.3453959253993597e-15 -9.9539126583596209e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -33,7 +33,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 175.9753297634164;
+	setAttr ".coi" 76.947506543634844;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -89,12 +89,9 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
-createNode transform -n "Bat_Group";
-	rename -uid "D0472AAB-40D3-10A1-FAB0-E5A8E0C07EE6";
-createNode transform -n "Bat" -p "Bat_Group";
+createNode transform -n "pCylinder1";
 	rename -uid "706BAFED-4627-5C20-5839-118FD1D459D5";
-	setAttr ".s" -type "double3" 0.75188442965285762 6.0584759081970727 0.75188442965285762 ;
-createNode mesh -n "BatShape" -p "Bat";
+createNode mesh -n "pCylinderShape1" -p "pCylinder1";
 	rename -uid "7BC6DC96-4084-6470-740D-54A9CFE293E6";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -104,26 +101,19 @@ createNode mesh -n "BatShape" -p "Bat";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-createNode parentConstraint -n "Bat_parentConstraint1" -p "Bat";
-	rename -uid "1585AEC3-4396-F6EB-A1EC-D3B1D09EBCBB";
-	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "PALbot_R_FK_Wrist_ctrlW0" -dv 1 -min 
-		0 -at "double";
-	setAttr -k on ".nds";
+createNode transform -n "pCylinder2";
+	rename -uid "156347AD-4007-A2D4-A119-2FA9DC48CA80";
+	setAttr ".s" -type "double3" 0.33681744715475681 3.3627849298178916 0.33681744715475681 ;
+createNode mesh -n "pCylinderShape2" -p "pCylinder2";
+	rename -uid "D395A91C-4A8A-AA5A-4C93-4A93E0E23C68";
 	setAttr -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 66.701811830963763 -11.104049384119616 -21.633842783413019 ;
-	setAttr ".rst" -type "double3" -7.6050300007406975 11.576868279586801 -2.5450007990418442 ;
-	setAttr ".rsrr" -type "double3" 66.701811830963763 -11.104049384119616 -21.633842783413019 ;
-	setAttr -k on ".w0";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
 createNode houdiniAsset -n "hunte__dev__Wallsubnet__1_01";
 	rename -uid "5987F6A3-414E-B455-0503-B081CEA1E6D1";
 	addAttr -is true -ci true -sn "houdiniAssetParm" -ln "houdiniAssetParm" -at "compound" 
@@ -237,7 +227,7 @@ createNode transform -n "WallTool" -p "hunte__dev__Wallsubnet__1_01";
 	rename -uid "618A2AC0-4283-FDB2-315A-538078883712";
 createNode transform -n "uvunwrap1_0" -p "WallTool";
 	rename -uid "F6FF6636-4780-7D19-63C0-C49F142BEDC1";
-	setAttr ".t" -type "double3" -43.59745181157043 -0.28455196428692098 -173.60063089220506 ;
+	setAttr ".t" -type "double3" -43.59745181157043 -0.28455196428692098 2.4717856363921134 ;
 	setAttr ".s" -type "double3" 7.0722935237291322 15.84317508505457 15.84317508505457 ;
 createNode mesh -n "uvunwrap1_0Shape" -p "|hunte__dev__Wallsubnet__1_01|WallTool|uvunwrap1_0";
 	rename -uid "1B758E35-4497-CEC7-6ECB-18BF23E24EBB";
@@ -495,8 +485,6 @@ createNode transform -n "geo1" -p "hunte__dev__Basic_Chair__1_01";
 	rename -uid "72552ED8-41B4-8232-3773-C49041D03399";
 createNode transform -n "uvunwrap1_0" -p "|hunte__dev__Basic_Chair__1_01|geo1";
 	rename -uid "CEAE8A83-46B4-8D2A-47E7-EB9F2A38317F";
-	setAttr ".t" -type "double3" 0 0 -161.30971105506038 ;
-	setAttr -av ".tz";
 createNode mesh -n "uvunwrap1_0Shape" -p "|hunte__dev__Basic_Chair__1_01|geo1|uvunwrap1_0";
 	rename -uid "4ACE3D2D-4E6A-A323-1506-2396CE869CF6";
 	setAttr -k off ".v";
@@ -631,7 +619,7 @@ createNode transform -n "geo1" -p "hunte__dev__JailBars__1_01";
 	rename -uid "BC1D2275-41B1-8BBB-77DA-1A94FE20671E";
 createNode transform -n "uvunwrap1_0" -p "|hunte__dev__JailBars__1_01|geo1";
 	rename -uid "2702C3B1-4656-F260-A299-51914FE68D6C";
-	setAttr ".t" -type "double3" -14.321846012926507 -0.98577773596334239 -152.89712420621859 ;
+	setAttr ".t" -type "double3" -14.321846012926507 -0.98577773596334239 23.17529232237856 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 	setAttr ".s" -type "double3" 25.406784799590305 25.406784799590305 25.406784799590305 ;
 	setAttr ".rp" -type "double3" 1.1830956116127924e-08 12.703392281485591 19.055088422228387 ;
@@ -754,7 +742,6 @@ createNode transform -n "geo1" -p "hunte__dev__SimpleGround__1_01";
 	rename -uid "6CB2A1FC-4372-28E7-2B95-66848B1A769F";
 createNode transform -n "uvquickshade1_0" -p "|hunte__dev__SimpleGround__1_01|geo1";
 	rename -uid "958B1DF5-4347-9509-808E-188C1CC02CA7";
-	setAttr ".t" -type "double3" 0 0 -176.07241652859716 ;
 	setAttr ".s" -type "double3" 11.276036161612407 1.4542317241026201 11.276036161612407 ;
 createNode mesh -n "uvquickshade1_0Shape" -p "uvquickshade1_0";
 	rename -uid "6DF3F6E4-44B5-AFB4-D731-E09E8A4B92D7";
@@ -991,7 +978,7 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n"
 		+ "            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
 		+ "            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n"
-		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1149\n            -height 375\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1134\n            -height 375\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n"
 		+ "            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n"
 		+ "            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n"
@@ -1019,8 +1006,8 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -bluePencil 1\n                -greasePencils 0\n                -excludeObjectPreset \"All\" \n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n"
 		+ "                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n"
 		+ "\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1149\\n    -height 375\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1149\\n    -height 375\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1134\\n    -height 375\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1134\\n    -height 375\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -1029,7 +1016,7 @@ createNode script -n "sceneConfigurationScriptNode";
 	setAttr ".st" 6;
 createNode reference -n "PALBotRN";
 	rename -uid "183C0FAA-4303-C816-4DD1-29AF3D4B6ED6";
-	setAttr -s 381 ".phl";
+	setAttr -s 374 ".phl";
 	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
 	setAttr ".phl[3]" 0;
@@ -1404,17 +1391,10 @@ createNode reference -n "PALBotRN";
 	setAttr ".phl[372]" 0;
 	setAttr ".phl[373]" 0;
 	setAttr ".phl[374]" 0;
-	setAttr ".phl[375]" 0;
-	setAttr ".phl[376]" 0;
-	setAttr ".phl[377]" 0;
-	setAttr ".phl[378]" 0;
-	setAttr ".phl[379]" 0;
-	setAttr ".phl[380]" 0;
-	setAttr ".phl[381]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"PALBotRN"
 		"PALBotRN" 0
-		"PALBotRN" 386
+		"PALBotRN" 379
 		2 "|PALBot:PALBOT_GRP" "scale" " -type \"double3\" 1 1 1"
 		2 "|PALBot:PALBOT_GRP" "rotatePivot" " -type \"double3\" 0 0 0"
 		2 "|PALBot:PALBOT_GRP" "scalePivot" " -type \"double3\" 0 0 0"
@@ -1673,516 +1653,502 @@ createNode reference -n "PALBotRN";
 		"PALBotRN.placeHolderList[125]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl.translateZ" 
 		"PALBotRN.placeHolderList[126]" ""
-		5 3 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl|PALBot:PALbot_R_FK_Wrist_ctrl_offset|PALBot:PALbot_R_FK_Wrist_ctrl.scale" 
-		"PALBotRN.placeHolderList[127]" ""
-		5 3 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl|PALBot:PALbot_R_FK_Wrist_ctrl_offset|PALBot:PALbot_R_FK_Wrist_ctrl.translate" 
-		"PALBotRN.placeHolderList[128]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl|PALBot:PALbot_R_FK_Wrist_ctrl_offset|PALBot:PALbot_R_FK_Wrist_ctrl.translateX" 
-		"PALBotRN.placeHolderList[129]" ""
+		"PALBotRN.placeHolderList[127]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl|PALBot:PALbot_R_FK_Wrist_ctrl_offset|PALBot:PALbot_R_FK_Wrist_ctrl.translateY" 
-		"PALBotRN.placeHolderList[130]" ""
+		"PALBotRN.placeHolderList[128]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl|PALBot:PALbot_R_FK_Wrist_ctrl_offset|PALBot:PALbot_R_FK_Wrist_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[131]" ""
-		5 3 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl|PALBot:PALbot_R_FK_Wrist_ctrl_offset|PALBot:PALbot_R_FK_Wrist_ctrl.rotatePivot" 
-		"PALBotRN.placeHolderList[132]" ""
-		5 3 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl|PALBot:PALbot_R_FK_Wrist_ctrl_offset|PALBot:PALbot_R_FK_Wrist_ctrl.rotatePivotTranslate" 
-		"PALBotRN.placeHolderList[133]" ""
-		5 3 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl|PALBot:PALbot_R_FK_Wrist_ctrl_offset|PALBot:PALbot_R_FK_Wrist_ctrl.rotate" 
-		"PALBotRN.placeHolderList[134]" ""
+		"PALBotRN.placeHolderList[129]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl|PALBot:PALbot_R_FK_Wrist_ctrl_offset|PALBot:PALbot_R_FK_Wrist_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[135]" ""
+		"PALBotRN.placeHolderList[130]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl|PALBot:PALbot_R_FK_Wrist_ctrl_offset|PALBot:PALbot_R_FK_Wrist_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[136]" ""
+		"PALBotRN.placeHolderList[131]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl|PALBot:PALbot_R_FK_Wrist_ctrl_offset|PALBot:PALbot_R_FK_Wrist_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[137]" ""
-		5 3 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl|PALBot:PALbot_R_FK_Wrist_ctrl_offset|PALBot:PALbot_R_FK_Wrist_ctrl.rotateOrder" 
-		"PALBotRN.placeHolderList[138]" ""
-		5 3 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl|PALBot:PALbot_R_FK_Wrist_ctrl_offset|PALBot:PALbot_R_FK_Wrist_ctrl.parentMatrix" 
-		"PALBotRN.placeHolderList[139]" ""
+		"PALBotRN.placeHolderList[132]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_arm_IK_FK_switch_offset|PALBot:PALbot_R_arm_IK_FK_switch.IK_FK" 
-		"PALBotRN.placeHolderList[140]" ""
+		"PALBotRN.placeHolderList[133]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl.translateX" 
-		"PALBotRN.placeHolderList[141]" ""
+		"PALBotRN.placeHolderList[134]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl.translateY" 
-		"PALBotRN.placeHolderList[142]" ""
+		"PALBotRN.placeHolderList[135]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[143]" ""
+		"PALBotRN.placeHolderList[136]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[144]" ""
+		"PALBotRN.placeHolderList[137]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[145]" ""
+		"PALBotRN.placeHolderList[138]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[146]" ""
+		"PALBotRN.placeHolderList[139]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[147]" ""
+		"PALBotRN.placeHolderList[140]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl.translateX" 
-		"PALBotRN.placeHolderList[148]" ""
+		"PALBotRN.placeHolderList[141]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl.translateY" 
-		"PALBotRN.placeHolderList[149]" ""
+		"PALBotRN.placeHolderList[142]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[150]" ""
+		"PALBotRN.placeHolderList[143]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[151]" ""
+		"PALBotRN.placeHolderList[144]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[152]" ""
+		"PALBotRN.placeHolderList[145]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl.translateX" 
-		"PALBotRN.placeHolderList[153]" ""
+		"PALBotRN.placeHolderList[146]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl.translateY" 
-		"PALBotRN.placeHolderList[154]" ""
+		"PALBotRN.placeHolderList[147]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[155]" ""
+		"PALBotRN.placeHolderList[148]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_L_FK_Elbow_offset|PALBot:PALbot_L_FK_Elbow_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[156]" ""
+		"PALBotRN.placeHolderList[149]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_L_FK_Elbow_offset|PALBot:PALbot_L_FK_Elbow_ctrl.translateX" 
-		"PALBotRN.placeHolderList[157]" ""
+		"PALBotRN.placeHolderList[150]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_L_FK_Elbow_offset|PALBot:PALbot_L_FK_Elbow_ctrl.translateY" 
-		"PALBotRN.placeHolderList[158]" ""
+		"PALBotRN.placeHolderList[151]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_L_FK_Elbow_offset|PALBot:PALbot_L_FK_Elbow_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[159]" ""
+		"PALBotRN.placeHolderList[152]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_L_FK_Elbow_offset|PALBot:PALbot_L_FK_Elbow_ctrl|PALBot:PALbot_L_FK_Wrist_ctrl_offset|PALBot:PALbot_L_FK_Wrist_ctrl.translateX" 
-		"PALBotRN.placeHolderList[160]" ""
+		"PALBotRN.placeHolderList[153]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_L_FK_Elbow_offset|PALBot:PALbot_L_FK_Elbow_ctrl|PALBot:PALbot_L_FK_Wrist_ctrl_offset|PALBot:PALbot_L_FK_Wrist_ctrl.translateY" 
-		"PALBotRN.placeHolderList[161]" ""
+		"PALBotRN.placeHolderList[154]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_L_FK_Elbow_offset|PALBot:PALbot_L_FK_Elbow_ctrl|PALBot:PALbot_L_FK_Wrist_ctrl_offset|PALBot:PALbot_L_FK_Wrist_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[162]" ""
+		"PALBotRN.placeHolderList[155]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_L_FK_Elbow_offset|PALBot:PALbot_L_FK_Elbow_ctrl|PALBot:PALbot_L_FK_Wrist_ctrl_offset|PALBot:PALbot_L_FK_Wrist_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[163]" ""
+		"PALBotRN.placeHolderList[156]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_L_FK_Elbow_offset|PALBot:PALbot_L_FK_Elbow_ctrl|PALBot:PALbot_L_FK_Wrist_ctrl_offset|PALBot:PALbot_L_FK_Wrist_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[164]" ""
+		"PALBotRN.placeHolderList[157]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_L_FK_Elbow_offset|PALBot:PALbot_L_FK_Elbow_ctrl|PALBot:PALbot_L_FK_Wrist_ctrl_offset|PALBot:PALbot_L_FK_Wrist_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[165]" ""
+		"PALBotRN.placeHolderList[158]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_arm_IK_FK_switch_offset|PALBot:PALbot_L_arm_IK_FK_switch.IK_FK" 
-		"PALBotRN.placeHolderList[166]" ""
+		"PALBotRN.placeHolderList[159]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl.translateX" 
-		"PALBotRN.placeHolderList[167]" ""
+		"PALBotRN.placeHolderList[160]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl.translateY" 
-		"PALBotRN.placeHolderList[168]" ""
+		"PALBotRN.placeHolderList[161]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[169]" ""
+		"PALBotRN.placeHolderList[162]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[170]" ""
+		"PALBotRN.placeHolderList[163]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[171]" ""
+		"PALBotRN.placeHolderList[164]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[172]" ""
+		"PALBotRN.placeHolderList[165]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl|PALBot:PALbot_R_hip_offset|PALBot:PALbot_R_hip.translateX" 
-		"PALBotRN.placeHolderList[173]" ""
+		"PALBotRN.placeHolderList[166]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl|PALBot:PALbot_R_hip_offset|PALBot:PALbot_R_hip.translateY" 
-		"PALBotRN.placeHolderList[174]" ""
+		"PALBotRN.placeHolderList[167]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl|PALBot:PALbot_R_hip_offset|PALBot:PALbot_R_hip.translateZ" 
-		"PALBotRN.placeHolderList[175]" ""
+		"PALBotRN.placeHolderList[168]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl|PALBot:PALbot_R_hip_offset|PALBot:PALbot_R_hip.rotateX" 
-		"PALBotRN.placeHolderList[176]" ""
+		"PALBotRN.placeHolderList[169]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl|PALBot:PALbot_R_hip_offset|PALBot:PALbot_R_hip.rotateY" 
-		"PALBotRN.placeHolderList[177]" ""
+		"PALBotRN.placeHolderList[170]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl|PALBot:PALbot_R_hip_offset|PALBot:PALbot_R_hip.rotateZ" 
-		"PALBotRN.placeHolderList[178]" ""
+		"PALBotRN.placeHolderList[171]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl|PALBot:PALbot_R_hip_offset|PALBot:PALbot_R_hip|PALBot:PALbot_R_leg_IK_FK_switch_offset|PALBot:PALbot_R_leg_IK_FK_switch.IK_FK" 
-		"PALBotRN.placeHolderList[179]" ""
+		"PALBotRN.placeHolderList[172]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl|PALBot:PALbot_L_hip_offset|PALBot:PALbot_L_hip.translateX" 
-		"PALBotRN.placeHolderList[180]" ""
+		"PALBotRN.placeHolderList[173]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl|PALBot:PALbot_L_hip_offset|PALBot:PALbot_L_hip.translateY" 
-		"PALBotRN.placeHolderList[181]" ""
+		"PALBotRN.placeHolderList[174]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl|PALBot:PALbot_L_hip_offset|PALBot:PALbot_L_hip.translateZ" 
-		"PALBotRN.placeHolderList[182]" ""
+		"PALBotRN.placeHolderList[175]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl|PALBot:PALbot_L_hip_offset|PALBot:PALbot_L_hip.rotateX" 
-		"PALBotRN.placeHolderList[183]" ""
+		"PALBotRN.placeHolderList[176]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl|PALBot:PALbot_L_hip_offset|PALBot:PALbot_L_hip.rotateY" 
-		"PALBotRN.placeHolderList[184]" ""
+		"PALBotRN.placeHolderList[177]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl|PALBot:PALbot_L_hip_offset|PALBot:PALbot_L_hip.rotateZ" 
-		"PALBotRN.placeHolderList[185]" ""
+		"PALBotRN.placeHolderList[178]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl|PALBot:PALbot_L_hip_offset|PALBot:PALbot_L_hip|PALBot:PALbot_L_leg_IK_FK_switch_offset|PALBot:PALbot_L_leg_IK_FK_switch.IK_FK" 
-		"PALBotRN.placeHolderList[186]" ""
+		"PALBotRN.placeHolderList[179]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl.translateX" 
-		"PALBotRN.placeHolderList[187]" ""
+		"PALBotRN.placeHolderList[180]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl.translateY" 
-		"PALBotRN.placeHolderList[188]" ""
+		"PALBotRN.placeHolderList[181]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[189]" ""
+		"PALBotRN.placeHolderList[182]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[190]" ""
+		"PALBotRN.placeHolderList[183]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[191]" ""
+		"PALBotRN.placeHolderList[184]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[192]" ""
+		"PALBotRN.placeHolderList[185]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl.translateX" 
-		"PALBotRN.placeHolderList[193]" ""
+		"PALBotRN.placeHolderList[186]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl.translateY" 
-		"PALBotRN.placeHolderList[194]" ""
+		"PALBotRN.placeHolderList[187]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[195]" ""
+		"PALBotRN.placeHolderList[188]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[196]" ""
+		"PALBotRN.placeHolderList[189]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[197]" ""
+		"PALBotRN.placeHolderList[190]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[198]" ""
+		"PALBotRN.placeHolderList[191]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl|PALBot:PALbot_L_Thumb03_offset|PALBot:PALbot_L_Thumb03_ctrl.translateX" 
-		"PALBotRN.placeHolderList[199]" ""
+		"PALBotRN.placeHolderList[192]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl|PALBot:PALbot_L_Thumb03_offset|PALBot:PALbot_L_Thumb03_ctrl.translateY" 
-		"PALBotRN.placeHolderList[200]" ""
+		"PALBotRN.placeHolderList[193]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl|PALBot:PALbot_L_Thumb03_offset|PALBot:PALbot_L_Thumb03_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[201]" ""
+		"PALBotRN.placeHolderList[194]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl|PALBot:PALbot_L_Thumb03_offset|PALBot:PALbot_L_Thumb03_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[202]" ""
+		"PALBotRN.placeHolderList[195]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl|PALBot:PALbot_L_Thumb03_offset|PALBot:PALbot_L_Thumb03_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[203]" ""
+		"PALBotRN.placeHolderList[196]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl|PALBot:PALbot_L_Thumb03_offset|PALBot:PALbot_L_Thumb03_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[204]" ""
+		"PALBotRN.placeHolderList[197]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl.translateX" 
-		"PALBotRN.placeHolderList[205]" ""
+		"PALBotRN.placeHolderList[198]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl.translateY" 
-		"PALBotRN.placeHolderList[206]" ""
+		"PALBotRN.placeHolderList[199]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[207]" ""
+		"PALBotRN.placeHolderList[200]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[208]" ""
+		"PALBotRN.placeHolderList[201]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[209]" ""
+		"PALBotRN.placeHolderList[202]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[210]" ""
+		"PALBotRN.placeHolderList[203]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl|PALBot:PALbot_L_Index02_offset|PALBot:PALbot_L_Index02_ctrl.translateX" 
-		"PALBotRN.placeHolderList[211]" ""
+		"PALBotRN.placeHolderList[204]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl|PALBot:PALbot_L_Index02_offset|PALBot:PALbot_L_Index02_ctrl.translateY" 
-		"PALBotRN.placeHolderList[212]" ""
+		"PALBotRN.placeHolderList[205]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl|PALBot:PALbot_L_Index02_offset|PALBot:PALbot_L_Index02_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[213]" ""
+		"PALBotRN.placeHolderList[206]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl|PALBot:PALbot_L_Index02_offset|PALBot:PALbot_L_Index02_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[214]" ""
+		"PALBotRN.placeHolderList[207]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl|PALBot:PALbot_L_Index02_offset|PALBot:PALbot_L_Index02_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[215]" ""
+		"PALBotRN.placeHolderList[208]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl|PALBot:PALbot_L_Index02_offset|PALBot:PALbot_L_Index02_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[216]" ""
+		"PALBotRN.placeHolderList[209]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl.translateX" 
-		"PALBotRN.placeHolderList[217]" ""
+		"PALBotRN.placeHolderList[210]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl.translateY" 
-		"PALBotRN.placeHolderList[218]" ""
+		"PALBotRN.placeHolderList[211]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[219]" ""
+		"PALBotRN.placeHolderList[212]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[220]" ""
+		"PALBotRN.placeHolderList[213]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[221]" ""
+		"PALBotRN.placeHolderList[214]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[222]" ""
+		"PALBotRN.placeHolderList[215]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl|PALBot:PALbot_L_Middle02_offset|PALBot:PALbot_L_Middle02_ctrl.translateX" 
-		"PALBotRN.placeHolderList[223]" ""
+		"PALBotRN.placeHolderList[216]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl|PALBot:PALbot_L_Middle02_offset|PALBot:PALbot_L_Middle02_ctrl.translateY" 
-		"PALBotRN.placeHolderList[224]" ""
+		"PALBotRN.placeHolderList[217]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl|PALBot:PALbot_L_Middle02_offset|PALBot:PALbot_L_Middle02_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[225]" ""
+		"PALBotRN.placeHolderList[218]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl|PALBot:PALbot_L_Middle02_offset|PALBot:PALbot_L_Middle02_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[226]" ""
+		"PALBotRN.placeHolderList[219]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl|PALBot:PALbot_L_Middle02_offset|PALBot:PALbot_L_Middle02_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[227]" ""
+		"PALBotRN.placeHolderList[220]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl|PALBot:PALbot_L_Middle02_offset|PALBot:PALbot_L_Middle02_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[228]" ""
+		"PALBotRN.placeHolderList[221]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl.translateX" 
-		"PALBotRN.placeHolderList[229]" ""
+		"PALBotRN.placeHolderList[222]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl.translateY" 
-		"PALBotRN.placeHolderList[230]" ""
+		"PALBotRN.placeHolderList[223]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[231]" ""
+		"PALBotRN.placeHolderList[224]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[232]" ""
+		"PALBotRN.placeHolderList[225]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[233]" ""
+		"PALBotRN.placeHolderList[226]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[234]" ""
+		"PALBotRN.placeHolderList[227]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl|PALBot:PALbot_L_Ring02_offset|PALBot:PALbot_L_Ring02_ctrl.translateX" 
-		"PALBotRN.placeHolderList[235]" ""
+		"PALBotRN.placeHolderList[228]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl|PALBot:PALbot_L_Ring02_offset|PALBot:PALbot_L_Ring02_ctrl.translateY" 
-		"PALBotRN.placeHolderList[236]" ""
+		"PALBotRN.placeHolderList[229]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl|PALBot:PALbot_L_Ring02_offset|PALBot:PALbot_L_Ring02_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[237]" ""
+		"PALBotRN.placeHolderList[230]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl|PALBot:PALbot_L_Ring02_offset|PALBot:PALbot_L_Ring02_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[238]" ""
+		"PALBotRN.placeHolderList[231]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl|PALBot:PALbot_L_Ring02_offset|PALBot:PALbot_L_Ring02_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[239]" ""
+		"PALBotRN.placeHolderList[232]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl|PALBot:PALbot_L_Ring02_offset|PALBot:PALbot_L_Ring02_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[240]" ""
+		"PALBotRN.placeHolderList[233]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl.translateX" 
-		"PALBotRN.placeHolderList[241]" ""
+		"PALBotRN.placeHolderList[234]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl.translateY" 
-		"PALBotRN.placeHolderList[242]" ""
+		"PALBotRN.placeHolderList[235]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[243]" ""
+		"PALBotRN.placeHolderList[236]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[244]" ""
+		"PALBotRN.placeHolderList[237]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[245]" ""
+		"PALBotRN.placeHolderList[238]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[246]" ""
+		"PALBotRN.placeHolderList[239]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl|PALBot:PALbot_L_Pinky02_offset|PALBot:PALbot_L_Pinky02_ctrl.translateX" 
-		"PALBotRN.placeHolderList[247]" ""
+		"PALBotRN.placeHolderList[240]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl|PALBot:PALbot_L_Pinky02_offset|PALBot:PALbot_L_Pinky02_ctrl.translateY" 
-		"PALBotRN.placeHolderList[248]" ""
+		"PALBotRN.placeHolderList[241]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl|PALBot:PALbot_L_Pinky02_offset|PALBot:PALbot_L_Pinky02_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[249]" ""
+		"PALBotRN.placeHolderList[242]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl|PALBot:PALbot_L_Pinky02_offset|PALBot:PALbot_L_Pinky02_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[250]" ""
+		"PALBotRN.placeHolderList[243]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl|PALBot:PALbot_L_Pinky02_offset|PALBot:PALbot_L_Pinky02_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[251]" ""
+		"PALBotRN.placeHolderList[244]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl|PALBot:PALbot_L_Pinky02_offset|PALBot:PALbot_L_Pinky02_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[252]" ""
+		"PALBotRN.placeHolderList[245]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl.translateX" 
-		"PALBotRN.placeHolderList[253]" ""
+		"PALBotRN.placeHolderList[246]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl.translateY" 
-		"PALBotRN.placeHolderList[254]" ""
+		"PALBotRN.placeHolderList[247]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[255]" ""
+		"PALBotRN.placeHolderList[248]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[256]" ""
+		"PALBotRN.placeHolderList[249]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[257]" ""
+		"PALBotRN.placeHolderList[250]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[258]" ""
+		"PALBotRN.placeHolderList[251]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl.translateX" 
-		"PALBotRN.placeHolderList[259]" ""
+		"PALBotRN.placeHolderList[252]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl.translateY" 
-		"PALBotRN.placeHolderList[260]" ""
+		"PALBotRN.placeHolderList[253]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[261]" ""
+		"PALBotRN.placeHolderList[254]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[262]" ""
+		"PALBotRN.placeHolderList[255]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[263]" ""
+		"PALBotRN.placeHolderList[256]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[264]" ""
+		"PALBotRN.placeHolderList[257]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl|PALBot:PALbot_R_Thumb03_offset|PALBot:PALbot_R_Thumb03_ctrl.translateX" 
-		"PALBotRN.placeHolderList[265]" ""
+		"PALBotRN.placeHolderList[258]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl|PALBot:PALbot_R_Thumb03_offset|PALBot:PALbot_R_Thumb03_ctrl.translateY" 
-		"PALBotRN.placeHolderList[266]" ""
+		"PALBotRN.placeHolderList[259]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl|PALBot:PALbot_R_Thumb03_offset|PALBot:PALbot_R_Thumb03_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[267]" ""
+		"PALBotRN.placeHolderList[260]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl|PALBot:PALbot_R_Thumb03_offset|PALBot:PALbot_R_Thumb03_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[268]" ""
+		"PALBotRN.placeHolderList[261]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl|PALBot:PALbot_R_Thumb03_offset|PALBot:PALbot_R_Thumb03_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[269]" ""
+		"PALBotRN.placeHolderList[262]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl|PALBot:PALbot_R_Thumb03_offset|PALBot:PALbot_R_Thumb03_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[270]" ""
+		"PALBotRN.placeHolderList[263]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl.translateX" 
-		"PALBotRN.placeHolderList[271]" ""
+		"PALBotRN.placeHolderList[264]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl.translateY" 
-		"PALBotRN.placeHolderList[272]" ""
+		"PALBotRN.placeHolderList[265]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[273]" ""
+		"PALBotRN.placeHolderList[266]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[274]" ""
+		"PALBotRN.placeHolderList[267]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[275]" ""
+		"PALBotRN.placeHolderList[268]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[276]" ""
+		"PALBotRN.placeHolderList[269]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl|PALBot:PALbot_R_Index02_offset|PALBot:PALbot_R_Index02_ctrl.translateX" 
-		"PALBotRN.placeHolderList[277]" ""
+		"PALBotRN.placeHolderList[270]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl|PALBot:PALbot_R_Index02_offset|PALBot:PALbot_R_Index02_ctrl.translateY" 
-		"PALBotRN.placeHolderList[278]" ""
+		"PALBotRN.placeHolderList[271]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl|PALBot:PALbot_R_Index02_offset|PALBot:PALbot_R_Index02_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[279]" ""
+		"PALBotRN.placeHolderList[272]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl|PALBot:PALbot_R_Index02_offset|PALBot:PALbot_R_Index02_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[280]" ""
+		"PALBotRN.placeHolderList[273]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl|PALBot:PALbot_R_Index02_offset|PALBot:PALbot_R_Index02_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[281]" ""
+		"PALBotRN.placeHolderList[274]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl|PALBot:PALbot_R_Index02_offset|PALBot:PALbot_R_Index02_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[282]" ""
+		"PALBotRN.placeHolderList[275]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl.translateX" 
-		"PALBotRN.placeHolderList[283]" ""
+		"PALBotRN.placeHolderList[276]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl.translateY" 
-		"PALBotRN.placeHolderList[284]" ""
+		"PALBotRN.placeHolderList[277]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[285]" ""
+		"PALBotRN.placeHolderList[278]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[286]" ""
+		"PALBotRN.placeHolderList[279]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[287]" ""
+		"PALBotRN.placeHolderList[280]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[288]" ""
+		"PALBotRN.placeHolderList[281]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl|PALBot:PALbot_R_Middle02_offset|PALBot:PALbot_R_Middle02_ctrl.translateX" 
-		"PALBotRN.placeHolderList[289]" ""
+		"PALBotRN.placeHolderList[282]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl|PALBot:PALbot_R_Middle02_offset|PALBot:PALbot_R_Middle02_ctrl.translateY" 
-		"PALBotRN.placeHolderList[290]" ""
+		"PALBotRN.placeHolderList[283]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl|PALBot:PALbot_R_Middle02_offset|PALBot:PALbot_R_Middle02_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[291]" ""
+		"PALBotRN.placeHolderList[284]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl|PALBot:PALbot_R_Middle02_offset|PALBot:PALbot_R_Middle02_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[292]" ""
+		"PALBotRN.placeHolderList[285]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl|PALBot:PALbot_R_Middle02_offset|PALBot:PALbot_R_Middle02_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[293]" ""
+		"PALBotRN.placeHolderList[286]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl|PALBot:PALbot_R_Middle02_offset|PALBot:PALbot_R_Middle02_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[294]" ""
+		"PALBotRN.placeHolderList[287]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl.translateX" 
-		"PALBotRN.placeHolderList[295]" ""
+		"PALBotRN.placeHolderList[288]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl.translateY" 
-		"PALBotRN.placeHolderList[296]" ""
+		"PALBotRN.placeHolderList[289]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[297]" ""
+		"PALBotRN.placeHolderList[290]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[298]" ""
+		"PALBotRN.placeHolderList[291]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[299]" ""
+		"PALBotRN.placeHolderList[292]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[300]" ""
+		"PALBotRN.placeHolderList[293]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl|PALBot:PALbot_R_Ring02_offset|PALBot:PALbot_R_Ring02_ctrl.translateX" 
-		"PALBotRN.placeHolderList[301]" ""
+		"PALBotRN.placeHolderList[294]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl|PALBot:PALbot_R_Ring02_offset|PALBot:PALbot_R_Ring02_ctrl.translateY" 
-		"PALBotRN.placeHolderList[302]" ""
+		"PALBotRN.placeHolderList[295]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl|PALBot:PALbot_R_Ring02_offset|PALBot:PALbot_R_Ring02_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[303]" ""
+		"PALBotRN.placeHolderList[296]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl|PALBot:PALbot_R_Ring02_offset|PALBot:PALbot_R_Ring02_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[304]" ""
+		"PALBotRN.placeHolderList[297]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl|PALBot:PALbot_R_Ring02_offset|PALBot:PALbot_R_Ring02_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[305]" ""
+		"PALBotRN.placeHolderList[298]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl|PALBot:PALbot_R_Ring02_offset|PALBot:PALbot_R_Ring02_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[306]" ""
+		"PALBotRN.placeHolderList[299]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl.translateX" 
-		"PALBotRN.placeHolderList[307]" ""
+		"PALBotRN.placeHolderList[300]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl.translateY" 
-		"PALBotRN.placeHolderList[308]" ""
+		"PALBotRN.placeHolderList[301]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[309]" ""
+		"PALBotRN.placeHolderList[302]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[310]" ""
+		"PALBotRN.placeHolderList[303]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[311]" ""
+		"PALBotRN.placeHolderList[304]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[312]" ""
+		"PALBotRN.placeHolderList[305]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl|PALBot:PALbot_R_Pinky02_offset|PALBot:PALbot_R_Pinky02_ctrl.translateX" 
-		"PALBotRN.placeHolderList[313]" ""
+		"PALBotRN.placeHolderList[306]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl|PALBot:PALbot_R_Pinky02_offset|PALBot:PALbot_R_Pinky02_ctrl.translateY" 
-		"PALBotRN.placeHolderList[314]" ""
+		"PALBotRN.placeHolderList[307]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl|PALBot:PALbot_R_Pinky02_offset|PALBot:PALbot_R_Pinky02_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[315]" ""
+		"PALBotRN.placeHolderList[308]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl|PALBot:PALbot_R_Pinky02_offset|PALBot:PALbot_R_Pinky02_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[316]" ""
+		"PALBotRN.placeHolderList[309]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl|PALBot:PALbot_R_Pinky02_offset|PALBot:PALbot_R_Pinky02_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[317]" ""
+		"PALBotRN.placeHolderList[310]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl|PALBot:PALbot_R_Pinky02_offset|PALBot:PALbot_R_Pinky02_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[318]" ""
+		"PALBotRN.placeHolderList[311]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_knee_aim_offset|PALBot:PALbot_R_knee_aim_ctrl.space_switch" 
-		"PALBotRN.placeHolderList[319]" ""
+		"PALBotRN.placeHolderList[312]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_knee_aim_offset|PALBot:PALbot_R_knee_aim_ctrl.translateX" 
-		"PALBotRN.placeHolderList[320]" ""
+		"PALBotRN.placeHolderList[313]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_knee_aim_offset|PALBot:PALbot_R_knee_aim_ctrl.translateY" 
-		"PALBotRN.placeHolderList[321]" ""
+		"PALBotRN.placeHolderList[314]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_knee_aim_offset|PALBot:PALbot_R_knee_aim_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[322]" ""
+		"PALBotRN.placeHolderList[315]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_knee_aim_offset|PALBot:PALbot_R_knee_aim_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[323]" ""
+		"PALBotRN.placeHolderList[316]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_knee_aim_offset|PALBot:PALbot_R_knee_aim_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[324]" ""
+		"PALBotRN.placeHolderList[317]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_knee_aim_offset|PALBot:PALbot_R_knee_aim_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[325]" ""
+		"PALBotRN.placeHolderList[318]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary.rotateX" 
-		"PALBotRN.placeHolderList[326]" ""
+		"PALBotRN.placeHolderList[319]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary.rotateY" 
-		"PALBotRN.placeHolderList[327]" ""
+		"PALBotRN.placeHolderList[320]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary.rotateZ" 
-		"PALBotRN.placeHolderList[328]" ""
+		"PALBotRN.placeHolderList[321]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary.translateX" 
-		"PALBotRN.placeHolderList[329]" ""
+		"PALBotRN.placeHolderList[322]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary.translateY" 
-		"PALBotRN.placeHolderList[330]" ""
+		"PALBotRN.placeHolderList[323]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary.translateZ" 
-		"PALBotRN.placeHolderList[331]" ""
+		"PALBotRN.placeHolderList[324]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape01_offset|PALBot:PALbot_R_footSec_reshape01.translateX" 
-		"PALBotRN.placeHolderList[332]" ""
+		"PALBotRN.placeHolderList[325]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape01_offset|PALBot:PALbot_R_footSec_reshape01.translateY" 
-		"PALBotRN.placeHolderList[333]" ""
+		"PALBotRN.placeHolderList[326]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape01_offset|PALBot:PALbot_R_footSec_reshape01.translateZ" 
-		"PALBotRN.placeHolderList[334]" ""
+		"PALBotRN.placeHolderList[327]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape01_offset|PALBot:PALbot_R_footSec_reshape01.rotateX" 
-		"PALBotRN.placeHolderList[335]" ""
+		"PALBotRN.placeHolderList[328]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape01_offset|PALBot:PALbot_R_footSec_reshape01.rotateY" 
-		"PALBotRN.placeHolderList[336]" ""
+		"PALBotRN.placeHolderList[329]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape01_offset|PALBot:PALbot_R_footSec_reshape01.rotateZ" 
-		"PALBotRN.placeHolderList[337]" ""
+		"PALBotRN.placeHolderList[330]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape02_offset|PALBot:PALbot_R_footSec_reshape02.translateX" 
-		"PALBotRN.placeHolderList[338]" ""
+		"PALBotRN.placeHolderList[331]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape02_offset|PALBot:PALbot_R_footSec_reshape02.translateY" 
-		"PALBotRN.placeHolderList[339]" ""
+		"PALBotRN.placeHolderList[332]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape02_offset|PALBot:PALbot_R_footSec_reshape02.translateZ" 
-		"PALBotRN.placeHolderList[340]" ""
+		"PALBotRN.placeHolderList[333]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape02_offset|PALBot:PALbot_R_footSec_reshape02.rotateX" 
-		"PALBotRN.placeHolderList[341]" ""
+		"PALBotRN.placeHolderList[334]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape02_offset|PALBot:PALbot_R_footSec_reshape02.rotateY" 
-		"PALBotRN.placeHolderList[342]" ""
+		"PALBotRN.placeHolderList[335]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape02_offset|PALBot:PALbot_R_footSec_reshape02.rotateZ" 
-		"PALBotRN.placeHolderList[343]" ""
+		"PALBotRN.placeHolderList[336]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_Engine_ctrl_offset1|PALBot:PALbot_R_Engine_ctrl.on_off" 
-		"PALBotRN.placeHolderList[344]" ""
+		"PALBotRN.placeHolderList[337]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_Engine_ctrl_offset1|PALBot:PALbot_R_Engine_ctrl.translateX" 
-		"PALBotRN.placeHolderList[345]" ""
+		"PALBotRN.placeHolderList[338]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_Engine_ctrl_offset1|PALBot:PALbot_R_Engine_ctrl.translateY" 
-		"PALBotRN.placeHolderList[346]" ""
+		"PALBotRN.placeHolderList[339]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_Engine_ctrl_offset1|PALBot:PALbot_R_Engine_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[347]" ""
+		"PALBotRN.placeHolderList[340]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_Engine_ctrl_offset1|PALBot:PALbot_R_Engine_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[348]" ""
+		"PALBotRN.placeHolderList[341]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_Engine_ctrl_offset1|PALBot:PALbot_R_Engine_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[349]" ""
+		"PALBotRN.placeHolderList[342]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_Engine_ctrl_offset1|PALBot:PALbot_R_Engine_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[350]" ""
+		"PALBotRN.placeHolderList[343]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_Engine_ctrl_offset1|PALBot:PALbot_R_Engine_ctrl.scaleX" 
-		"PALBotRN.placeHolderList[351]" ""
+		"PALBotRN.placeHolderList[344]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_Engine_ctrl_offset1|PALBot:PALbot_R_Engine_ctrl.scaleY" 
-		"PALBotRN.placeHolderList[352]" ""
+		"PALBotRN.placeHolderList[345]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_Engine_ctrl_offset1|PALBot:PALbot_R_Engine_ctrl.scaleZ" 
-		"PALBotRN.placeHolderList[353]" ""
+		"PALBotRN.placeHolderList[346]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl.Heel_Peel" 
-		"PALBotRN.placeHolderList[354]" ""
+		"PALBotRN.placeHolderList[347]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl.follow_hip" 
-		"PALBotRN.placeHolderList[355]" ""
+		"PALBotRN.placeHolderList[348]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[356]" ""
+		"PALBotRN.placeHolderList[349]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl.translateX" 
-		"PALBotRN.placeHolderList[357]" ""
+		"PALBotRN.placeHolderList[350]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl.translateY" 
-		"PALBotRN.placeHolderList[358]" ""
+		"PALBotRN.placeHolderList[351]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[359]" ""
+		"PALBotRN.placeHolderList[352]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[360]" ""
+		"PALBotRN.placeHolderList[353]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[361]" ""
+		"PALBotRN.placeHolderList[354]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip.rotateX" 
-		"PALBotRN.placeHolderList[362]" ""
+		"PALBotRN.placeHolderList[355]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip.rotateY" 
-		"PALBotRN.placeHolderList[363]" ""
+		"PALBotRN.placeHolderList[356]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip.rotateZ" 
-		"PALBotRN.placeHolderList[364]" ""
+		"PALBotRN.placeHolderList[357]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip.translateX" 
-		"PALBotRN.placeHolderList[365]" ""
+		"PALBotRN.placeHolderList[358]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip.translateY" 
-		"PALBotRN.placeHolderList[366]" ""
+		"PALBotRN.placeHolderList[359]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip.translateZ" 
-		"PALBotRN.placeHolderList[367]" ""
+		"PALBotRN.placeHolderList[360]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip.translateX" 
-		"PALBotRN.placeHolderList[368]" ""
+		"PALBotRN.placeHolderList[361]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip.translateY" 
-		"PALBotRN.placeHolderList[369]" ""
+		"PALBotRN.placeHolderList[362]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip.translateZ" 
-		"PALBotRN.placeHolderList[370]" ""
+		"PALBotRN.placeHolderList[363]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip.rotateX" 
-		"PALBotRN.placeHolderList[371]" ""
+		"PALBotRN.placeHolderList[364]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip.rotateY" 
-		"PALBotRN.placeHolderList[372]" ""
+		"PALBotRN.placeHolderList[365]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip.rotateZ" 
-		"PALBotRN.placeHolderList[373]" ""
+		"PALBotRN.placeHolderList[366]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip|PALBot:PALbot_R_IK_footBall_offset|PALBot:PALbot_R_IK_footBall_ctrl.translateX" 
-		"PALBotRN.placeHolderList[374]" ""
+		"PALBotRN.placeHolderList[367]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip|PALBot:PALbot_R_IK_footBall_offset|PALBot:PALbot_R_IK_footBall_ctrl.translateY" 
-		"PALBotRN.placeHolderList[375]" ""
+		"PALBotRN.placeHolderList[368]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip|PALBot:PALbot_R_IK_footBall_offset|PALBot:PALbot_R_IK_footBall_ctrl.translateZ" 
-		"PALBotRN.placeHolderList[376]" ""
+		"PALBotRN.placeHolderList[369]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip|PALBot:PALbot_R_IK_footBall_offset|PALBot:PALbot_R_IK_footBall_ctrl.rotateX" 
-		"PALBotRN.placeHolderList[377]" ""
+		"PALBotRN.placeHolderList[370]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip|PALBot:PALbot_R_IK_footBall_offset|PALBot:PALbot_R_IK_footBall_ctrl.rotateY" 
-		"PALBotRN.placeHolderList[378]" ""
+		"PALBotRN.placeHolderList[371]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip|PALBot:PALbot_R_IK_footBall_offset|PALBot:PALbot_R_IK_footBall_ctrl.rotateZ" 
-		"PALBotRN.placeHolderList[379]" ""
+		"PALBotRN.placeHolderList[372]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_HandVIS_offset|PALBot:PALbot_L_HandVIS.Hand_Vis" 
-		"PALBotRN.placeHolderList[380]" ""
+		"PALBotRN.placeHolderList[373]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_HandVIS_offset|PALBot:PALbot_L_HandVIS.canon_light" 
-		"PALBotRN.placeHolderList[381]" "";
+		"PALBotRN.placeHolderList[374]" "";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "PALBotRN1";
@@ -7306,55 +7272,74 @@ createNode animCurveTA -n "PALbot_R_FK_Wrist_ctrl_rotateX1";
 	rename -uid "D949742A-4A44-B6F6-C4C2-56B1B7F68D88";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 17 ".ktv[0:16]"  0 0 16 84.735181498434827 21 144.11917716134829
-		 23 86.638831374414337 24 84.519245140133393 25 83.308053006258575 26 83.308053006258575
-		 28 83.308053006258575 29 83.308053006258575 31 83.308053006258575 33 59.376416868274248
-		 36 -88.319834753932824 38 83.308053006258575 39 83.308053006258575 41 83.308053006258575
-		 46 83.308053006258575 47 83.308053006258575;
-	setAttr -s 17 ".kot[11:16]"  5 5 5 5 5 5;
+	setAttr -s 20 ".ktv[0:19]"  0 0 16 87.979794094061461 19 87.979794094061461
+		 20 87.979794094061461 21 87.979794094061461 22 87.979794094061461 23 86.638831374414337
+		 24 84.519245140133393 25 83.308053006258575 26 83.308053006258575 28 83.308053006258575
+		 29 83.308053006258575 31 83.308053006258575 33 83.308053006258575 36 -88.319834753932824
+		 38 83.308053006258575 39 83.308053006258575 41 83.308053006258575 46 83.308053006258575
+		 47 83.308053006258575;
+	setAttr -s 20 ".kit[0:19]"  18 10 10 10 10 10 10 10 
+		10 10 10 10 10 10 10 10 10 10 10 10;
+	setAttr -s 20 ".kot[0:19]"  5 10 10 10 10 10 10 10 
+		10 10 10 10 10 10 5 5 5 5 5 5;
 createNode animCurveTA -n "PALbot_R_FK_Wrist_ctrl_rotateY1";
 	rename -uid "8EF17BF7-46B4-9665-19ED-EBA1CC93DEF8";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 20 ".ktv[0:19]"  0 47.786115061402576 16 -56.838593452177463
+	setAttr -s 20 ".ktv[0:19]"  0 47.786115061402576 16 -55.675289624157685
 		 19 -55.675289624157685 20 -55.675289624157685 21 -55.675289624157685 22 -55.675289624157685
 		 23 -62.708597383866454 24 -73.825761262115762 25 -80.178426335401099 26 -80.178426335401099
-		 28 -80.178426335401099 29 -80.178426335401099 31 -80.178426335401099 33 -72.238538998958632
+		 28 -80.178426335401099 29 -80.178426335401099 31 -80.178426335401099 33 -80.178426335401099
 		 36 -47.315532551534872 38 -80.178426335401099 39 -80.178426335401099 41 -80.178426335401099
 		 46 -80.178426335401099 47 -80.178426335401099;
-	setAttr -s 20 ".kot[14:19]"  5 5 5 5 5 5;
+	setAttr -s 20 ".kit[0:19]"  18 10 10 10 10 10 10 10 
+		10 10 10 10 10 10 10 10 10 10 10 10;
+	setAttr -s 20 ".kot[0:19]"  5 10 10 10 10 10 10 10 
+		10 10 10 10 10 10 5 5 5 5 5 5;
 createNode animCurveTA -n "PALbot_R_FK_Wrist_ctrl_rotateZ1";
 	rename -uid "0A2DACDD-4C96-B74C-49C5-7F89A0610746";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 20 ".ktv[0:19]"  0 0 16 -64.084887702002405 19 -88.331382649983539
+	setAttr -s 20 ".ktv[0:19]"  0 0 16 -88.331382649983539 19 -88.331382649983539
 		 20 -88.331382649983539 21 -88.331382649983539 22 -88.331382649983539 23 -86.917403474617871
 		 24 -84.682404132910847 25 -83.40526165193539 26 -83.40526165193539 28 -83.40526165193539
-		 29 -83.40526165193539 31 -83.40526165193539 33 -24.599244840178628 36 88.764750461970607
+		 29 -83.40526165193539 31 -83.40526165193539 33 -83.40526165193539 36 88.764750461970607
 		 38 -83.40526165193539 39 -83.40526165193539 41 -83.40526165193539 46 -83.40526165193539
 		 47 -83.40526165193539;
-	setAttr -s 20 ".kot[14:19]"  5 5 5 5 5 5;
+	setAttr -s 20 ".kit[0:19]"  18 10 10 10 10 10 10 10 
+		10 10 10 10 10 10 10 10 10 10 10 10;
+	setAttr -s 20 ".kot[0:19]"  5 10 10 10 10 10 10 10 
+		10 10 10 10 10 10 5 5 5 5 5 5;
 createNode animCurveTL -n "PALbot_R_FK_Wrist_ctrl_translateX1";
 	rename -uid "89DF2BED-4E8D-307A-37D7-ABA387E3F35E";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
 	setAttr -s 20 ".ktv[0:19]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
 		 26 0 28 0 29 0 31 0 33 0 36 0 38 0 39 0 41 0 46 0 47 0;
-	setAttr -s 20 ".kot[14:19]"  5 5 5 5 5 5;
+	setAttr -s 20 ".kit[0:19]"  18 10 10 10 10 10 10 10 
+		10 10 10 10 10 10 10 10 10 10 10 10;
+	setAttr -s 20 ".kot[0:19]"  5 10 10 10 10 10 10 10 
+		10 10 10 10 10 10 5 5 5 5 5 5;
 createNode animCurveTL -n "PALbot_R_FK_Wrist_ctrl_translateY1";
 	rename -uid "4CC915CD-4BDE-595D-8AD0-B8999CFFBDDD";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
 	setAttr -s 20 ".ktv[0:19]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
 		 26 0 28 0 29 0 31 0 33 0 36 0 38 0 39 0 41 0 46 0 47 0;
-	setAttr -s 20 ".kot[14:19]"  5 5 5 5 5 5;
+	setAttr -s 20 ".kit[0:19]"  18 10 10 10 10 10 10 10 
+		10 10 10 10 10 10 10 10 10 10 10 10;
+	setAttr -s 20 ".kot[0:19]"  5 10 10 10 10 10 10 10 
+		10 10 10 10 10 10 5 5 5 5 5 5;
 createNode animCurveTL -n "PALbot_R_FK_Wrist_ctrl_translateZ1";
 	rename -uid "62DBFBD9-48C6-F8AE-BBBD-F5BEB6C8806F";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
 	setAttr -s 20 ".ktv[0:19]"  0 0 16 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0
 		 26 0 28 0 29 0 31 0 33 0 36 0 38 0 39 0 41 0 46 0 47 0;
-	setAttr -s 20 ".kot[14:19]"  5 5 5 5 5 5;
+	setAttr -s 20 ".kit[0:19]"  18 10 10 10 10 10 10 10 
+		10 10 10 10 10 10 10 10 10 10 10 10;
+	setAttr -s 20 ".kot[0:19]"  5 10 10 10 10 10 10 10 
+		10 10 10 10 10 10 5 5 5 5 5 5;
 createNode animCurveTA -n "PALbot_chestUp_ctrl_rotateX1";
 	rename -uid "27C0D238-4CEF-8C7B-3DF7-06BD9DDA2E75";
 	setAttr ".tan" 10;
@@ -10295,6 +10280,29 @@ createNode bump2d -n "bump2d1";
 	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
 createNode displacementShader -n "displacementShader1";
 	rename -uid "32221A9F-4619-B2F2-E8F7-D491273C954D";
+createNode polyCylinder -n "polyCylinder2";
+	rename -uid "037995CA-4FEC-825F-A6AE-00AD7370DB59";
+	setAttr ".sa" 16;
+	setAttr ".sc" 1;
+	setAttr ".cuv" 3;
+createNode animCurveTL -n "pCylinder2_translateX";
+	rename -uid "FFCE3094-4D31-C766-B006-E2876CBAE328";
+	setAttr ".tan" 10;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  26 3.9768153318401422 29 3.9768153318401422;
+	setAttr -s 2 ".kot[0:1]"  5 5;
+createNode animCurveTL -n "pCylinder2_translateY";
+	rename -uid "00BC1B97-48D1-ECA5-9C5D-D3927B191E23";
+	setAttr ".tan" 10;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  26 -10.068365112459505 29 -10.068365112459505;
+	setAttr -s 2 ".kot[0:1]"  5 5;
+createNode animCurveTL -n "pCylinder2_translateZ";
+	rename -uid "9F5AA2B8-496D-2B9B-ADF1-73A52EF8DDBD";
+	setAttr ".tan" 10;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  26 5.1919593505196691 29 5.1919593505196691;
+	setAttr -s 2 ".kot[0:1]"  5 5;
 createNode phong -n "v_layered2";
 	rename -uid "252E97B9-46C9-A286-4213-1B8CE9428223";
 createNode shadingEngine -n "v_layered2SG";
@@ -11792,89 +11800,109 @@ createNode groupParts -n "groupParts2";
 createNode groupId -n "groupId13";
 	rename -uid "9E7DDC58-4CE5-A31B-70FA-2291885CB38F";
 	setAttr ".ihi" 0;
+createNode animCurveTL -n "pCylinder1_translateZ";
+	rename -uid "56A7EB3A-4D7E-C7DC-817E-57AD57870680";
+	setAttr ".tan" 10;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  0 -4.6892508599335834 17 -15.139023144344499
+		 21 7.8487510845402211 22 5.897287221737975 23 -19.96698954244328 33 -2.5159303382075926
+		 38 -2.6245563547817934 39 11.395 47 11.470317594211702 51 -9.5048578996920803;
+	setAttr -s 10 ".kit[0:9]"  9 9 10 10 10 10 10 10 
+		10 10;
+	setAttr -s 10 ".kot[0:9]"  9 9 5 5 5 5 5 5 
+		5 5;
+createNode animCurveTU -n "pCylinder1_scaleZ";
+	rename -uid "02967E48-4B26-3A83-9BBE-13BB81639DAB";
+	setAttr ".tan" 10;
+	setAttr ".wgt" no;
+	setAttr -s 8 ".ktv[0:7]"  21 0.75188442965285762 22 0.75188442965285762
+		 23 0.75188442965285762 33 0.75188442965285762 38 0.75188442965285762 39 0.75188442965285762
+		 47 0.75188442965285762 51 0.75188442965285762;
+	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
+createNode animCurveTU -n "pCylinder1_scaleX";
+	rename -uid "28F5061A-4F70-33FE-EA58-8E9E7FA5972A";
+	setAttr ".tan" 10;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  0 0.75188442965285762 17 0.75188442965285762
+		 21 0.75188442965285762 22 0.75188442965285762 23 0.75188442965285762 33 0.75188442965285762
+		 38 0.75188442965285762 39 0.75188442965285762 47 0.75188442965285762 51 0.75188442965285762;
+	setAttr -s 10 ".kit[0:9]"  9 9 10 10 10 10 10 10 
+		10 10;
+	setAttr -s 10 ".kot[0:9]"  9 9 5 5 5 5 5 5 
+		5 5;
+createNode animCurveTU -n "pCylinder1_scaleY";
+	rename -uid "54D08C99-4C41-D8BE-AD46-BF82DA2D5356";
+	setAttr ".tan" 10;
+	setAttr ".wgt" no;
+	setAttr -s 8 ".ktv[0:7]"  21 6.0584759081970727 22 6.0584759081970727
+		 23 6.0584759081970727 33 6.0584759081970727 38 6.0584759081970727 39 6.0584759081970727
+		 47 6.0584759081970727 51 6.0584759081970727;
+	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
+createNode animCurveTU -n "pCylinder1_visibility";
+	rename -uid "218678F6-463A-6E2F-1E76-64A2029C675F";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  0 1 17 1 21 1 22 1 23 1 33 1 38 1 39 1 47 1
+		 51 1;
+	setAttr -s 10 ".kot[2:9]"  5 5 5 5 5 5 5 5;
+createNode animCurveTL -n "pCylinder1_translateY";
+	rename -uid "3E39C92F-4761-11A7-A167-21881693A312";
+	setAttr ".tan" 10;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  0 12.42405895736715 17 17.934701433105047
+		 21 14.807804483958103 22 10.587313124502725 23 10.587313124502725 33 7.1459538673910066
+		 38 7.1459538673910066 39 3.146 47 16.39750843543008 51 17.282037831880068;
+	setAttr -s 10 ".kit[0:9]"  9 9 10 10 10 10 10 10 
+		10 10;
+	setAttr -s 10 ".kot[0:9]"  9 9 5 5 5 5 5 5 
+		5 5;
+createNode animCurveTL -n "pCylinder1_translateX";
+	rename -uid "033FFEB6-4106-861F-2EF5-E5B2A14F4E8F";
+	setAttr ".tan" 10;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  0 -7.6176083624706408 17 -5.1348778110982911
+		 21 0.87962588084448967 22 4.476435231620961 23 4.476435231620961 33 7.631685805399675
+		 38 7.5627292777579385 39 7.482 47 -2.569947419979294 51 -0.98628063771138774;
+	setAttr -s 10 ".kit[0:9]"  9 9 10 10 10 10 10 10 
+		10 10;
+	setAttr -s 10 ".kot[0:9]"  9 9 5 5 5 5 5 5 
+		5 5;
+createNode animCurveTA -n "pCylinder1_rotateY";
+	rename -uid "5E5DF643-40AD-7E13-B872-ECAF41477DEB";
+	setAttr ".tan" 10;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  0 0 17 0 21 0 22 28.268486639054402 23 28.268486639054402
+		 33 43.030399018683916 38 43.030399018683923 39 64.743 47 74.110193522215567 51 -9.1551321916673825;
+	setAttr -s 10 ".kit[0:9]"  9 9 10 10 10 10 10 10 
+		10 10;
+	setAttr -s 10 ".kot[0:9]"  9 9 5 5 5 5 5 5 
+		5 5;
+createNode animCurveTA -n "pCylinder1_rotateZ";
+	rename -uid "DB6FCCC5-4D01-074E-D334-6B9ABE4A4E6D";
+	setAttr ".tan" 10;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  0 0 17 0 21 0 22 -13.75974291671962 23 -13.75974291671962
+		 33 -151.597874619377 38 -151.59787461937697 39 -3.416 47 12.85976280865937 51 333.06565315217898;
+	setAttr -s 10 ".kit[0:9]"  9 9 10 10 10 10 10 10 
+		10 10;
+	setAttr -s 10 ".kot[0:9]"  9 9 5 5 5 5 5 5 
+		5 5;
+createNode animCurveTA -n "pCylinder1_rotateX";
+	rename -uid "FF1C2C7C-496B-8B36-819F-8BB5ADA51B1E";
+	setAttr ".tan" 10;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  0 35.463734207409054 17 -129.57070114862717
+		 21 66.139234912701411 22 62.658603820898904 23 62.658603820898904 33 -62.576024205905313
+		 38 -76.092820095989765 39 111.375 42 111.37541141383394 47 -50.74126359735785 51 -66.220689696785556;
+	setAttr -s 11 ".kit[0:10]"  9 9 10 10 10 10 10 10 
+		10 10 10;
+	setAttr -s 11 ".kot[0:10]"  9 9 5 5 5 5 5 5 
+		5 5 5;
 createNode polyCylinder -n "polyCylinder1";
 	rename -uid "B301021D-4847-26D2-711D-14B3F8350650";
 	setAttr ".sa" 16;
 	setAttr ".sc" 1;
 	setAttr ".cuv" 3;
-createNode animCurveTU -n "Bat_parentConstraint1_nodeState";
-	rename -uid "33C1861C-4B5A-B132-3501-53A60C9D97EC";
-	setAttr ".tan" 9;
-	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  0 0 32 0 33 0;
-	setAttr -s 3 ".kot[0:2]"  5 5 5;
-createNode animCurveTL -n "Bat_parentConstraint1_target_0__targetOffsetTranslateX";
-	rename -uid "4594B352-4A6D-31A7-2BC6-B996E43C8324";
-	setAttr ".tan" 10;
-	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  0 1.1616946614328985 32 1.1616946614328985
-		 33 1.1616946614328985;
-	setAttr -s 3 ".kot[0:2]"  5 5 5;
-createNode animCurveTL -n "Bat_parentConstraint1_target_0__targetOffsetTranslateY";
-	rename -uid "06B67F8F-4F19-CF6A-C1F2-838F53A4BF1A";
-	setAttr ".tan" 10;
-	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  0 -2.0458179804158352 32 -2.0458179804158352
-		 33 -2.0458179804158352;
-	setAttr -s 3 ".kot[0:2]"  5 5 5;
-createNode animCurveTL -n "Bat_parentConstraint1_target_0__targetOffsetTranslateZ";
-	rename -uid "E0929473-4E98-5A68-9EE6-8EA800C99B92";
-	setAttr ".tan" 10;
-	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  0 3.9343181374552625 32 3.9343181374552625
-		 33 3.9343181374552625;
-	setAttr -s 3 ".kot[0:2]"  5 5 5;
-createNode animCurveTA -n "Bat_parentConstraint1_target_0__targetOffsetRotateX";
-	rename -uid "CDD8E817-4CF0-09D5-DC73-8990FBF8A2BA";
-	setAttr ".tan" 10;
-	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  0 102.22583217765911 32 102.22583217765911
-		 33 102.22583217765911;
-	setAttr -s 3 ".kot[0:2]"  5 5 5;
-createNode animCurveTA -n "Bat_parentConstraint1_target_0__targetOffsetRotateY";
-	rename -uid "9949A2C8-4183-E2EE-5629-0092D441FD75";
-	setAttr ".tan" 10;
-	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  0 -5.0304474085861255 32 -5.0304474085861255
-		 33 -5.0304474085861255;
-	setAttr -s 3 ".kot[0:2]"  5 5 5;
-createNode animCurveTA -n "Bat_parentConstraint1_target_0__targetOffsetRotateZ";
-	rename -uid "530261EF-4D71-DD4C-16A3-77803E836E08";
-	setAttr ".tan" 10;
-	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  0 48.367482831107353 32 48.367482831107353
-		 33 48.367482831107353;
-	setAttr -s 3 ".kot[0:2]"  5 5 5;
-createNode animCurveTU -n "Bat_parentConstraint1_interpType";
-	rename -uid "D25C6819-4489-44D4-E947-55923B05533C";
-	setAttr ".tan" 9;
-	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  0 1 32 1 33 1;
-	setAttr -s 3 ".kot[0:2]"  5 5 5;
-createNode animCurveTL -n "Bat_parentConstraint1_rotationDecompositionTargetX";
-	rename -uid "01B63804-4361-6F5B-759B-96B6C3F21B3E";
-	setAttr ".tan" 10;
-	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  0 0 32 0 33 0;
-	setAttr -s 3 ".kot[0:2]"  5 5 5;
-createNode animCurveTL -n "Bat_parentConstraint1_rotationDecompositionTargetY";
-	rename -uid "E6C463D9-4638-0147-E3BD-D8AB3C9911F2";
-	setAttr ".tan" 10;
-	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  0 0 32 0 33 0;
-	setAttr -s 3 ".kot[0:2]"  5 5 5;
-createNode animCurveTL -n "Bat_parentConstraint1_rotationDecompositionTargetZ";
-	rename -uid "00A6B3DC-4ACB-6C38-7682-E6AF9C65EDF3";
-	setAttr ".tan" 10;
-	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  0 0 32 0 33 0;
-	setAttr -s 3 ".kot[0:2]"  5 5 5;
-createNode animCurveTU -n "Bat_parentConstraint1_PALbot_R_FK_Wrist_ctrlW0";
-	rename -uid "D7954541-4F1F-8451-3DB7-96AF4C0DC44B";
-	setAttr ".tan" 10;
-	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  0 1 32 1 33 1;
-	setAttr -s 3 ".kot[0:2]"  5 5 5;
 select -ne :time1;
 	setAttr ".o" 0;
 select -ne :hardwareRenderingGlobals;
@@ -11903,7 +11931,7 @@ select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 2 ".dsm";
+	setAttr -s 3 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
@@ -12065,261 +12093,254 @@ connectAttr "PALbot_R_FK_Elbow_ctrl_rotateX1.o" "PALBotRN.phl[123]";
 connectAttr "PALbot_R_FK_Elbow_ctrl_translateX1.o" "PALBotRN.phl[124]";
 connectAttr "PALbot_R_FK_Elbow_ctrl_translateY1.o" "PALBotRN.phl[125]";
 connectAttr "PALbot_R_FK_Elbow_ctrl_translateZ1.o" "PALBotRN.phl[126]";
-connectAttr "PALBotRN.phl[127]" "Bat_parentConstraint1.tg[0].ts";
-connectAttr "PALBotRN.phl[128]" "Bat_parentConstraint1.tg[0].tt";
-connectAttr "PALbot_R_FK_Wrist_ctrl_translateX1.o" "PALBotRN.phl[129]";
-connectAttr "PALbot_R_FK_Wrist_ctrl_translateY1.o" "PALBotRN.phl[130]";
-connectAttr "PALbot_R_FK_Wrist_ctrl_translateZ1.o" "PALBotRN.phl[131]";
-connectAttr "PALBotRN.phl[132]" "Bat_parentConstraint1.tg[0].trp";
-connectAttr "PALBotRN.phl[133]" "Bat_parentConstraint1.tg[0].trt";
-connectAttr "PALBotRN.phl[134]" "Bat_parentConstraint1.tg[0].tr";
-connectAttr "PALbot_R_FK_Wrist_ctrl_rotateY1.o" "PALBotRN.phl[135]";
-connectAttr "PALbot_R_FK_Wrist_ctrl_rotateX1.o" "PALBotRN.phl[136]";
-connectAttr "PALbot_R_FK_Wrist_ctrl_rotateZ1.o" "PALBotRN.phl[137]";
-connectAttr "PALBotRN.phl[138]" "Bat_parentConstraint1.tg[0].tro";
-connectAttr "PALBotRN.phl[139]" "Bat_parentConstraint1.tg[0].tpm";
-connectAttr "PALbot_R_arm_IK_FK_switch_IK_FK1.o" "PALBotRN.phl[140]";
-connectAttr "PALbot_L_Clavicle_ctrl_translateX1.o" "PALBotRN.phl[141]";
-connectAttr "PALbot_L_Clavicle_ctrl_translateY1.o" "PALBotRN.phl[142]";
-connectAttr "PALbot_L_Clavicle_ctrl_translateZ1.o" "PALBotRN.phl[143]";
-connectAttr "PALbot_L_Clavicle_ctrl_rotateX1.o" "PALBotRN.phl[144]";
-connectAttr "PALbot_L_Clavicle_ctrl_rotateY1.o" "PALBotRN.phl[145]";
-connectAttr "PALbot_L_Clavicle_ctrl_rotateZ1.o" "PALBotRN.phl[146]";
-connectAttr "PALbot_L_ShoulderRotate_ctrl_rotateZ2.o" "PALBotRN.phl[147]";
-connectAttr "PALbot_L_ShoulderRotate_ctrl_translateX2.o" "PALBotRN.phl[148]";
-connectAttr "PALbot_L_ShoulderRotate_ctrl_translateY2.o" "PALBotRN.phl[149]";
-connectAttr "PALbot_L_ShoulderRotate_ctrl_translateZ2.o" "PALBotRN.phl[150]";
-connectAttr "PALbot_L_Arm_ctrl_rotateZ3.o" "PALBotRN.phl[151]";
-connectAttr "PALbot_L_Arm_ctrl_rotateY3.o" "PALBotRN.phl[152]";
-connectAttr "PALbot_L_Arm_ctrl_translateX3.o" "PALBotRN.phl[153]";
-connectAttr "PALbot_L_Arm_ctrl_translateY3.o" "PALBotRN.phl[154]";
-connectAttr "PALbot_L_Arm_ctrl_translateZ3.o" "PALBotRN.phl[155]";
-connectAttr "PALbot_L_FK_Elbow_ctrl_rotateX1.o" "PALBotRN.phl[156]";
-connectAttr "PALbot_L_FK_Elbow_ctrl_translateX1.o" "PALBotRN.phl[157]";
-connectAttr "PALbot_L_FK_Elbow_ctrl_translateY1.o" "PALBotRN.phl[158]";
-connectAttr "PALbot_L_FK_Elbow_ctrl_translateZ1.o" "PALBotRN.phl[159]";
-connectAttr "PALbot_L_FK_Wrist_ctrl_translateX1.o" "PALBotRN.phl[160]";
-connectAttr "PALbot_L_FK_Wrist_ctrl_translateY1.o" "PALBotRN.phl[161]";
-connectAttr "PALbot_L_FK_Wrist_ctrl_translateZ1.o" "PALBotRN.phl[162]";
-connectAttr "PALbot_L_FK_Wrist_ctrl_rotateY1.o" "PALBotRN.phl[163]";
-connectAttr "PALbot_L_FK_Wrist_ctrl_rotateX1.o" "PALBotRN.phl[164]";
-connectAttr "PALbot_L_FK_Wrist_ctrl_rotateZ1.o" "PALBotRN.phl[165]";
-connectAttr "PALbot_L_arm_IK_FK_switch_IK_FK1.o" "PALBotRN.phl[166]";
-connectAttr "PALbot_hipMain_ctrl_translateX1.o" "PALBotRN.phl[167]";
-connectAttr "PALbot_hipMain_ctrl_translateY1.o" "PALBotRN.phl[168]";
-connectAttr "PALbot_hipMain_ctrl_translateZ1.o" "PALBotRN.phl[169]";
-connectAttr "PALbot_hipMain_ctrl_rotateX1.o" "PALBotRN.phl[170]";
-connectAttr "PALbot_hipMain_ctrl_rotateY1.o" "PALBotRN.phl[171]";
-connectAttr "PALbot_hipMain_ctrl_rotateZ1.o" "PALBotRN.phl[172]";
-connectAttr "PALbot_R_hip_translateX1.o" "PALBotRN.phl[173]";
-connectAttr "PALbot_R_hip_translateY1.o" "PALBotRN.phl[174]";
-connectAttr "PALbot_R_hip_translateZ1.o" "PALBotRN.phl[175]";
-connectAttr "PALbot_R_hip_rotateX1.o" "PALBotRN.phl[176]";
-connectAttr "PALbot_R_hip_rotateY1.o" "PALBotRN.phl[177]";
-connectAttr "PALbot_R_hip_rotateZ1.o" "PALBotRN.phl[178]";
-connectAttr "PALbot_R_leg_IK_FK_switch_IK_FK1.o" "PALBotRN.phl[179]";
-connectAttr "PALbot_L_hip_translateX1.o" "PALBotRN.phl[180]";
-connectAttr "PALbot_L_hip_translateY1.o" "PALBotRN.phl[181]";
-connectAttr "PALbot_L_hip_translateZ1.o" "PALBotRN.phl[182]";
-connectAttr "PALbot_L_hip_rotateX1.o" "PALBotRN.phl[183]";
-connectAttr "PALbot_L_hip_rotateY1.o" "PALBotRN.phl[184]";
-connectAttr "PALbot_L_hip_rotateZ1.o" "PALBotRN.phl[185]";
-connectAttr "PALbot_L_leg_IK_FK_switch_IK_FK1.o" "PALBotRN.phl[186]";
-connectAttr "PALbot_L_Thumb01_ctrl_translateX1.o" "PALBotRN.phl[187]";
-connectAttr "PALbot_L_Thumb01_ctrl_translateY1.o" "PALBotRN.phl[188]";
-connectAttr "PALbot_L_Thumb01_ctrl_translateZ1.o" "PALBotRN.phl[189]";
-connectAttr "PALbot_L_Thumb01_ctrl_rotateX1.o" "PALBotRN.phl[190]";
-connectAttr "PALbot_L_Thumb01_ctrl_rotateY1.o" "PALBotRN.phl[191]";
-connectAttr "PALbot_L_Thumb01_ctrl_rotateZ1.o" "PALBotRN.phl[192]";
-connectAttr "PALbot_L_Thumb02_ctrl_translateX1.o" "PALBotRN.phl[193]";
-connectAttr "PALbot_L_Thumb02_ctrl_translateY1.o" "PALBotRN.phl[194]";
-connectAttr "PALbot_L_Thumb02_ctrl_translateZ1.o" "PALBotRN.phl[195]";
-connectAttr "PALbot_L_Thumb02_ctrl_rotateX1.o" "PALBotRN.phl[196]";
-connectAttr "PALbot_L_Thumb02_ctrl_rotateY1.o" "PALBotRN.phl[197]";
-connectAttr "PALbot_L_Thumb02_ctrl_rotateZ1.o" "PALBotRN.phl[198]";
-connectAttr "PALbot_L_Thumb03_ctrl_translateX1.o" "PALBotRN.phl[199]";
-connectAttr "PALbot_L_Thumb03_ctrl_translateY1.o" "PALBotRN.phl[200]";
-connectAttr "PALbot_L_Thumb03_ctrl_translateZ1.o" "PALBotRN.phl[201]";
-connectAttr "PALbot_L_Thumb03_ctrl_rotateX1.o" "PALBotRN.phl[202]";
-connectAttr "PALbot_L_Thumb03_ctrl_rotateY1.o" "PALBotRN.phl[203]";
-connectAttr "PALbot_L_Thumb03_ctrl_rotateZ1.o" "PALBotRN.phl[204]";
-connectAttr "PALbot_L_Index01_ctrl_translateX1.o" "PALBotRN.phl[205]";
-connectAttr "PALbot_L_Index01_ctrl_translateY1.o" "PALBotRN.phl[206]";
-connectAttr "PALbot_L_Index01_ctrl_translateZ1.o" "PALBotRN.phl[207]";
-connectAttr "PALbot_L_Index01_ctrl_rotateX1.o" "PALBotRN.phl[208]";
-connectAttr "PALbot_L_Index01_ctrl_rotateY1.o" "PALBotRN.phl[209]";
-connectAttr "PALbot_L_Index01_ctrl_rotateZ1.o" "PALBotRN.phl[210]";
-connectAttr "PALbot_L_Index02_ctrl_translateX1.o" "PALBotRN.phl[211]";
-connectAttr "PALbot_L_Index02_ctrl_translateY1.o" "PALBotRN.phl[212]";
-connectAttr "PALbot_L_Index02_ctrl_translateZ1.o" "PALBotRN.phl[213]";
-connectAttr "PALbot_L_Index02_ctrl_rotateX1.o" "PALBotRN.phl[214]";
-connectAttr "PALbot_L_Index02_ctrl_rotateY1.o" "PALBotRN.phl[215]";
-connectAttr "PALbot_L_Index02_ctrl_rotateZ1.o" "PALBotRN.phl[216]";
-connectAttr "PALbot_L_Middle01_ctrl_translateX1.o" "PALBotRN.phl[217]";
-connectAttr "PALbot_L_Middle01_ctrl_translateY1.o" "PALBotRN.phl[218]";
-connectAttr "PALbot_L_Middle01_ctrl_translateZ1.o" "PALBotRN.phl[219]";
-connectAttr "PALbot_L_Middle01_ctrl_rotateX1.o" "PALBotRN.phl[220]";
-connectAttr "PALbot_L_Middle01_ctrl_rotateY1.o" "PALBotRN.phl[221]";
-connectAttr "PALbot_L_Middle01_ctrl_rotateZ1.o" "PALBotRN.phl[222]";
-connectAttr "PALbot_L_Middle02_ctrl_translateX1.o" "PALBotRN.phl[223]";
-connectAttr "PALbot_L_Middle02_ctrl_translateY1.o" "PALBotRN.phl[224]";
-connectAttr "PALbot_L_Middle02_ctrl_translateZ1.o" "PALBotRN.phl[225]";
-connectAttr "PALbot_L_Middle02_ctrl_rotateX1.o" "PALBotRN.phl[226]";
-connectAttr "PALbot_L_Middle02_ctrl_rotateY1.o" "PALBotRN.phl[227]";
-connectAttr "PALbot_L_Middle02_ctrl_rotateZ1.o" "PALBotRN.phl[228]";
-connectAttr "PALbot_L_Ring01_ctrl_translateX1.o" "PALBotRN.phl[229]";
-connectAttr "PALbot_L_Ring01_ctrl_translateY1.o" "PALBotRN.phl[230]";
-connectAttr "PALbot_L_Ring01_ctrl_translateZ1.o" "PALBotRN.phl[231]";
-connectAttr "PALbot_L_Ring01_ctrl_rotateX1.o" "PALBotRN.phl[232]";
-connectAttr "PALbot_L_Ring01_ctrl_rotateY1.o" "PALBotRN.phl[233]";
-connectAttr "PALbot_L_Ring01_ctrl_rotateZ1.o" "PALBotRN.phl[234]";
-connectAttr "PALbot_L_Ring02_ctrl_translateX1.o" "PALBotRN.phl[235]";
-connectAttr "PALbot_L_Ring02_ctrl_translateY1.o" "PALBotRN.phl[236]";
-connectAttr "PALbot_L_Ring02_ctrl_translateZ1.o" "PALBotRN.phl[237]";
-connectAttr "PALbot_L_Ring02_ctrl_rotateX1.o" "PALBotRN.phl[238]";
-connectAttr "PALbot_L_Ring02_ctrl_rotateY1.o" "PALBotRN.phl[239]";
-connectAttr "PALbot_L_Ring02_ctrl_rotateZ1.o" "PALBotRN.phl[240]";
-connectAttr "PALbot_L_Pinky01_ctrl_translateX1.o" "PALBotRN.phl[241]";
-connectAttr "PALbot_L_Pinky01_ctrl_translateY1.o" "PALBotRN.phl[242]";
-connectAttr "PALbot_L_Pinky01_ctrl_translateZ1.o" "PALBotRN.phl[243]";
-connectAttr "PALbot_L_Pinky01_ctrl_rotateX1.o" "PALBotRN.phl[244]";
-connectAttr "PALbot_L_Pinky01_ctrl_rotateY1.o" "PALBotRN.phl[245]";
-connectAttr "PALbot_L_Pinky01_ctrl_rotateZ1.o" "PALBotRN.phl[246]";
-connectAttr "PALbot_L_Pinky02_ctrl_translateX1.o" "PALBotRN.phl[247]";
-connectAttr "PALbot_L_Pinky02_ctrl_translateY1.o" "PALBotRN.phl[248]";
-connectAttr "PALbot_L_Pinky02_ctrl_translateZ1.o" "PALBotRN.phl[249]";
-connectAttr "PALbot_L_Pinky02_ctrl_rotateX1.o" "PALBotRN.phl[250]";
-connectAttr "PALbot_L_Pinky02_ctrl_rotateY1.o" "PALBotRN.phl[251]";
-connectAttr "PALbot_L_Pinky02_ctrl_rotateZ1.o" "PALBotRN.phl[252]";
-connectAttr "PALbot_R_Thumb01_ctrl_translateX1.o" "PALBotRN.phl[253]";
-connectAttr "PALbot_R_Thumb01_ctrl_translateY1.o" "PALBotRN.phl[254]";
-connectAttr "PALbot_R_Thumb01_ctrl_translateZ1.o" "PALBotRN.phl[255]";
-connectAttr "PALbot_R_Thumb01_ctrl_rotateX1.o" "PALBotRN.phl[256]";
-connectAttr "PALbot_R_Thumb01_ctrl_rotateY1.o" "PALBotRN.phl[257]";
-connectAttr "PALbot_R_Thumb01_ctrl_rotateZ1.o" "PALBotRN.phl[258]";
-connectAttr "PALbot_R_Thumb02_ctrl_translateX1.o" "PALBotRN.phl[259]";
-connectAttr "PALbot_R_Thumb02_ctrl_translateY1.o" "PALBotRN.phl[260]";
-connectAttr "PALbot_R_Thumb02_ctrl_translateZ1.o" "PALBotRN.phl[261]";
-connectAttr "PALbot_R_Thumb02_ctrl_rotateX1.o" "PALBotRN.phl[262]";
-connectAttr "PALbot_R_Thumb02_ctrl_rotateY1.o" "PALBotRN.phl[263]";
-connectAttr "PALbot_R_Thumb02_ctrl_rotateZ1.o" "PALBotRN.phl[264]";
-connectAttr "PALbot_R_Thumb03_ctrl_translateX1.o" "PALBotRN.phl[265]";
-connectAttr "PALbot_R_Thumb03_ctrl_translateY1.o" "PALBotRN.phl[266]";
-connectAttr "PALbot_R_Thumb03_ctrl_translateZ1.o" "PALBotRN.phl[267]";
-connectAttr "PALbot_R_Thumb03_ctrl_rotateX1.o" "PALBotRN.phl[268]";
-connectAttr "PALbot_R_Thumb03_ctrl_rotateY1.o" "PALBotRN.phl[269]";
-connectAttr "PALbot_R_Thumb03_ctrl_rotateZ1.o" "PALBotRN.phl[270]";
-connectAttr "PALbot_R_Index01_ctrl_translateX1.o" "PALBotRN.phl[271]";
-connectAttr "PALbot_R_Index01_ctrl_translateY1.o" "PALBotRN.phl[272]";
-connectAttr "PALbot_R_Index01_ctrl_translateZ1.o" "PALBotRN.phl[273]";
-connectAttr "PALbot_R_Index01_ctrl_rotateX1.o" "PALBotRN.phl[274]";
-connectAttr "PALbot_R_Index01_ctrl_rotateY1.o" "PALBotRN.phl[275]";
-connectAttr "PALbot_R_Index01_ctrl_rotateZ1.o" "PALBotRN.phl[276]";
-connectAttr "PALbot_R_Index02_ctrl_translateX1.o" "PALBotRN.phl[277]";
-connectAttr "PALbot_R_Index02_ctrl_translateY1.o" "PALBotRN.phl[278]";
-connectAttr "PALbot_R_Index02_ctrl_translateZ1.o" "PALBotRN.phl[279]";
-connectAttr "PALbot_R_Index02_ctrl_rotateX1.o" "PALBotRN.phl[280]";
-connectAttr "PALbot_R_Index02_ctrl_rotateY1.o" "PALBotRN.phl[281]";
-connectAttr "PALbot_R_Index02_ctrl_rotateZ1.o" "PALBotRN.phl[282]";
-connectAttr "PALbot_R_Middle01_ctrl_translateX1.o" "PALBotRN.phl[283]";
-connectAttr "PALbot_R_Middle01_ctrl_translateY1.o" "PALBotRN.phl[284]";
-connectAttr "PALbot_R_Middle01_ctrl_translateZ1.o" "PALBotRN.phl[285]";
-connectAttr "PALbot_R_Middle01_ctrl_rotateX1.o" "PALBotRN.phl[286]";
-connectAttr "PALbot_R_Middle01_ctrl_rotateY1.o" "PALBotRN.phl[287]";
-connectAttr "PALbot_R_Middle01_ctrl_rotateZ1.o" "PALBotRN.phl[288]";
-connectAttr "PALbot_R_Middle02_ctrl_translateX1.o" "PALBotRN.phl[289]";
-connectAttr "PALbot_R_Middle02_ctrl_translateY1.o" "PALBotRN.phl[290]";
-connectAttr "PALbot_R_Middle02_ctrl_translateZ1.o" "PALBotRN.phl[291]";
-connectAttr "PALbot_R_Middle02_ctrl_rotateX1.o" "PALBotRN.phl[292]";
-connectAttr "PALbot_R_Middle02_ctrl_rotateY1.o" "PALBotRN.phl[293]";
-connectAttr "PALbot_R_Middle02_ctrl_rotateZ1.o" "PALBotRN.phl[294]";
-connectAttr "PALbot_R_Ring01_ctrl_translateX1.o" "PALBotRN.phl[295]";
-connectAttr "PALbot_R_Ring01_ctrl_translateY1.o" "PALBotRN.phl[296]";
-connectAttr "PALbot_R_Ring01_ctrl_translateZ1.o" "PALBotRN.phl[297]";
-connectAttr "PALbot_R_Ring01_ctrl_rotateX1.o" "PALBotRN.phl[298]";
-connectAttr "PALbot_R_Ring01_ctrl_rotateY1.o" "PALBotRN.phl[299]";
-connectAttr "PALbot_R_Ring01_ctrl_rotateZ1.o" "PALBotRN.phl[300]";
-connectAttr "PALbot_R_Ring02_ctrl_translateX1.o" "PALBotRN.phl[301]";
-connectAttr "PALbot_R_Ring02_ctrl_translateY1.o" "PALBotRN.phl[302]";
-connectAttr "PALbot_R_Ring02_ctrl_translateZ1.o" "PALBotRN.phl[303]";
-connectAttr "PALbot_R_Ring02_ctrl_rotateX1.o" "PALBotRN.phl[304]";
-connectAttr "PALbot_R_Ring02_ctrl_rotateY1.o" "PALBotRN.phl[305]";
-connectAttr "PALbot_R_Ring02_ctrl_rotateZ1.o" "PALBotRN.phl[306]";
-connectAttr "PALbot_R_Pinky01_ctrl_translateX1.o" "PALBotRN.phl[307]";
-connectAttr "PALbot_R_Pinky01_ctrl_translateY1.o" "PALBotRN.phl[308]";
-connectAttr "PALbot_R_Pinky01_ctrl_translateZ1.o" "PALBotRN.phl[309]";
-connectAttr "PALbot_R_Pinky01_ctrl_rotateX1.o" "PALBotRN.phl[310]";
-connectAttr "PALbot_R_Pinky01_ctrl_rotateY1.o" "PALBotRN.phl[311]";
-connectAttr "PALbot_R_Pinky01_ctrl_rotateZ1.o" "PALBotRN.phl[312]";
-connectAttr "PALbot_R_Pinky02_ctrl_translateX1.o" "PALBotRN.phl[313]";
-connectAttr "PALbot_R_Pinky02_ctrl_translateY1.o" "PALBotRN.phl[314]";
-connectAttr "PALbot_R_Pinky02_ctrl_translateZ1.o" "PALBotRN.phl[315]";
-connectAttr "PALbot_R_Pinky02_ctrl_rotateX1.o" "PALBotRN.phl[316]";
-connectAttr "PALbot_R_Pinky02_ctrl_rotateY1.o" "PALBotRN.phl[317]";
-connectAttr "PALbot_R_Pinky02_ctrl_rotateZ1.o" "PALBotRN.phl[318]";
-connectAttr "PALbot_R_knee_aim_ctrl_space_switch1.o" "PALBotRN.phl[319]";
-connectAttr "PALbot_R_knee_aim_ctrl_translateX1.o" "PALBotRN.phl[320]";
-connectAttr "PALbot_R_knee_aim_ctrl_translateY1.o" "PALBotRN.phl[321]";
-connectAttr "PALbot_R_knee_aim_ctrl_translateZ1.o" "PALBotRN.phl[322]";
-connectAttr "PALbot_R_knee_aim_ctrl_rotateX1.o" "PALBotRN.phl[323]";
-connectAttr "PALbot_R_knee_aim_ctrl_rotateY1.o" "PALBotRN.phl[324]";
-connectAttr "PALbot_R_knee_aim_ctrl_rotateZ1.o" "PALBotRN.phl[325]";
-connectAttr "PALbot_R_foot_secondary_rotateX1.o" "PALBotRN.phl[326]";
-connectAttr "PALbot_R_foot_secondary_rotateY1.o" "PALBotRN.phl[327]";
-connectAttr "PALbot_R_foot_secondary_rotateZ1.o" "PALBotRN.phl[328]";
-connectAttr "PALbot_R_foot_secondary_translateX1.o" "PALBotRN.phl[329]";
-connectAttr "PALbot_R_foot_secondary_translateY1.o" "PALBotRN.phl[330]";
-connectAttr "PALbot_R_foot_secondary_translateZ1.o" "PALBotRN.phl[331]";
-connectAttr "PALbot_R_footSec_reshape01_translateX1.o" "PALBotRN.phl[332]";
-connectAttr "PALbot_R_footSec_reshape01_translateY1.o" "PALBotRN.phl[333]";
-connectAttr "PALbot_R_footSec_reshape01_translateZ1.o" "PALBotRN.phl[334]";
-connectAttr "PALbot_R_footSec_reshape01_rotateX1.o" "PALBotRN.phl[335]";
-connectAttr "PALbot_R_footSec_reshape01_rotateY1.o" "PALBotRN.phl[336]";
-connectAttr "PALbot_R_footSec_reshape01_rotateZ1.o" "PALBotRN.phl[337]";
-connectAttr "PALbot_R_footSec_reshape02_translateX1.o" "PALBotRN.phl[338]";
-connectAttr "PALbot_R_footSec_reshape02_translateY1.o" "PALBotRN.phl[339]";
-connectAttr "PALbot_R_footSec_reshape02_translateZ1.o" "PALBotRN.phl[340]";
-connectAttr "PALbot_R_footSec_reshape02_rotateX1.o" "PALBotRN.phl[341]";
-connectAttr "PALbot_R_footSec_reshape02_rotateY1.o" "PALBotRN.phl[342]";
-connectAttr "PALbot_R_footSec_reshape02_rotateZ1.o" "PALBotRN.phl[343]";
-connectAttr "PALbot_R_Engine_ctrl_on_off1.o" "PALBotRN.phl[344]";
-connectAttr "PALbot_R_Engine_ctrl_translateX1.o" "PALBotRN.phl[345]";
-connectAttr "PALbot_R_Engine_ctrl_translateY1.o" "PALBotRN.phl[346]";
-connectAttr "PALbot_R_Engine_ctrl_translateZ1.o" "PALBotRN.phl[347]";
-connectAttr "PALbot_R_Engine_ctrl_rotateX1.o" "PALBotRN.phl[348]";
-connectAttr "PALbot_R_Engine_ctrl_rotateY1.o" "PALBotRN.phl[349]";
-connectAttr "PALbot_R_Engine_ctrl_rotateZ1.o" "PALBotRN.phl[350]";
-connectAttr "PALbot_R_Engine_ctrl_scaleX1.o" "PALBotRN.phl[351]";
-connectAttr "PALbot_R_Engine_ctrl_scaleY1.o" "PALBotRN.phl[352]";
-connectAttr "PALbot_R_Engine_ctrl_scaleZ1.o" "PALBotRN.phl[353]";
-connectAttr "PALbot_R_IK_Foot_ctrl_Heel_Peel1.o" "PALBotRN.phl[354]";
-connectAttr "PALbot_R_IK_Foot_ctrl_follow_hip1.o" "PALBotRN.phl[355]";
-connectAttr "PALbot_R_IK_Foot_ctrl_translateZ1.o" "PALBotRN.phl[356]";
-connectAttr "PALbot_R_IK_Foot_ctrl_translateX1.o" "PALBotRN.phl[357]";
-connectAttr "PALbot_R_IK_Foot_ctrl_translateY1.o" "PALBotRN.phl[358]";
-connectAttr "PALbot_R_IK_Foot_ctrl_rotateX1.o" "PALBotRN.phl[359]";
-connectAttr "PALbot_R_IK_Foot_ctrl_rotateY1.o" "PALBotRN.phl[360]";
-connectAttr "PALbot_R_IK_Foot_ctrl_rotateZ1.o" "PALBotRN.phl[361]";
-connectAttr "PALbot_R_IK_heel_lift_tip_rotateX1.o" "PALBotRN.phl[362]";
-connectAttr "PALbot_R_IK_heel_lift_tip_rotateY1.o" "PALBotRN.phl[363]";
-connectAttr "PALbot_R_IK_heel_lift_tip_rotateZ1.o" "PALBotRN.phl[364]";
-connectAttr "PALbot_R_IK_heel_lift_tip_translateX1.o" "PALBotRN.phl[365]";
-connectAttr "PALbot_R_IK_heel_lift_tip_translateY1.o" "PALBotRN.phl[366]";
-connectAttr "PALbot_R_IK_heel_lift_tip_translateZ1.o" "PALBotRN.phl[367]";
-connectAttr "PALbot_R_IK_foot_tip_translateX1.o" "PALBotRN.phl[368]";
-connectAttr "PALbot_R_IK_foot_tip_translateY1.o" "PALBotRN.phl[369]";
-connectAttr "PALbot_R_IK_foot_tip_translateZ1.o" "PALBotRN.phl[370]";
-connectAttr "PALbot_R_IK_foot_tip_rotateX1.o" "PALBotRN.phl[371]";
-connectAttr "PALbot_R_IK_foot_tip_rotateY1.o" "PALBotRN.phl[372]";
-connectAttr "PALbot_R_IK_foot_tip_rotateZ1.o" "PALBotRN.phl[373]";
-connectAttr "PALbot_R_IK_footBall_ctrl_translateX1.o" "PALBotRN.phl[374]";
-connectAttr "PALbot_R_IK_footBall_ctrl_translateY1.o" "PALBotRN.phl[375]";
-connectAttr "PALbot_R_IK_footBall_ctrl_translateZ1.o" "PALBotRN.phl[376]";
-connectAttr "PALbot_R_IK_footBall_ctrl_rotateX1.o" "PALBotRN.phl[377]";
-connectAttr "PALbot_R_IK_footBall_ctrl_rotateY1.o" "PALBotRN.phl[378]";
-connectAttr "PALbot_R_IK_footBall_ctrl_rotateZ1.o" "PALBotRN.phl[379]";
-connectAttr "PALbot_L_HandVIS_Hand_Vis1.o" "PALBotRN.phl[380]";
-connectAttr "PALbot_L_HandVIS_canon_light1.o" "PALBotRN.phl[381]";
+connectAttr "PALbot_R_FK_Wrist_ctrl_translateX1.o" "PALBotRN.phl[127]";
+connectAttr "PALbot_R_FK_Wrist_ctrl_translateY1.o" "PALBotRN.phl[128]";
+connectAttr "PALbot_R_FK_Wrist_ctrl_translateZ1.o" "PALBotRN.phl[129]";
+connectAttr "PALbot_R_FK_Wrist_ctrl_rotateY1.o" "PALBotRN.phl[130]";
+connectAttr "PALbot_R_FK_Wrist_ctrl_rotateX1.o" "PALBotRN.phl[131]";
+connectAttr "PALbot_R_FK_Wrist_ctrl_rotateZ1.o" "PALBotRN.phl[132]";
+connectAttr "PALbot_R_arm_IK_FK_switch_IK_FK1.o" "PALBotRN.phl[133]";
+connectAttr "PALbot_L_Clavicle_ctrl_translateX1.o" "PALBotRN.phl[134]";
+connectAttr "PALbot_L_Clavicle_ctrl_translateY1.o" "PALBotRN.phl[135]";
+connectAttr "PALbot_L_Clavicle_ctrl_translateZ1.o" "PALBotRN.phl[136]";
+connectAttr "PALbot_L_Clavicle_ctrl_rotateX1.o" "PALBotRN.phl[137]";
+connectAttr "PALbot_L_Clavicle_ctrl_rotateY1.o" "PALBotRN.phl[138]";
+connectAttr "PALbot_L_Clavicle_ctrl_rotateZ1.o" "PALBotRN.phl[139]";
+connectAttr "PALbot_L_ShoulderRotate_ctrl_rotateZ2.o" "PALBotRN.phl[140]";
+connectAttr "PALbot_L_ShoulderRotate_ctrl_translateX2.o" "PALBotRN.phl[141]";
+connectAttr "PALbot_L_ShoulderRotate_ctrl_translateY2.o" "PALBotRN.phl[142]";
+connectAttr "PALbot_L_ShoulderRotate_ctrl_translateZ2.o" "PALBotRN.phl[143]";
+connectAttr "PALbot_L_Arm_ctrl_rotateZ3.o" "PALBotRN.phl[144]";
+connectAttr "PALbot_L_Arm_ctrl_rotateY3.o" "PALBotRN.phl[145]";
+connectAttr "PALbot_L_Arm_ctrl_translateX3.o" "PALBotRN.phl[146]";
+connectAttr "PALbot_L_Arm_ctrl_translateY3.o" "PALBotRN.phl[147]";
+connectAttr "PALbot_L_Arm_ctrl_translateZ3.o" "PALBotRN.phl[148]";
+connectAttr "PALbot_L_FK_Elbow_ctrl_rotateX1.o" "PALBotRN.phl[149]";
+connectAttr "PALbot_L_FK_Elbow_ctrl_translateX1.o" "PALBotRN.phl[150]";
+connectAttr "PALbot_L_FK_Elbow_ctrl_translateY1.o" "PALBotRN.phl[151]";
+connectAttr "PALbot_L_FK_Elbow_ctrl_translateZ1.o" "PALBotRN.phl[152]";
+connectAttr "PALbot_L_FK_Wrist_ctrl_translateX1.o" "PALBotRN.phl[153]";
+connectAttr "PALbot_L_FK_Wrist_ctrl_translateY1.o" "PALBotRN.phl[154]";
+connectAttr "PALbot_L_FK_Wrist_ctrl_translateZ1.o" "PALBotRN.phl[155]";
+connectAttr "PALbot_L_FK_Wrist_ctrl_rotateY1.o" "PALBotRN.phl[156]";
+connectAttr "PALbot_L_FK_Wrist_ctrl_rotateX1.o" "PALBotRN.phl[157]";
+connectAttr "PALbot_L_FK_Wrist_ctrl_rotateZ1.o" "PALBotRN.phl[158]";
+connectAttr "PALbot_L_arm_IK_FK_switch_IK_FK1.o" "PALBotRN.phl[159]";
+connectAttr "PALbot_hipMain_ctrl_translateX1.o" "PALBotRN.phl[160]";
+connectAttr "PALbot_hipMain_ctrl_translateY1.o" "PALBotRN.phl[161]";
+connectAttr "PALbot_hipMain_ctrl_translateZ1.o" "PALBotRN.phl[162]";
+connectAttr "PALbot_hipMain_ctrl_rotateX1.o" "PALBotRN.phl[163]";
+connectAttr "PALbot_hipMain_ctrl_rotateY1.o" "PALBotRN.phl[164]";
+connectAttr "PALbot_hipMain_ctrl_rotateZ1.o" "PALBotRN.phl[165]";
+connectAttr "PALbot_R_hip_translateX1.o" "PALBotRN.phl[166]";
+connectAttr "PALbot_R_hip_translateY1.o" "PALBotRN.phl[167]";
+connectAttr "PALbot_R_hip_translateZ1.o" "PALBotRN.phl[168]";
+connectAttr "PALbot_R_hip_rotateX1.o" "PALBotRN.phl[169]";
+connectAttr "PALbot_R_hip_rotateY1.o" "PALBotRN.phl[170]";
+connectAttr "PALbot_R_hip_rotateZ1.o" "PALBotRN.phl[171]";
+connectAttr "PALbot_R_leg_IK_FK_switch_IK_FK1.o" "PALBotRN.phl[172]";
+connectAttr "PALbot_L_hip_translateX1.o" "PALBotRN.phl[173]";
+connectAttr "PALbot_L_hip_translateY1.o" "PALBotRN.phl[174]";
+connectAttr "PALbot_L_hip_translateZ1.o" "PALBotRN.phl[175]";
+connectAttr "PALbot_L_hip_rotateX1.o" "PALBotRN.phl[176]";
+connectAttr "PALbot_L_hip_rotateY1.o" "PALBotRN.phl[177]";
+connectAttr "PALbot_L_hip_rotateZ1.o" "PALBotRN.phl[178]";
+connectAttr "PALbot_L_leg_IK_FK_switch_IK_FK1.o" "PALBotRN.phl[179]";
+connectAttr "PALbot_L_Thumb01_ctrl_translateX1.o" "PALBotRN.phl[180]";
+connectAttr "PALbot_L_Thumb01_ctrl_translateY1.o" "PALBotRN.phl[181]";
+connectAttr "PALbot_L_Thumb01_ctrl_translateZ1.o" "PALBotRN.phl[182]";
+connectAttr "PALbot_L_Thumb01_ctrl_rotateX1.o" "PALBotRN.phl[183]";
+connectAttr "PALbot_L_Thumb01_ctrl_rotateY1.o" "PALBotRN.phl[184]";
+connectAttr "PALbot_L_Thumb01_ctrl_rotateZ1.o" "PALBotRN.phl[185]";
+connectAttr "PALbot_L_Thumb02_ctrl_translateX1.o" "PALBotRN.phl[186]";
+connectAttr "PALbot_L_Thumb02_ctrl_translateY1.o" "PALBotRN.phl[187]";
+connectAttr "PALbot_L_Thumb02_ctrl_translateZ1.o" "PALBotRN.phl[188]";
+connectAttr "PALbot_L_Thumb02_ctrl_rotateX1.o" "PALBotRN.phl[189]";
+connectAttr "PALbot_L_Thumb02_ctrl_rotateY1.o" "PALBotRN.phl[190]";
+connectAttr "PALbot_L_Thumb02_ctrl_rotateZ1.o" "PALBotRN.phl[191]";
+connectAttr "PALbot_L_Thumb03_ctrl_translateX1.o" "PALBotRN.phl[192]";
+connectAttr "PALbot_L_Thumb03_ctrl_translateY1.o" "PALBotRN.phl[193]";
+connectAttr "PALbot_L_Thumb03_ctrl_translateZ1.o" "PALBotRN.phl[194]";
+connectAttr "PALbot_L_Thumb03_ctrl_rotateX1.o" "PALBotRN.phl[195]";
+connectAttr "PALbot_L_Thumb03_ctrl_rotateY1.o" "PALBotRN.phl[196]";
+connectAttr "PALbot_L_Thumb03_ctrl_rotateZ1.o" "PALBotRN.phl[197]";
+connectAttr "PALbot_L_Index01_ctrl_translateX1.o" "PALBotRN.phl[198]";
+connectAttr "PALbot_L_Index01_ctrl_translateY1.o" "PALBotRN.phl[199]";
+connectAttr "PALbot_L_Index01_ctrl_translateZ1.o" "PALBotRN.phl[200]";
+connectAttr "PALbot_L_Index01_ctrl_rotateX1.o" "PALBotRN.phl[201]";
+connectAttr "PALbot_L_Index01_ctrl_rotateY1.o" "PALBotRN.phl[202]";
+connectAttr "PALbot_L_Index01_ctrl_rotateZ1.o" "PALBotRN.phl[203]";
+connectAttr "PALbot_L_Index02_ctrl_translateX1.o" "PALBotRN.phl[204]";
+connectAttr "PALbot_L_Index02_ctrl_translateY1.o" "PALBotRN.phl[205]";
+connectAttr "PALbot_L_Index02_ctrl_translateZ1.o" "PALBotRN.phl[206]";
+connectAttr "PALbot_L_Index02_ctrl_rotateX1.o" "PALBotRN.phl[207]";
+connectAttr "PALbot_L_Index02_ctrl_rotateY1.o" "PALBotRN.phl[208]";
+connectAttr "PALbot_L_Index02_ctrl_rotateZ1.o" "PALBotRN.phl[209]";
+connectAttr "PALbot_L_Middle01_ctrl_translateX1.o" "PALBotRN.phl[210]";
+connectAttr "PALbot_L_Middle01_ctrl_translateY1.o" "PALBotRN.phl[211]";
+connectAttr "PALbot_L_Middle01_ctrl_translateZ1.o" "PALBotRN.phl[212]";
+connectAttr "PALbot_L_Middle01_ctrl_rotateX1.o" "PALBotRN.phl[213]";
+connectAttr "PALbot_L_Middle01_ctrl_rotateY1.o" "PALBotRN.phl[214]";
+connectAttr "PALbot_L_Middle01_ctrl_rotateZ1.o" "PALBotRN.phl[215]";
+connectAttr "PALbot_L_Middle02_ctrl_translateX1.o" "PALBotRN.phl[216]";
+connectAttr "PALbot_L_Middle02_ctrl_translateY1.o" "PALBotRN.phl[217]";
+connectAttr "PALbot_L_Middle02_ctrl_translateZ1.o" "PALBotRN.phl[218]";
+connectAttr "PALbot_L_Middle02_ctrl_rotateX1.o" "PALBotRN.phl[219]";
+connectAttr "PALbot_L_Middle02_ctrl_rotateY1.o" "PALBotRN.phl[220]";
+connectAttr "PALbot_L_Middle02_ctrl_rotateZ1.o" "PALBotRN.phl[221]";
+connectAttr "PALbot_L_Ring01_ctrl_translateX1.o" "PALBotRN.phl[222]";
+connectAttr "PALbot_L_Ring01_ctrl_translateY1.o" "PALBotRN.phl[223]";
+connectAttr "PALbot_L_Ring01_ctrl_translateZ1.o" "PALBotRN.phl[224]";
+connectAttr "PALbot_L_Ring01_ctrl_rotateX1.o" "PALBotRN.phl[225]";
+connectAttr "PALbot_L_Ring01_ctrl_rotateY1.o" "PALBotRN.phl[226]";
+connectAttr "PALbot_L_Ring01_ctrl_rotateZ1.o" "PALBotRN.phl[227]";
+connectAttr "PALbot_L_Ring02_ctrl_translateX1.o" "PALBotRN.phl[228]";
+connectAttr "PALbot_L_Ring02_ctrl_translateY1.o" "PALBotRN.phl[229]";
+connectAttr "PALbot_L_Ring02_ctrl_translateZ1.o" "PALBotRN.phl[230]";
+connectAttr "PALbot_L_Ring02_ctrl_rotateX1.o" "PALBotRN.phl[231]";
+connectAttr "PALbot_L_Ring02_ctrl_rotateY1.o" "PALBotRN.phl[232]";
+connectAttr "PALbot_L_Ring02_ctrl_rotateZ1.o" "PALBotRN.phl[233]";
+connectAttr "PALbot_L_Pinky01_ctrl_translateX1.o" "PALBotRN.phl[234]";
+connectAttr "PALbot_L_Pinky01_ctrl_translateY1.o" "PALBotRN.phl[235]";
+connectAttr "PALbot_L_Pinky01_ctrl_translateZ1.o" "PALBotRN.phl[236]";
+connectAttr "PALbot_L_Pinky01_ctrl_rotateX1.o" "PALBotRN.phl[237]";
+connectAttr "PALbot_L_Pinky01_ctrl_rotateY1.o" "PALBotRN.phl[238]";
+connectAttr "PALbot_L_Pinky01_ctrl_rotateZ1.o" "PALBotRN.phl[239]";
+connectAttr "PALbot_L_Pinky02_ctrl_translateX1.o" "PALBotRN.phl[240]";
+connectAttr "PALbot_L_Pinky02_ctrl_translateY1.o" "PALBotRN.phl[241]";
+connectAttr "PALbot_L_Pinky02_ctrl_translateZ1.o" "PALBotRN.phl[242]";
+connectAttr "PALbot_L_Pinky02_ctrl_rotateX1.o" "PALBotRN.phl[243]";
+connectAttr "PALbot_L_Pinky02_ctrl_rotateY1.o" "PALBotRN.phl[244]";
+connectAttr "PALbot_L_Pinky02_ctrl_rotateZ1.o" "PALBotRN.phl[245]";
+connectAttr "PALbot_R_Thumb01_ctrl_translateX1.o" "PALBotRN.phl[246]";
+connectAttr "PALbot_R_Thumb01_ctrl_translateY1.o" "PALBotRN.phl[247]";
+connectAttr "PALbot_R_Thumb01_ctrl_translateZ1.o" "PALBotRN.phl[248]";
+connectAttr "PALbot_R_Thumb01_ctrl_rotateX1.o" "PALBotRN.phl[249]";
+connectAttr "PALbot_R_Thumb01_ctrl_rotateY1.o" "PALBotRN.phl[250]";
+connectAttr "PALbot_R_Thumb01_ctrl_rotateZ1.o" "PALBotRN.phl[251]";
+connectAttr "PALbot_R_Thumb02_ctrl_translateX1.o" "PALBotRN.phl[252]";
+connectAttr "PALbot_R_Thumb02_ctrl_translateY1.o" "PALBotRN.phl[253]";
+connectAttr "PALbot_R_Thumb02_ctrl_translateZ1.o" "PALBotRN.phl[254]";
+connectAttr "PALbot_R_Thumb02_ctrl_rotateX1.o" "PALBotRN.phl[255]";
+connectAttr "PALbot_R_Thumb02_ctrl_rotateY1.o" "PALBotRN.phl[256]";
+connectAttr "PALbot_R_Thumb02_ctrl_rotateZ1.o" "PALBotRN.phl[257]";
+connectAttr "PALbot_R_Thumb03_ctrl_translateX1.o" "PALBotRN.phl[258]";
+connectAttr "PALbot_R_Thumb03_ctrl_translateY1.o" "PALBotRN.phl[259]";
+connectAttr "PALbot_R_Thumb03_ctrl_translateZ1.o" "PALBotRN.phl[260]";
+connectAttr "PALbot_R_Thumb03_ctrl_rotateX1.o" "PALBotRN.phl[261]";
+connectAttr "PALbot_R_Thumb03_ctrl_rotateY1.o" "PALBotRN.phl[262]";
+connectAttr "PALbot_R_Thumb03_ctrl_rotateZ1.o" "PALBotRN.phl[263]";
+connectAttr "PALbot_R_Index01_ctrl_translateX1.o" "PALBotRN.phl[264]";
+connectAttr "PALbot_R_Index01_ctrl_translateY1.o" "PALBotRN.phl[265]";
+connectAttr "PALbot_R_Index01_ctrl_translateZ1.o" "PALBotRN.phl[266]";
+connectAttr "PALbot_R_Index01_ctrl_rotateX1.o" "PALBotRN.phl[267]";
+connectAttr "PALbot_R_Index01_ctrl_rotateY1.o" "PALBotRN.phl[268]";
+connectAttr "PALbot_R_Index01_ctrl_rotateZ1.o" "PALBotRN.phl[269]";
+connectAttr "PALbot_R_Index02_ctrl_translateX1.o" "PALBotRN.phl[270]";
+connectAttr "PALbot_R_Index02_ctrl_translateY1.o" "PALBotRN.phl[271]";
+connectAttr "PALbot_R_Index02_ctrl_translateZ1.o" "PALBotRN.phl[272]";
+connectAttr "PALbot_R_Index02_ctrl_rotateX1.o" "PALBotRN.phl[273]";
+connectAttr "PALbot_R_Index02_ctrl_rotateY1.o" "PALBotRN.phl[274]";
+connectAttr "PALbot_R_Index02_ctrl_rotateZ1.o" "PALBotRN.phl[275]";
+connectAttr "PALbot_R_Middle01_ctrl_translateX1.o" "PALBotRN.phl[276]";
+connectAttr "PALbot_R_Middle01_ctrl_translateY1.o" "PALBotRN.phl[277]";
+connectAttr "PALbot_R_Middle01_ctrl_translateZ1.o" "PALBotRN.phl[278]";
+connectAttr "PALbot_R_Middle01_ctrl_rotateX1.o" "PALBotRN.phl[279]";
+connectAttr "PALbot_R_Middle01_ctrl_rotateY1.o" "PALBotRN.phl[280]";
+connectAttr "PALbot_R_Middle01_ctrl_rotateZ1.o" "PALBotRN.phl[281]";
+connectAttr "PALbot_R_Middle02_ctrl_translateX1.o" "PALBotRN.phl[282]";
+connectAttr "PALbot_R_Middle02_ctrl_translateY1.o" "PALBotRN.phl[283]";
+connectAttr "PALbot_R_Middle02_ctrl_translateZ1.o" "PALBotRN.phl[284]";
+connectAttr "PALbot_R_Middle02_ctrl_rotateX1.o" "PALBotRN.phl[285]";
+connectAttr "PALbot_R_Middle02_ctrl_rotateY1.o" "PALBotRN.phl[286]";
+connectAttr "PALbot_R_Middle02_ctrl_rotateZ1.o" "PALBotRN.phl[287]";
+connectAttr "PALbot_R_Ring01_ctrl_translateX1.o" "PALBotRN.phl[288]";
+connectAttr "PALbot_R_Ring01_ctrl_translateY1.o" "PALBotRN.phl[289]";
+connectAttr "PALbot_R_Ring01_ctrl_translateZ1.o" "PALBotRN.phl[290]";
+connectAttr "PALbot_R_Ring01_ctrl_rotateX1.o" "PALBotRN.phl[291]";
+connectAttr "PALbot_R_Ring01_ctrl_rotateY1.o" "PALBotRN.phl[292]";
+connectAttr "PALbot_R_Ring01_ctrl_rotateZ1.o" "PALBotRN.phl[293]";
+connectAttr "PALbot_R_Ring02_ctrl_translateX1.o" "PALBotRN.phl[294]";
+connectAttr "PALbot_R_Ring02_ctrl_translateY1.o" "PALBotRN.phl[295]";
+connectAttr "PALbot_R_Ring02_ctrl_translateZ1.o" "PALBotRN.phl[296]";
+connectAttr "PALbot_R_Ring02_ctrl_rotateX1.o" "PALBotRN.phl[297]";
+connectAttr "PALbot_R_Ring02_ctrl_rotateY1.o" "PALBotRN.phl[298]";
+connectAttr "PALbot_R_Ring02_ctrl_rotateZ1.o" "PALBotRN.phl[299]";
+connectAttr "PALbot_R_Pinky01_ctrl_translateX1.o" "PALBotRN.phl[300]";
+connectAttr "PALbot_R_Pinky01_ctrl_translateY1.o" "PALBotRN.phl[301]";
+connectAttr "PALbot_R_Pinky01_ctrl_translateZ1.o" "PALBotRN.phl[302]";
+connectAttr "PALbot_R_Pinky01_ctrl_rotateX1.o" "PALBotRN.phl[303]";
+connectAttr "PALbot_R_Pinky01_ctrl_rotateY1.o" "PALBotRN.phl[304]";
+connectAttr "PALbot_R_Pinky01_ctrl_rotateZ1.o" "PALBotRN.phl[305]";
+connectAttr "PALbot_R_Pinky02_ctrl_translateX1.o" "PALBotRN.phl[306]";
+connectAttr "PALbot_R_Pinky02_ctrl_translateY1.o" "PALBotRN.phl[307]";
+connectAttr "PALbot_R_Pinky02_ctrl_translateZ1.o" "PALBotRN.phl[308]";
+connectAttr "PALbot_R_Pinky02_ctrl_rotateX1.o" "PALBotRN.phl[309]";
+connectAttr "PALbot_R_Pinky02_ctrl_rotateY1.o" "PALBotRN.phl[310]";
+connectAttr "PALbot_R_Pinky02_ctrl_rotateZ1.o" "PALBotRN.phl[311]";
+connectAttr "PALbot_R_knee_aim_ctrl_space_switch1.o" "PALBotRN.phl[312]";
+connectAttr "PALbot_R_knee_aim_ctrl_translateX1.o" "PALBotRN.phl[313]";
+connectAttr "PALbot_R_knee_aim_ctrl_translateY1.o" "PALBotRN.phl[314]";
+connectAttr "PALbot_R_knee_aim_ctrl_translateZ1.o" "PALBotRN.phl[315]";
+connectAttr "PALbot_R_knee_aim_ctrl_rotateX1.o" "PALBotRN.phl[316]";
+connectAttr "PALbot_R_knee_aim_ctrl_rotateY1.o" "PALBotRN.phl[317]";
+connectAttr "PALbot_R_knee_aim_ctrl_rotateZ1.o" "PALBotRN.phl[318]";
+connectAttr "PALbot_R_foot_secondary_rotateX1.o" "PALBotRN.phl[319]";
+connectAttr "PALbot_R_foot_secondary_rotateY1.o" "PALBotRN.phl[320]";
+connectAttr "PALbot_R_foot_secondary_rotateZ1.o" "PALBotRN.phl[321]";
+connectAttr "PALbot_R_foot_secondary_translateX1.o" "PALBotRN.phl[322]";
+connectAttr "PALbot_R_foot_secondary_translateY1.o" "PALBotRN.phl[323]";
+connectAttr "PALbot_R_foot_secondary_translateZ1.o" "PALBotRN.phl[324]";
+connectAttr "PALbot_R_footSec_reshape01_translateX1.o" "PALBotRN.phl[325]";
+connectAttr "PALbot_R_footSec_reshape01_translateY1.o" "PALBotRN.phl[326]";
+connectAttr "PALbot_R_footSec_reshape01_translateZ1.o" "PALBotRN.phl[327]";
+connectAttr "PALbot_R_footSec_reshape01_rotateX1.o" "PALBotRN.phl[328]";
+connectAttr "PALbot_R_footSec_reshape01_rotateY1.o" "PALBotRN.phl[329]";
+connectAttr "PALbot_R_footSec_reshape01_rotateZ1.o" "PALBotRN.phl[330]";
+connectAttr "PALbot_R_footSec_reshape02_translateX1.o" "PALBotRN.phl[331]";
+connectAttr "PALbot_R_footSec_reshape02_translateY1.o" "PALBotRN.phl[332]";
+connectAttr "PALbot_R_footSec_reshape02_translateZ1.o" "PALBotRN.phl[333]";
+connectAttr "PALbot_R_footSec_reshape02_rotateX1.o" "PALBotRN.phl[334]";
+connectAttr "PALbot_R_footSec_reshape02_rotateY1.o" "PALBotRN.phl[335]";
+connectAttr "PALbot_R_footSec_reshape02_rotateZ1.o" "PALBotRN.phl[336]";
+connectAttr "PALbot_R_Engine_ctrl_on_off1.o" "PALBotRN.phl[337]";
+connectAttr "PALbot_R_Engine_ctrl_translateX1.o" "PALBotRN.phl[338]";
+connectAttr "PALbot_R_Engine_ctrl_translateY1.o" "PALBotRN.phl[339]";
+connectAttr "PALbot_R_Engine_ctrl_translateZ1.o" "PALBotRN.phl[340]";
+connectAttr "PALbot_R_Engine_ctrl_rotateX1.o" "PALBotRN.phl[341]";
+connectAttr "PALbot_R_Engine_ctrl_rotateY1.o" "PALBotRN.phl[342]";
+connectAttr "PALbot_R_Engine_ctrl_rotateZ1.o" "PALBotRN.phl[343]";
+connectAttr "PALbot_R_Engine_ctrl_scaleX1.o" "PALBotRN.phl[344]";
+connectAttr "PALbot_R_Engine_ctrl_scaleY1.o" "PALBotRN.phl[345]";
+connectAttr "PALbot_R_Engine_ctrl_scaleZ1.o" "PALBotRN.phl[346]";
+connectAttr "PALbot_R_IK_Foot_ctrl_Heel_Peel1.o" "PALBotRN.phl[347]";
+connectAttr "PALbot_R_IK_Foot_ctrl_follow_hip1.o" "PALBotRN.phl[348]";
+connectAttr "PALbot_R_IK_Foot_ctrl_translateZ1.o" "PALBotRN.phl[349]";
+connectAttr "PALbot_R_IK_Foot_ctrl_translateX1.o" "PALBotRN.phl[350]";
+connectAttr "PALbot_R_IK_Foot_ctrl_translateY1.o" "PALBotRN.phl[351]";
+connectAttr "PALbot_R_IK_Foot_ctrl_rotateX1.o" "PALBotRN.phl[352]";
+connectAttr "PALbot_R_IK_Foot_ctrl_rotateY1.o" "PALBotRN.phl[353]";
+connectAttr "PALbot_R_IK_Foot_ctrl_rotateZ1.o" "PALBotRN.phl[354]";
+connectAttr "PALbot_R_IK_heel_lift_tip_rotateX1.o" "PALBotRN.phl[355]";
+connectAttr "PALbot_R_IK_heel_lift_tip_rotateY1.o" "PALBotRN.phl[356]";
+connectAttr "PALbot_R_IK_heel_lift_tip_rotateZ1.o" "PALBotRN.phl[357]";
+connectAttr "PALbot_R_IK_heel_lift_tip_translateX1.o" "PALBotRN.phl[358]";
+connectAttr "PALbot_R_IK_heel_lift_tip_translateY1.o" "PALBotRN.phl[359]";
+connectAttr "PALbot_R_IK_heel_lift_tip_translateZ1.o" "PALBotRN.phl[360]";
+connectAttr "PALbot_R_IK_foot_tip_translateX1.o" "PALBotRN.phl[361]";
+connectAttr "PALbot_R_IK_foot_tip_translateY1.o" "PALBotRN.phl[362]";
+connectAttr "PALbot_R_IK_foot_tip_translateZ1.o" "PALBotRN.phl[363]";
+connectAttr "PALbot_R_IK_foot_tip_rotateX1.o" "PALBotRN.phl[364]";
+connectAttr "PALbot_R_IK_foot_tip_rotateY1.o" "PALBotRN.phl[365]";
+connectAttr "PALbot_R_IK_foot_tip_rotateZ1.o" "PALBotRN.phl[366]";
+connectAttr "PALbot_R_IK_footBall_ctrl_translateX1.o" "PALBotRN.phl[367]";
+connectAttr "PALbot_R_IK_footBall_ctrl_translateY1.o" "PALBotRN.phl[368]";
+connectAttr "PALbot_R_IK_footBall_ctrl_translateZ1.o" "PALBotRN.phl[369]";
+connectAttr "PALbot_R_IK_footBall_ctrl_rotateX1.o" "PALBotRN.phl[370]";
+connectAttr "PALbot_R_IK_footBall_ctrl_rotateY1.o" "PALBotRN.phl[371]";
+connectAttr "PALbot_R_IK_footBall_ctrl_rotateZ1.o" "PALBotRN.phl[372]";
+connectAttr "PALbot_L_HandVIS_Hand_Vis1.o" "PALBotRN.phl[373]";
+connectAttr "PALbot_L_HandVIS_canon_light1.o" "PALBotRN.phl[374]";
 connectAttr "PALbot_MAIN_global_scale.o" "PALBotRN1.phl[1]";
 connectAttr "PALbot_MAIN_Mesh_lock.o" "PALBotRN1.phl[2]";
 connectAttr "PALbot_MAIN_translateZ.o" "PALBotRN1.phl[3]";
@@ -12701,40 +12722,21 @@ connectAttr "PALbot_R_IK_footBall_ctrl_rotateY.o" "PALBotRN1.phl[378]";
 connectAttr "PALbot_R_IK_footBall_ctrl_rotateZ.o" "PALBotRN1.phl[379]";
 connectAttr "PALbot_L_HandVIS_Hand_Vis.o" "PALBotRN1.phl[380]";
 connectAttr "PALbot_L_HandVIS_canon_light.o" "PALBotRN1.phl[381]";
-connectAttr "Bat_parentConstraint1.ctx" "Bat.tx";
-connectAttr "Bat_parentConstraint1.cty" "Bat.ty";
-connectAttr "Bat_parentConstraint1.ctz" "Bat.tz";
-connectAttr "Bat_parentConstraint1.crx" "Bat.rx";
-connectAttr "Bat_parentConstraint1.cry" "Bat.ry";
-connectAttr "Bat_parentConstraint1.crz" "Bat.rz";
-connectAttr "polyCylinder1.out" "BatShape.i";
-connectAttr "Bat_parentConstraint1_nodeState.o" "Bat_parentConstraint1.nds";
-connectAttr "Bat.ro" "Bat_parentConstraint1.cro";
-connectAttr "Bat.pim" "Bat_parentConstraint1.cpim";
-connectAttr "Bat.rp" "Bat_parentConstraint1.crp";
-connectAttr "Bat.rpt" "Bat_parentConstraint1.crt";
-connectAttr "Bat_parentConstraint1.w0" "Bat_parentConstraint1.tg[0].tw";
-connectAttr "Bat_parentConstraint1_target_0__targetOffsetTranslateX.o" "Bat_parentConstraint1.tg[0].totx"
-		;
-connectAttr "Bat_parentConstraint1_target_0__targetOffsetTranslateY.o" "Bat_parentConstraint1.tg[0].toty"
-		;
-connectAttr "Bat_parentConstraint1_target_0__targetOffsetTranslateZ.o" "Bat_parentConstraint1.tg[0].totz"
-		;
-connectAttr "Bat_parentConstraint1_target_0__targetOffsetRotateX.o" "Bat_parentConstraint1.tg[0].torx"
-		;
-connectAttr "Bat_parentConstraint1_target_0__targetOffsetRotateY.o" "Bat_parentConstraint1.tg[0].tory"
-		;
-connectAttr "Bat_parentConstraint1_target_0__targetOffsetRotateZ.o" "Bat_parentConstraint1.tg[0].torz"
-		;
-connectAttr "Bat_parentConstraint1_PALbot_R_FK_Wrist_ctrlW0.o" "Bat_parentConstraint1.w0"
-		;
-connectAttr "Bat_parentConstraint1_interpType.o" "Bat_parentConstraint1.int";
-connectAttr "Bat_parentConstraint1_rotationDecompositionTargetX.o" "Bat_parentConstraint1.rdtx"
-		;
-connectAttr "Bat_parentConstraint1_rotationDecompositionTargetY.o" "Bat_parentConstraint1.rdty"
-		;
-connectAttr "Bat_parentConstraint1_rotationDecompositionTargetZ.o" "Bat_parentConstraint1.rdtz"
-		;
+connectAttr "pCylinder1_translateX.o" "pCylinder1.tx";
+connectAttr "pCylinder1_translateY.o" "pCylinder1.ty";
+connectAttr "pCylinder1_translateZ.o" "pCylinder1.tz";
+connectAttr "pCylinder1_visibility.o" "pCylinder1.v";
+connectAttr "pCylinder1_rotateX.o" "pCylinder1.rx";
+connectAttr "pCylinder1_rotateY.o" "pCylinder1.ry";
+connectAttr "pCylinder1_rotateZ.o" "pCylinder1.rz";
+connectAttr "pCylinder1_scaleX.o" "pCylinder1.sx";
+connectAttr "pCylinder1_scaleY.o" "pCylinder1.sy";
+connectAttr "pCylinder1_scaleZ.o" "pCylinder1.sz";
+connectAttr "polyCylinder1.out" "pCylinderShape1.i";
+connectAttr "pCylinder2_translateX.o" "pCylinder2.tx";
+connectAttr "pCylinder2_translateY.o" "pCylinder2.ty";
+connectAttr "pCylinder2_translateZ.o" "pCylinder2.tz";
+connectAttr "polyCylinder2.out" "pCylinderShape2.i";
 connectAttr ":time1.o" "hunte__dev__Wallsubnet__1_01.inTime";
 connectAttr "hunte__dev__Wallsubnet__1_01.outputObjects[0].outputObjectTranslate" "WallTool.t"
 		;
@@ -15079,7 +15081,8 @@ connectAttr "Abandoned_Factory_Tiled_Floor_02_normal.msg" ":defaultTextureList1.
 		 -na;
 connectAttr "file53.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file54.msg" ":defaultTextureList1.tx" -na;
-connectAttr "BatShape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "pCylinderShape1.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "pCylinderShape2.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "uvflatten1_0Shape.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId13.msg" ":initialShadingGroup.gn" -na;
 connectAttr "MainLightGreen.iog" ":defaultLightSet.dsm" -na;
