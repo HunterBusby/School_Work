@@ -1,0 +1,1 @@
+I decided to put the forearm on the side as opposed to the middle because movement would be restrained if it was in the middle. I fleshed out the shape of the fingers and the finger tips. I added another joint so that there is more movement possibilities in the wrist area. I also gave the main arms 'Bicep' and 'forearm' some depth to it for style.
