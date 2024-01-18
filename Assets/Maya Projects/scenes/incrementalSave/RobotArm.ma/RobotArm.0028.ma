@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: RobotArm.ma
-//Last modified: Wed, Jan 17, 2024 08:42:53 PM
+//Last modified: Wed, Jan 17, 2024 08:27:42 PM
 //Codeset: 1252
 requires maya "2024";
 requires -nodeType "polyGear" "modelingToolkit" "0.0.0.0";
@@ -11,12 +11,12 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202302170737-4500172811";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22621)";
-fileInfo "UUID" "8A1B0E34-4E07-097B-C7DA-79B341A1BCA8";
+fileInfo "UUID" "D56193BA-472E-BD2C-D0D9-7789D07B4982";
 createNode transform -s -n "persp";
 	rename -uid "178579DD-44DA-C6D3-7A48-C9977327F758";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 114.35772066519873 93.150402678211719 -78.692133265522443 ;
-	setAttr ".r" -type "double3" -29.928255754321484 476.24959501044412 0 ;
+	setAttr ".t" -type "double3" 17.844710017889327 60.066001116552222 -43.597728725715214 ;
+	setAttr ".r" -type "double3" -37.728255754452292 482.24959501056139 0 ;
 	setAttr ".rp" -type "double3" -1.7763568394002505e-15 -1.0658141036401503e-14 1.4210854715202004e-14 ;
 	setAttr ".rpt" -type "double3" 1.4649255705830604e-14 2.9764651439504301e-15 3.5532099372456078e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -24,7 +24,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".fl" 32.882119075243551;
-	setAttr ".coi" 142.07474062609867;
+	setAttr ".coi" 20.615812025256769;
 	setAttr ".ow" 141.98614652268336;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
