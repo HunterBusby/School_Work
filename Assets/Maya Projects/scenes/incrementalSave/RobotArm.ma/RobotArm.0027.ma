@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: RobotArm.ma
-//Last modified: Wed, Jan 17, 2024 08:27:42 PM
+//Last modified: Wed, Jan 17, 2024 08:26:52 PM
 //Codeset: 1252
 requires maya "2024";
 requires -nodeType "polyGear" "modelingToolkit" "0.0.0.0";
@@ -11,12 +11,12 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202302170737-4500172811";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22621)";
-fileInfo "UUID" "D56193BA-472E-BD2C-D0D9-7789D07B4982";
+fileInfo "UUID" "9CF0743D-4BA8-5F27-BA36-8384C8BB0116";
 createNode transform -s -n "persp";
 	rename -uid "178579DD-44DA-C6D3-7A48-C9977327F758";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 17.844710017889327 60.066001116552222 -43.597728725715214 ;
-	setAttr ".r" -type "double3" -37.728255754452292 482.24959501056139 0 ;
+	setAttr ".t" -type "double3" 7.5641810121602333 56.31452898177119 -73.025105479450673 ;
+	setAttr ".r" -type "double3" -11.328255754473577 175.84959501059367 0 ;
 	setAttr ".rp" -type "double3" -1.7763568394002505e-15 -1.0658141036401503e-14 1.4210854715202004e-14 ;
 	setAttr ".rpt" -type "double3" 1.4649255705830604e-14 2.9764651439504301e-15 3.5532099372456078e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -24,7 +24,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".fl" 32.882119075243551;
-	setAttr ".coi" 20.615812025256769;
+	setAttr ".coi" 39.231892130898707;
 	setAttr ".ow" 141.98614652268336;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
@@ -8455,7 +8455,7 @@ createNode mesh -n "Thingfinger2Shape" -p "Thingfinger2";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pCylinder5";
 	rename -uid "4167F039-45C2-EC15-3BC0-92B7B607B432";
-	setAttr ".t" -type "double3" 7.1365030770230824 47.299820013065442 -33.64675848878781 ;
+	setAttr ".t" -type "double3" 7.3014667992520863 47.299820013065442 -33.64675848878781 ;
 	setAttr ".r" -type "double3" 0 0 90 ;
 	setAttr ".s" -type "double3" 0.75239737594666678 1.8774243812487219 0.75239737594666678 ;
 	setAttr ".rp" -type "double3" 0 1.8774240975308949 0 ;
@@ -8996,7 +8996,7 @@ createNode mesh -n "pCylinderShape8" -p "|pCylinder5|pCube6|pCylinder8";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pCylinder9";
 	rename -uid "6242DC04-4352-F5F8-3090-06835BF103E1";
-	setAttr ".t" -type "double3" 0.78584350554273996 47.299820013065442 -33.64675848878781 ;
+	setAttr ".t" -type "double3" 0.48316587416456636 47.299820013065442 -33.64675848878781 ;
 	setAttr ".r" -type "double3" 0 0 -90 ;
 	setAttr ".s" -type "double3" 0.75239737594666678 1.8774243812487219 0.75239737594666678 ;
 	setAttr ".rp" -type "double3" 0 1.9141038516349944 0 ;
