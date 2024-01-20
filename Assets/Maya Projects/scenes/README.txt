@@ -1,3 +1,1 @@
-I decided to put the forearm on the side as opposed to the middle because movement would be restrained if it was in the middle. I fleshed out the shape of the fingers and the finger tips. I added another joint so that there is more movement possibilities in the wrist area. I also gave the main arms 'Bicep' and 'forearm' some depth to it for style.
-
--- I realized the wrist movement looked weird without giving it space in the arm so I cut it out. 
+Uvmapping and surfacing went well. Had a little problem with the gear having nonmanifold geometry that was unfixable, but the UV looked good so I didn't mess around with it. It is possible to have multiple texture groups in Sketchfab, you just have to select each different group and assign it's different maps (Normal, height, base) so it's just a little tideous.
